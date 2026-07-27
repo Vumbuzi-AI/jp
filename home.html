@@ -1,0 +1,2053 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>
+      Healthcare Institution - We are committed to your health and well-being
+    </title>
+
+    <meta
+      content="Healthcare Institution - We are committed to your health and well-being"
+      property="og:title"
+    />
+    <meta
+      content="Healthcare Institution - We are committed to your health and well-being"
+      name="twitter:title"
+    />
+    <meta
+      content="Explore our website and discover how we can partner with you on your journey to better health."
+      name="description"
+    />
+    <meta
+      content="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1200&q=80"
+      property="og:image"
+    />
+    <meta
+      content="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1200&q=80"
+      name="twitter:image"
+    />
+
+    <!-- Inline SVG favicon -->
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231C86C9'/%3E%3Cpath d='M14 7h4v7h7v4h-7v7h-4v-7H7v-4h7z' fill='white'/%3E%3C/svg%3E"
+    />
+
+    <!-- Google Fonts replacing WebFont.load (Lato, Poppins, Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Lato:wght@300;400;700;900&family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="theme.css" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: "rgb(var(--color-brand) / <alpha-value>)",
+              "brand-dark": "rgb(var(--color-brand-dark) / <alpha-value>)",
+              accent: "rgb(var(--color-accent) / <alpha-value>)",
+              "accent-dark": "rgb(var(--color-accent-dark) / <alpha-value>)",
+              ink: "rgb(var(--color-ink) / <alpha-value>)",
+            },
+            fontFamily: {
+              sans: [
+                "Inter",
+                "Lato",
+                "ui-sans-serif",
+                "system-ui",
+                "sans-serif",
+              ],
+              display: ["Poppins", "Inter", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <!-- Mark that JS is available BEFORE first paint so reveal-hidden styles only apply when JS can undo them (progressive enhancement, no FOUC). -->
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+
+    <style>
+      body {
+        font-family: "Inter", "Lato", sans-serif;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5 {
+        font-family: "Poppins", "Inter", sans-serif;
+      }
+
+      /* ---- Scroll reveal (only hidden when JS is present) ---- */
+      .js [data-reveal] {
+        opacity: 0;
+        transform: translateY(28px);
+        transition:
+          opacity 0.7s ease,
+          transform 0.7s ease;
+      }
+      .js [data-reveal].is-visible {
+        opacity: 1;
+        transform: none;
+      }
+      .js [data-reveal][data-reveal-delay="1"] {
+        transition-delay: 0.1s;
+      }
+      .js [data-reveal][data-reveal-delay="2"] {
+        transition-delay: 0.2s;
+      }
+      .js [data-reveal][data-reveal-delay="3"] {
+        transition-delay: 0.3s;
+      }
+
+      /* ---- Benefit underline fill ---- */
+      .benefit-line {
+        transform-origin: left center;
+      }
+      .js .benefit-line {
+        transform: scaleX(0);
+        transition: transform 1s ease;
+      }
+      .js .benefit-line.is-filled {
+        transform: scaleX(1);
+      }
+
+      /* ---- Testimonials carousel (grid fallback without JS) ---- */
+      .t-controls {
+        display: none;
+      }
+      .js [data-carousel] .t-viewport {
+        overflow: hidden;
+      }
+      .js [data-carousel] .t-track {
+        display: flex;
+        gap: 0;
+        transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .js [data-carousel] .t-slide {
+        flex: 0 0 100%;
+        min-width: 0;
+        padding: 0 0.5rem;
+      }
+      .js [data-carousel] .t-controls {
+        display: flex;
+      }
+      @media (min-width: 768px) {
+        .js [data-carousel] .t-slide {
+          flex: 0 0 50%;
+        }
+      }
+      @media (min-width: 1024px) {
+        .js [data-carousel] .t-slide {
+          flex: 0 0 33.3333%;
+        }
+      }
+
+      /* ---- Mobile dropdown submenu (JS click toggle) ---- */
+      .js .nav-submenu.open {
+        display: block;
+      }
+
+      /* ---- Back-to-top: hidden until scrolled (JS only) ---- */
+      .js #back-to-top {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(12px);
+        transition:
+          opacity 0.3s ease,
+          transform 0.3s ease,
+          visibility 0.3s;
+      }
+      .js #back-to-top.is-visible {
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .js [data-reveal],
+        .js .benefit-line,
+        .js [data-carousel] .t-track {
+          transition: none;
+        }
+        .js [data-reveal] {
+          opacity: 1;
+          transform: none;
+        }
+        .js .benefit-line {
+          transform: scaleX(1);
+        }
+      }
+    </style>
+  </head>
+
+  <body class="bg-white text-ink antialiased">
+    <!-- ================= NAV ================= -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur shadow-sm">
+      <div class="mx-auto max-w-7xl px-5 lg:px-8">
+        <div class="flex items-center justify-between h-20">
+          <!-- Logo: inline SVG mark + brand name -->
+          <a href="home.html" class="flex items-center gap-2.5">
+            <span
+              class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-brand"
+            >
+              <svg
+                class="h-5 w-5 text-white"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path d="M10 4h4v6h6v4h-6v6h-4v-6H4v-4h6z" />
+              </svg>
+            </span>
+            <span class="text-lg font-bold text-ink"
+              >Healthcare<span class="text-brand"> Institution</span></span
+            >
+          </a>
+
+          <!-- Mobile toggle (checkbox + label peer pattern) -->
+          <input type="checkbox" id="nav-toggle" class="peer hidden" />
+          <label
+            for="nav-toggle"
+            class="lg:hidden cursor-pointer p-2 text-ink"
+            aria-label="Toggle menu"
+          >
+            <svg
+              class="h-7 w-7"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <line x1="3" y1="6" x2="21" y2="6" />
+              <line x1="3" y1="12" x2="21" y2="12" />
+              <line x1="3" y1="18" x2="21" y2="18" />
+            </svg>
+          </label>
+
+          <!-- Nav menu -->
+          <nav
+            class="hidden peer-checked:block lg:flex lg:items-center lg:gap-1 absolute lg:static top-20 left-0 right-0 bg-white lg:bg-transparent shadow-lg lg:shadow-none px-5 lg:px-0 py-4 lg:py-0 space-y-1 lg:space-y-0"
+          >
+            <!-- Dropdown: Demos -->
+            <div class="group relative">
+              <button
+                data-dropdown-btn
+                class="flex items-center gap-1 px-4 py-2 text-sm font-medium text-ink hover:text-brand w-full lg:w-auto"
+              >
+                Demos
+                <svg
+                  class="h-4 w-4"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </button>
+              <div
+                class="nav-submenu hidden group-hover:block group-focus-within:block lg:absolute lg:top-full lg:left-0 lg:min-w-48 rounded-xl lg:bg-white lg:shadow-xl lg:ring-1 lg:ring-black/5 lg:p-2 pl-4 lg:pl-2"
+              >
+                <a
+                  href="home.html"
+                  class="block rounded-lg px-3 py-2 text-sm text-gray-700 hover:bg-brand/5 hover:text-brand"
+                  >Home 1</a
+                >
+                <a
+                  href="#"
+                  class="block rounded-lg px-3 py-2 text-sm text-gray-700 hover:bg-brand/5 hover:text-brand"
+                  >Home 2</a
+                >
+                <a
+                  href="#"
+                  class="block rounded-lg px-3 py-2 text-sm text-gray-700 hover:bg-brand/5 hover:text-brand"
+                  >Home 3</a
+                >
+              </div>
+            </div>
+
+            <!-- Dropdown: About Us -->
+            <div class="group relative">
+              <button
+                data-dropdown-btn
+                class="flex items-center gap-1 px-4 py-2 text-sm font-medium text-ink hover:text-brand w-full lg:w-auto"
+              >
+                About Us
+                <svg
+                  class="h-4 w-4"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </button>
+              <div
+                class="nav-submenu hidden group-hover:block group-focus-within:block lg:absolute lg:top-full lg:left-0 lg:min-w-48 rounded-xl lg:bg-white lg:shadow-xl lg:ring-1 lg:ring-black/5 lg:p-2 pl-4 lg:pl-2"
+              >
+                <a
+                  href="about.html"
+                  class="block rounded-lg px-3 py-2 text-sm text-gray-700 hover:bg-brand/5 hover:text-brand"
+                  >About Us</a
+                >
+                <a
+                  href="#"
+                  class="block rounded-lg px-3 py-2 text-sm text-gray-700 hover:bg-brand/5 hover:text-brand"
+                  >Our Doctors</a
+                >
+                <a
+                  href="#"
+                  class="block rounded-lg px-3 py-2 text-sm text-gray-700 hover:bg-brand/5 hover:text-brand"
+                  >Join Us</a
+                >
+                <a
+                  href="#"
+                  class="block rounded-lg px-3 py-2 text-sm text-gray-700 hover:bg-brand/5 hover:text-brand"
+                  >Pricing</a
+                >
+                <a
+                  href="testimonials.html"
+                  class="block rounded-lg px-3 py-2 text-sm text-gray-700 hover:bg-brand/5 hover:text-brand"
+                  >Testimonials</a
+                >
+                <a
+                  href="faqs.html"
+                  class="block rounded-lg px-3 py-2 text-sm text-gray-700 hover:bg-brand/5 hover:text-brand"
+                  >FAQ</a
+                >
+              </div>
+            </div>
+
+            <a
+              href="#"
+              class="block px-4 py-2 text-sm font-medium text-ink hover:text-brand"
+              >Departments</a
+            >
+            <a
+              href="#Our-best-services"
+              class="block px-4 py-2 text-sm font-medium text-ink hover:text-brand"
+              >Services</a
+            >
+
+            <!-- Dropdown: All Pages -->
+            <div class="group relative">
+              <button
+                data-dropdown-btn
+                class="flex items-center gap-1 px-4 py-2 text-sm font-medium text-ink hover:text-brand w-full lg:w-auto"
+              >
+                All Pages
+                <svg
+                  class="h-4 w-4"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </button>
+              <div
+                class="nav-submenu hidden group-hover:block group-focus-within:block lg:absolute lg:top-full lg:right-0 lg:min-w-64 rounded-xl lg:bg-white lg:shadow-xl lg:ring-1 lg:ring-black/5 lg:p-2 pl-4 lg:pl-2 lg:grid lg:grid-cols-2 lg:gap-1"
+              >
+                <a
+                  href="#"
+                  class="block rounded-lg px-3 py-2 text-sm text-gray-700 hover:bg-brand/5 hover:text-brand"
+                  >Our Doctors</a
+                >
+                <a
+                  href="#"
+                  class="block rounded-lg px-3 py-2 text-sm text-gray-700 hover:bg-brand/5 hover:text-brand"
+                  >Departments</a
+                >
+                <a
+                  href="#"
+                  class="block rounded-lg px-3 py-2 text-sm text-gray-700 hover:bg-brand/5 hover:text-brand"
+                  >Pricing</a
+                >
+                <a
+                  href="#"
+                  class="block rounded-lg px-3 py-2 text-sm text-gray-700 hover:bg-brand/5 hover:text-brand"
+                  >Working Hours</a
+                >
+                <a
+                  href="#"
+                  class="block rounded-lg px-3 py-2 text-sm text-gray-700 hover:bg-brand/5 hover:text-brand"
+                  >Schedule</a
+                >
+                <a
+                  href="#"
+                  class="block rounded-lg px-3 py-2 text-sm text-gray-700 hover:bg-brand/5 hover:text-brand"
+                  >Gallery</a
+                >
+                <a
+                  href="#Latest-News"
+                  class="block rounded-lg px-3 py-2 text-sm text-gray-700 hover:bg-brand/5 hover:text-brand"
+                  >Our Blog</a
+                >
+                <a
+                  href="contact-us.html"
+                  class="block rounded-lg px-3 py-2 text-sm text-gray-700 hover:bg-brand/5 hover:text-brand"
+                  >Contact Us</a
+                >
+              </div>
+            </div>
+
+            <a
+              href="contact-us.html"
+              class="mt-2 lg:mt-0 lg:ml-3 inline-flex items-center justify-center rounded-full bg-brand px-6 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-brand/90"
+              >Contact Us</a
+            >
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!-- ================= HERO BANNER ================= -->
+    <section class="relative min-h-[600px] flex items-center overflow-hidden">
+      <img
+        src="https://images.unsplash.com/photo-1516841273335-e39b37888115?w=1400&q=80"
+        alt="Medical team caring for patients"
+        class="absolute inset-0 h-full w-full object-cover"
+      />
+      <div
+        class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/20"
+      ></div>
+      <div class="relative mx-auto max-w-7xl px-5 lg:px-8 py-24 w-full">
+        <div class="max-w-2xl" data-reveal>
+          <h1 class="text-4xl md:text-6xl font-bold leading-tight text-white">
+            We are committed to your health and well-being
+          </h1>
+          <p class="mt-6 text-lg text-white/85">
+            Explore our website today and discover how we can partner with you
+            on your journey to better health.
+          </p>
+          <div class="mt-9 flex flex-wrap items-center gap-4">
+            <a
+              href="#Our-Benefits"
+              class="inline-flex items-center rounded-full bg-white px-7 py-3 text-sm font-semibold text-brand shadow transition hover:bg-gray-100"
+              >Learn More</a
+            >
+            <a
+              href="#Our-best-services"
+              class="inline-flex h-14 w-14 items-center justify-center rounded-full border-2 border-accent text-accent transition hover:bg-accent hover:text-ink"
+              aria-label="Scroll to services"
+            >
+              <svg
+                class="h-6 w-6"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <line x1="12" y1="5" x2="12" y2="19" />
+                <polyline points="19 12 12 19 5 12" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= BENEFITS / STATS ================= -->
+    <section id="Our-Benefits" class="bg-brand" data-benefits>
+      <div class="mx-auto max-w-7xl px-5 lg:px-8 py-14">
+        <div
+          class="grid grid-cols-2 gap-8 md:grid-cols-4 divide-y-0 md:divide-x divide-white/20"
+        >
+          <div class="text-center md:px-4">
+            <h2
+              class="text-4xl md:text-5xl font-bold text-white"
+              data-count="500"
+              data-suffix="+"
+            >
+              500+
+            </h2>
+            <p class="mt-2 text-white/80">Consultations</p>
+            <div class="benefit-line mx-auto mt-4 h-0.5 w-16 bg-white/50"></div>
+          </div>
+          <div class="text-center md:px-4">
+            <h2
+              class="text-4xl md:text-5xl font-bold text-white"
+              data-count="97"
+              data-suffix="%"
+            >
+              97%
+            </h2>
+            <p class="mt-2 text-white/80">Trusted Clients</p>
+            <div class="benefit-line mx-auto mt-4 h-0.5 w-16 bg-white/50"></div>
+          </div>
+          <div class="text-center md:px-4">
+            <h2
+              class="text-4xl md:text-5xl font-bold text-white"
+              data-count="100"
+              data-suffix=""
+            >
+              100
+            </h2>
+            <p class="mt-2 text-white/80">Consultations</p>
+            <div class="benefit-line mx-auto mt-4 h-0.5 w-16 bg-white/50"></div>
+          </div>
+          <div class="text-center md:px-4">
+            <h2
+              class="text-4xl md:text-5xl font-bold text-white"
+              data-count="28"
+              data-suffix="+"
+            >
+              28+
+            </h2>
+            <p class="mt-2 text-white/80">Years Experience</p>
+            <div class="benefit-line mx-auto mt-4 h-0.5 w-16 bg-white/50"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= OUR BEST SERVICES ================= -->
+    <section id="Our-best-services" class="py-20">
+      <div class="mx-auto max-w-7xl px-5 lg:px-8">
+        <div
+          class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6"
+          data-reveal
+        >
+          <div class="max-w-2xl">
+            <h2 class="text-3xl md:text-4xl font-bold text-ink">
+              Our best services
+            </h2>
+            <p class="mt-4 text-gray-600">
+              Explore our wide range of medical specialties and services,
+              including primary care, specialized treatments, surgical
+              procedures, diagnostic imaging, and more.
+            </p>
+          </div>
+          <a
+            href="#"
+            class="inline-flex shrink-0 items-center rounded-full border-2 border-ink px-6 py-2.5 text-sm font-semibold text-ink transition hover:bg-ink hover:text-white"
+            >All Services</a
+          >
+        </div>
+
+        <div class="mt-12 grid gap-6 lg:grid-cols-2" data-reveal>
+          <!-- Feature image -->
+          <div class="relative overflow-hidden rounded-3xl min-h-72">
+            <img
+              src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=1080&q=80"
+              loading="lazy"
+              alt="Doctors collaborating"
+              class="absolute inset-0 h-full w-full object-cover"
+            />
+          </div>
+
+          <!-- Service list -->
+          <div class="grid gap-6 sm:grid-cols-2">
+            <!-- item -->
+            <div class="rounded-3xl bg-gray-50 p-7 transition hover:shadow-lg">
+              <span
+                class="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-brand/10 text-brand"
+              >
+                <svg
+                  class="h-7 w-7"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"
+                  />
+                  <line x1="4" y1="22" x2="4" y2="15" />
+                </svg>
+              </span>
+              <h5 class="mt-5 text-lg font-semibold text-ink">Primary Care</h5>
+              <p class="mt-2 text-sm text-gray-600">
+                Our primary care services serve as the foundation of your
+                healthcare journey.
+              </p>
+            </div>
+            <div class="rounded-3xl bg-gray-50 p-7 transition hover:shadow-lg">
+              <span
+                class="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-brand/10 text-brand"
+              >
+                <svg
+                  class="h-7 w-7"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"
+                  />
+                  <path d="M19 10v2a7 7 0 0 1-14 0v-2" />
+                  <line x1="12" y1="19" x2="12" y2="22" />
+                </svg>
+              </span>
+              <h5 class="mt-5 text-lg font-semibold text-ink">
+                Specialized Treatments
+              </h5>
+              <p class="mt-2 text-sm text-gray-600">
+                Our specialized care ensures you receive holistic treatment
+                addressing all aspects of your health.
+              </p>
+            </div>
+            <div class="rounded-3xl bg-gray-50 p-7 transition hover:shadow-lg">
+              <span
+                class="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-brand/10 text-brand"
+              >
+                <svg
+                  class="h-7 w-7"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M8 2v4" />
+                  <path d="M16 2v4" />
+                  <path d="M12 6v6l4 2" />
+                  <circle cx="12" cy="14" r="8" />
+                </svg>
+              </span>
+              <h5 class="mt-5 text-lg font-semibold text-ink">
+                Surgical Procedures
+              </h5>
+              <p class="mt-2 text-sm text-gray-600">
+                Advanced surgical care delivered by experienced specialists
+                using modern techniques.
+              </p>
+            </div>
+            <div class="rounded-3xl bg-gray-50 p-7 transition hover:shadow-lg">
+              <span
+                class="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-brand/10 text-brand"
+              >
+                <svg
+                  class="h-7 w-7"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <rect x="3" y="3" width="18" height="18" rx="2" />
+                  <circle cx="12" cy="12" r="4" />
+                  <line x1="12" y1="3" x2="12" y2="21" />
+                </svg>
+              </span>
+              <h5 class="mt-5 text-lg font-semibold text-ink">
+                Diagnostic Imaging
+              </h5>
+              <p class="mt-2 text-sm text-gray-600">
+                State-of-the-art imaging for accurate diagnosis and effective
+                treatment planning.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SERVICES LIST GRID ================= -->
+    <section class="pb-20">
+      <div class="mx-auto max-w-7xl px-5 lg:px-8">
+        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3" data-reveal>
+          <article class="group">
+            <a href="#" class="block overflow-hidden rounded-3xl">
+              <img
+                src="https://images.unsplash.com/photo-1584982751601-97dcc096659c?w=1080&q=80"
+                loading="lazy"
+                alt="Rehabilitation Services"
+                class="h-60 w-full object-cover transition duration-500 group-hover:scale-105"
+              />
+            </a>
+            <div class="mt-5">
+              <a
+                href="#"
+                class="text-xl font-semibold text-ink hover:text-brand"
+                >Rehabilitation Services</a
+              >
+              <p class="mt-2 text-sm text-gray-600">
+                Offer specialized programs for managing chronic diseases such as
+                diabetes, hypertension, or asthma.
+              </p>
+            </div>
+          </article>
+
+          <article class="group">
+            <a href="#" class="block overflow-hidden rounded-3xl">
+              <img
+                src="https://images.unsplash.com/photo-1579154204601-01588f351e67?w=1080&q=80"
+                loading="lazy"
+                alt="Laboratory Services"
+                class="h-60 w-full object-cover transition duration-500 group-hover:scale-105"
+              />
+            </a>
+            <div class="mt-5">
+              <a
+                href="#"
+                class="text-xl font-semibold text-ink hover:text-brand"
+                >Laboratory Services</a
+              >
+              <p class="mt-2 text-sm text-gray-600">
+                Showcase the institution's diagnostic imaging and laboratory
+                services, including X-rays, MRIs, CT scans, ultrasounds, and
+                blood tests.
+              </p>
+            </div>
+          </article>
+
+          <article class="group">
+            <a href="#" class="block overflow-hidden rounded-3xl">
+              <img
+                src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=1080&q=80"
+                loading="lazy"
+                alt="Wellness Programs"
+                class="h-60 w-full object-cover transition duration-500 group-hover:scale-105"
+              />
+            </a>
+            <div class="mt-5">
+              <a
+                href="#"
+                class="text-xl font-semibold text-ink hover:text-brand"
+                >Wellness Programs</a
+              >
+              <p class="mt-2 text-sm text-gray-600">
+                Topics could include nutrition, exercise, stress management, and
+                chronic disease management.
+              </p>
+            </div>
+          </article>
+
+          <article class="group">
+            <a href="#" class="block overflow-hidden rounded-3xl">
+              <img
+                src="https://images.unsplash.com/photo-1666214280557-f1b5022eb634?w=1080&q=80"
+                loading="lazy"
+                alt="Specialized Medical Procedures"
+                class="h-60 w-full object-cover transition duration-500 group-hover:scale-105"
+              />
+            </a>
+            <div class="mt-5">
+              <a
+                href="#"
+                class="text-xl font-semibold text-ink hover:text-brand"
+                >Specialized Medical Procedures</a
+              >
+              <p class="mt-2 text-sm text-gray-600">
+                Provide detailed information about each procedure, including
+                benefits, risks, and recovery processes.
+              </p>
+            </div>
+          </article>
+
+          <article class="group">
+            <a href="#" class="block overflow-hidden rounded-3xl">
+              <img
+                src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=1080&q=80"
+                loading="lazy"
+                alt="Health Screening Packages"
+                class="h-60 w-full object-cover transition duration-500 group-hover:scale-105"
+              />
+            </a>
+            <div class="mt-5">
+              <a
+                href="#"
+                class="text-xl font-semibold text-ink hover:text-brand"
+                >Health Screening Packages</a
+              >
+              <p class="mt-2 text-sm text-gray-600">
+                Packages include check-ups, screenings for chronic diseases,
+                vaccinations, and lifestyle counseling to promote preventive
+                care.
+              </p>
+            </div>
+          </article>
+
+          <article class="group">
+            <a href="#" class="block overflow-hidden rounded-3xl">
+              <img
+                src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1080&q=80"
+                loading="lazy"
+                alt="Telemedicine Consultations"
+                class="h-60 w-full object-cover transition duration-500 group-hover:scale-105"
+              />
+            </a>
+            <div class="mt-5">
+              <a
+                href="#"
+                class="text-xl font-semibold text-ink hover:text-brand"
+                >Telemedicine Consultations</a
+              >
+              <p class="mt-2 text-sm text-gray-600">
+                Offer virtual appointments with healthcare professionals for
+                non-emergency medical concerns.
+              </p>
+            </div>
+          </article>
+        </div>
+
+        <!-- Contact strip -->
+        <div
+          class="mt-14 grid gap-8 rounded-3xl bg-gray-50 p-8 md:grid-cols-3 md:items-center"
+          data-reveal
+        >
+          <div class="flex items-center gap-4">
+            <span
+              class="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-brand/10 text-brand"
+            >
+              <svg
+                class="h-6 w-6"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"
+                />
+              </svg>
+            </span>
+            <div class="flex flex-col text-sm font-medium text-ink">
+              <a href="tel:(704)555-0127" class="hover:text-brand"
+                >(704) 555-0127</a
+              >
+              <a href="tel:(704)358-1528" class="hover:text-brand"
+                >(704) 358-1528</a
+              >
+            </div>
+          </div>
+          <div class="flex items-center gap-4">
+            <span
+              class="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-brand/10 text-brand"
+            >
+              <svg
+                class="h-6 w-6"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+            </span>
+            <p class="text-sm text-gray-700">
+              8502 Preston Rd. Inglewood, Maine 98380
+            </p>
+          </div>
+          <form
+            onsubmit="return false;"
+            class="flex overflow-hidden rounded-full ring-1 ring-gray-300 focus-within:ring-brand"
+          >
+            <input
+              type="email"
+              placeholder="Need help?"
+              required
+              class="w-full bg-transparent px-5 py-3 text-sm outline-none"
+            />
+            <button
+              class="shrink-0 bg-ink px-6 py-3 text-sm font-semibold text-white transition hover:bg-brand"
+            >
+              Send
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= WE ARE ALWAYS READY TO HELP ================= -->
+    <section class="relative bg-gray-50 py-20">
+      <div class="mx-auto max-w-7xl px-5 lg:px-8">
+        <div class="grid gap-12 lg:grid-cols-2 lg:items-center" data-reveal>
+          <div>
+            <h2 class="text-3xl md:text-4xl font-bold text-ink">
+              We Are Always Ready To Help Your Problems
+            </h2>
+            <div class="mt-10 space-y-8">
+              <div>
+                <div class="flex items-center gap-4">
+                  <span
+                    class="inline-flex h-11 w-11 items-center justify-center rounded-full bg-brand text-white font-semibold"
+                    >1</span
+                  >
+                  <h5 class="text-lg font-semibold text-ink">
+                    Patient-Centered Approach
+                  </h5>
+                </div>
+                <p class="mt-3 text-gray-600">
+                  Our team-based approach ensures that you receive holistic care
+                  that addresses all aspects of your health.
+                </p>
+              </div>
+              <div>
+                <div class="flex items-center gap-4">
+                  <span
+                    class="inline-flex h-11 w-11 items-center justify-center rounded-full bg-brand text-white font-semibold"
+                    >2</span
+                  >
+                  <h5 class="text-lg font-semibold text-ink">
+                    Expert Medical Care
+                  </h5>
+                </div>
+                <p class="mt-3 text-gray-600">
+                  Our team-based approach ensures that you receive holistic care
+                  that addresses all aspects of your health.
+                </p>
+              </div>
+              <div>
+                <div class="flex items-center gap-4">
+                  <span
+                    class="inline-flex h-11 w-11 items-center justify-center rounded-full bg-brand text-white font-semibold"
+                    >3</span
+                  >
+                  <h5 class="text-lg font-semibold text-ink">
+                    Collaborative Approach
+                  </h5>
+                </div>
+                <p class="mt-3 text-gray-600">
+                  Our team-based approach ensures that you receive holistic care
+                  that addresses all aspects of your health.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Image with floating contact card -->
+          <div class="relative">
+            <img
+              src="https://images.unsplash.com/photo-1666214280391-8ff5bd3c0bf0?w=1080&q=80"
+              loading="lazy"
+              alt="Doctor with patient"
+              class="h-[480px] w-full rounded-3xl object-cover"
+            />
+            <div
+              class="absolute bottom-6 left-6 right-6 rounded-2xl bg-brand p-6 text-white shadow-xl md:right-auto md:max-w-xs"
+            >
+              <h3 class="text-lg font-semibold">
+                Easily find our contact information
+              </h3>
+              <p class="mt-1 text-sm text-white/85">
+                Ensuring seamless communication and access to our services.
+              </p>
+              <div class="mt-4 flex items-center gap-2">
+                <svg
+                  class="h-5 w-5"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"
+                  />
+                </svg>
+                <a href="tel:(704)555-0127" class="font-medium"
+                  >(704) 555-0127</a
+                >
+              </div>
+              <a
+                href="contact-us.html"
+                class="mt-5 inline-flex items-center rounded-full bg-white px-6 py-2.5 text-sm font-semibold text-brand transition hover:bg-gray-100"
+                >Get in Touch</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= VIDEO / CTA ================= -->
+    <section class="relative overflow-hidden">
+      <img
+        src="https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=1400&q=80"
+        loading="lazy"
+        alt="Medical facility"
+        class="absolute inset-0 h-full w-full object-cover"
+      />
+      <div class="absolute inset-0 bg-black/65"></div>
+      <div class="relative mx-auto max-w-7xl px-5 lg:px-8 py-24">
+        <div class="max-w-xl" data-reveal>
+          <h2 class="text-3xl md:text-4xl font-bold text-white">How We Work</h2>
+          <p class="mt-4 text-white/85">
+            Our commitment to excellence, compassion, and innovation sets us
+            apart as a trusted partner in your healthcare journey.
+          </p>
+          <a
+            href="https://www.youtube.com/watch?v=setu9Ir1miY"
+            target="_blank"
+            rel="noopener"
+            id="watch-video"
+            data-video-id="setu9Ir1miY"
+            class="mt-8 inline-flex items-center gap-3 rounded-full bg-white px-6 py-3 text-sm font-semibold text-brand transition hover:bg-gray-100"
+          >
+            Watch
+            <span
+              class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-brand text-white"
+            >
+              <svg
+                class="h-4 w-4"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <polygon points="5 3 19 12 5 21 5 3" />
+              </svg>
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= TESTIMONIALS CAROUSEL (grid fallback without JS) ================= -->
+    <section class="py-20">
+      <div class="mx-auto max-w-7xl px-5 lg:px-8">
+        <p class="text-brand font-semibold uppercase tracking-wide" data-reveal>
+          Testimonials
+        </p>
+        <h2
+          class="mt-2 text-3xl md:text-4xl font-bold text-ink"
+          data-reveal
+          data-reveal-delay="1"
+        >
+          What our patients say
+        </h2>
+
+        <div class="mt-12" data-carousel data-reveal data-reveal-delay="2">
+          <div class="t-viewport">
+            <div class="t-track grid gap-8 md:grid-cols-3">
+              <!-- slide -->
+              <figure class="t-slide">
+                <div class="rounded-3xl bg-gray-50 p-8 h-full">
+                  <div
+                    class="flex gap-1 text-brand"
+                    aria-label="5 out of 5 stars"
+                  >
+                    <svg
+                      class="h-5 w-5"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      aria-hidden="true"
+                    >
+                      <polygon
+                        points="12 2 15 9 22 9.3 17 14 18.5 21 12 17.3 5.5 21 7 14 2 9.3 9 9"
+                      />
+                    </svg>
+                    <svg
+                      class="h-5 w-5"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      aria-hidden="true"
+                    >
+                      <polygon
+                        points="12 2 15 9 22 9.3 17 14 18.5 21 12 17.3 5.5 21 7 14 2 9.3 9 9"
+                      />
+                    </svg>
+                    <svg
+                      class="h-5 w-5"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      aria-hidden="true"
+                    >
+                      <polygon
+                        points="12 2 15 9 22 9.3 17 14 18.5 21 12 17.3 5.5 21 7 14 2 9.3 9 9"
+                      />
+                    </svg>
+                    <svg
+                      class="h-5 w-5"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      aria-hidden="true"
+                    >
+                      <polygon
+                        points="12 2 15 9 22 9.3 17 14 18.5 21 12 17.3 5.5 21 7 14 2 9.3 9 9"
+                      />
+                    </svg>
+                    <svg
+                      class="h-5 w-5"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      aria-hidden="true"
+                    >
+                      <polygon
+                        points="12 2 15 9 22 9.3 17 14 18.5 21 12 17.3 5.5 21 7 14 2 9.3 9 9"
+                      />
+                    </svg>
+                  </div>
+                  <blockquote class="mt-5 text-gray-700">
+                    The doctors went above and beyond to ensure I received the
+                    best possible treatment. I am grateful for their dedication
+                    and would trust them with my health any day.
+                  </blockquote>
+                  <figcaption class="mt-6 flex items-center gap-3">
+                    <img
+                      src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=1080&q=80"
+                      loading="lazy"
+                      alt="Daniela Mellinetor"
+                      class="h-11 w-11 rounded-full object-cover"
+                    />
+                    <span class="font-semibold text-ink"
+                      >Daniela Mellinetor</span
+                    >
+                  </figcaption>
+                </div>
+              </figure>
+
+              <figure class="t-slide">
+                <div class="rounded-3xl bg-gray-50 p-8 h-full">
+                  <div
+                    class="flex gap-1 text-brand"
+                    aria-label="5 out of 5 stars"
+                  >
+                    <svg
+                      class="h-5 w-5"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      aria-hidden="true"
+                    >
+                      <polygon
+                        points="12 2 15 9 22 9.3 17 14 18.5 21 12 17.3 5.5 21 7 14 2 9.3 9 9"
+                      />
+                    </svg>
+                    <svg
+                      class="h-5 w-5"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      aria-hidden="true"
+                    >
+                      <polygon
+                        points="12 2 15 9 22 9.3 17 14 18.5 21 12 17.3 5.5 21 7 14 2 9.3 9 9"
+                      />
+                    </svg>
+                    <svg
+                      class="h-5 w-5"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      aria-hidden="true"
+                    >
+                      <polygon
+                        points="12 2 15 9 22 9.3 17 14 18.5 21 12 17.3 5.5 21 7 14 2 9.3 9 9"
+                      />
+                    </svg>
+                    <svg
+                      class="h-5 w-5"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      aria-hidden="true"
+                    >
+                      <polygon
+                        points="12 2 15 9 22 9.3 17 14 18.5 21 12 17.3 5.5 21 7 14 2 9.3 9 9"
+                      />
+                    </svg>
+                    <svg
+                      class="h-5 w-5"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      aria-hidden="true"
+                    >
+                      <polygon
+                        points="12 2 15 9 22 9.3 17 14 18.5 21 12 17.3 5.5 21 7 14 2 9.3 9 9"
+                      />
+                    </svg>
+                  </div>
+                  <blockquote class="mt-5 text-gray-700">
+                    I cannot thank the medical team enough for their exceptional
+                    care and expertise. From the moment I walked in, I felt
+                    reassured and supported.
+                  </blockquote>
+                  <figcaption class="mt-6 flex items-center gap-3">
+                    <img
+                      src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=1080&q=80"
+                      loading="lazy"
+                      alt="Cameron Williamson"
+                      class="h-11 w-11 rounded-full object-cover"
+                    />
+                    <span class="font-semibold text-ink"
+                      >Cameron Williamson</span
+                    >
+                  </figcaption>
+                </div>
+              </figure>
+
+              <figure class="t-slide">
+                <div class="rounded-3xl bg-gray-50 p-8 h-full">
+                  <div
+                    class="flex gap-1 text-brand"
+                    aria-label="5 out of 5 stars"
+                  >
+                    <svg
+                      class="h-5 w-5"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      aria-hidden="true"
+                    >
+                      <polygon
+                        points="12 2 15 9 22 9.3 17 14 18.5 21 12 17.3 5.5 21 7 14 2 9.3 9 9"
+                      />
+                    </svg>
+                    <svg
+                      class="h-5 w-5"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      aria-hidden="true"
+                    >
+                      <polygon
+                        points="12 2 15 9 22 9.3 17 14 18.5 21 12 17.3 5.5 21 7 14 2 9.3 9 9"
+                      />
+                    </svg>
+                    <svg
+                      class="h-5 w-5"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      aria-hidden="true"
+                    >
+                      <polygon
+                        points="12 2 15 9 22 9.3 17 14 18.5 21 12 17.3 5.5 21 7 14 2 9.3 9 9"
+                      />
+                    </svg>
+                    <svg
+                      class="h-5 w-5"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      aria-hidden="true"
+                    >
+                      <polygon
+                        points="12 2 15 9 22 9.3 17 14 18.5 21 12 17.3 5.5 21 7 14 2 9.3 9 9"
+                      />
+                    </svg>
+                    <svg
+                      class="h-5 w-5"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      aria-hidden="true"
+                    >
+                      <polygon
+                        points="12 2 15 9 22 9.3 17 14 18.5 21 12 17.3 5.5 21 7 14 2 9.3 9 9"
+                      />
+                    </svg>
+                  </div>
+                  <blockquote class="mt-5 text-gray-700">
+                    The doctors went above and beyond to ensure I received the
+                    best possible treatment. I am grateful for their dedication
+                    and would trust them with my health any day.
+                  </blockquote>
+                  <figcaption class="mt-6 flex items-center gap-3">
+                    <img
+                      src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=1080&q=80"
+                      loading="lazy"
+                      alt="Michel Karanazivius"
+                      class="h-11 w-11 rounded-full object-cover"
+                    />
+                    <span class="font-semibold text-ink"
+                      >Michel Karanazivius</span
+                    >
+                  </figcaption>
+                </div>
+              </figure>
+            </div>
+          </div>
+
+          <!-- Controls (revealed only when JS runs) -->
+          <div class="t-controls mt-8 items-center justify-between gap-4">
+            <button
+              type="button"
+              data-prev
+              aria-label="Previous testimonial"
+              class="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border-2 border-ink text-ink transition hover:bg-ink hover:text-white"
+            >
+              <svg
+                class="h-5 w-5"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <polyline points="15 18 9 12 15 6" />
+              </svg>
+            </button>
+            <div
+              class="t-dots flex items-center gap-2"
+              role="tablist"
+              aria-label="Select testimonial"
+            ></div>
+            <button
+              type="button"
+              data-next
+              aria-label="Next testimonial"
+              class="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border-2 border-ink text-ink transition hover:bg-ink hover:text-white"
+            >
+              <svg
+                class="h-5 w-5"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <polyline points="9 18 15 12 9 6" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= LATEST NEWS ================= -->
+    <section id="Latest-News" class="pb-20">
+      <div class="mx-auto max-w-7xl px-5 lg:px-8">
+        <div
+          class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6"
+          data-reveal
+        >
+          <div class="max-w-2xl">
+            <h2 class="text-3xl md:text-4xl font-bold text-ink">Latest News</h2>
+            <p class="mt-4 text-gray-600">
+              Discover articles, tips, and resources to help you maintain a
+              healthy lifestyle, manage chronic conditions, and make informed
+              healthcare decisions.
+            </p>
+          </div>
+          <a
+            href="#"
+            class="inline-flex shrink-0 items-center rounded-full border-2 border-ink px-6 py-2.5 text-sm font-semibold text-ink transition hover:bg-ink hover:text-white"
+            >View All</a
+          >
+        </div>
+
+        <div class="mt-12 grid gap-8 md:grid-cols-3" data-reveal>
+          <article
+            class="overflow-hidden rounded-3xl shadow-sm ring-1 ring-gray-100"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1527613426441-4da17471b66d?w=1080&q=80"
+              loading="lazy"
+              alt="Navigating Mental Health Challenges"
+              class="h-56 w-full object-cover"
+            />
+            <div class="p-7">
+              <a href="#"
+                ><h5 class="text-lg font-semibold text-ink hover:text-brand">
+                  Navigating Mental Health Challenges
+                </h5></a
+              >
+              <p class="mt-3 text-sm text-gray-600">
+                Explore various mental health challenges individuals face and
+                practical strategies for coping, emphasizing the importance of
+                destigmatizing mental health issues.
+              </p>
+              <div class="mt-5 flex items-center justify-between">
+                <a
+                  href="#"
+                  class="text-sm font-semibold text-ink hover:text-brand"
+                  >Learn More</a
+                >
+                <span class="text-sm text-gray-500">Apr 1, 2024</span>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="overflow-hidden rounded-3xl shadow-sm ring-1 ring-gray-100"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=1080&q=80"
+              loading="lazy"
+              alt="The Role of Nutrition in Managing Chronic Conditions"
+              class="h-56 w-full object-cover"
+            />
+            <div class="p-7">
+              <a href="#"
+                ><h5 class="text-lg font-semibold text-ink hover:text-brand">
+                  The Role of Nutrition in Managing Chronic Conditions
+                </h5></a
+              >
+              <p class="mt-3 text-sm text-gray-600">
+                Examine the impact of nutrition on chronic conditions such as
+                diabetes, hypertension, and heart disease, offering dietary
+                recommendations and tips for patients.
+              </p>
+              <div class="mt-5 flex items-center justify-between">
+                <a
+                  href="#"
+                  class="text-sm font-semibold text-ink hover:text-brand"
+                  >Learn More</a
+                >
+                <span class="text-sm text-gray-500">Apr 1, 2024</span>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="overflow-hidden rounded-3xl shadow-sm ring-1 ring-gray-100"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1615461066841-6116e61058f4?w=1080&q=80"
+              loading="lazy"
+              alt="Breaking Down the Myths and Realities of Vaccinations"
+              class="h-56 w-full object-cover"
+            />
+            <div class="p-7">
+              <a href="#"
+                ><h5 class="text-lg font-semibold text-ink hover:text-brand">
+                  Breaking Down the Myths and Realities of Vaccinations
+                </h5></a
+              >
+              <p class="mt-3 text-sm text-gray-600">
+                Address common misconceptions about vaccinations with
+                evidence-based information to help patients make confident,
+                informed decisions.
+              </p>
+              <div class="mt-5 flex items-center justify-between">
+                <a
+                  href="#"
+                  class="text-sm font-semibold text-ink hover:text-brand"
+                  >Learn More</a
+                >
+                <span class="text-sm text-gray-500">Apr 1, 2024</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer id="contact" class="bg-ink text-white">
+      <!-- Subscribe -->
+      <div class="border-b border-white/10">
+        <div class="mx-auto max-w-7xl px-5 lg:px-8 py-16">
+          <div class="grid gap-8 lg:grid-cols-2 lg:items-center">
+            <div>
+              <span
+                class="inline-flex h-12 w-12 items-center justify-center rounded-full bg-brand"
+              >
+                <svg
+                  class="h-6 w-6 text-white"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M4 4h16v16H4z" />
+                  <polyline points="4 6 12 13 20 6" />
+                </svg>
+              </span>
+              <h2 class="mt-5 text-2xl md:text-3xl font-bold">
+                Subscribe to our latest news
+              </h2>
+            </div>
+            <form
+              onsubmit="return false;"
+              class="flex w-full overflow-hidden rounded-full bg-white/10 ring-1 ring-white/20 focus-within:ring-brand"
+            >
+              <input
+                type="email"
+                placeholder="Email"
+                required
+                class="w-full bg-transparent px-6 py-4 text-sm text-white placeholder-white/60 outline-none"
+              />
+              <button
+                class="shrink-0 bg-brand px-8 py-4 text-sm font-semibold text-white transition hover:bg-brand/90"
+              >
+                Subscribe
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Top footer -->
+      <div class="mx-auto max-w-7xl px-5 lg:px-8 py-16">
+        <div
+          class="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between"
+        >
+          <div class="flex items-center gap-2.5">
+            <span
+              class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-brand"
+            >
+              <svg
+                class="h-5 w-5 text-white"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path d="M10 4h4v6h6v4h-6v6h-4v-6H4v-4h6z" />
+              </svg>
+            </span>
+            <span class="text-lg font-bold">Healthcare Institution</span>
+          </div>
+
+          <div class="grid gap-6 sm:grid-cols-3">
+            <div class="flex items-start gap-3">
+              <svg
+                class="mt-0.5 h-5 w-5 shrink-0 text-brand"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+              <p class="text-sm text-white/80">
+                8502 Preston Rd. Inglewood, Maine 98380
+              </p>
+            </div>
+            <div class="flex items-start gap-3">
+              <svg
+                class="mt-0.5 h-5 w-5 shrink-0 text-brand"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"
+                />
+              </svg>
+              <div class="flex flex-col text-sm text-white/80">
+                <a href="tel:(704)555-0127" class="hover:text-white"
+                  >(704) 555-0127</a
+                >
+                <a href="tel:(704)358-1528" class="hover:text-white"
+                  >(704) 358-1528</a
+                >
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <svg
+                class="mt-0.5 h-5 w-5 shrink-0 text-brand"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <rect x="2" y="4" width="20" height="16" rx="2" />
+                <path d="m22 7-10 5L2 7" />
+              </svg>
+              <a
+                href="mailto:healthcare@office.com"
+                class="text-sm text-white/80 hover:text-white"
+                >healthcare@office.com</a
+              >
+            </div>
+          </div>
+
+          <a
+            href="contact-us.html"
+            class="inline-flex items-center gap-3 rounded-full bg-brand px-6 py-3 text-sm font-semibold text-white transition hover:bg-brand/90"
+          >
+            Get in Touch
+            <svg
+              class="h-4 w-4"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <line x1="7" y1="17" x2="17" y2="7" />
+              <polyline points="7 7 17 7 17 17" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Bottom footer -->
+      <div class="border-t border-white/10">
+        <div class="mx-auto max-w-7xl px-5 lg:px-8 py-8">
+          <div
+            class="flex flex-col gap-6 md:flex-row md:items-center md:justify-between"
+          >
+            <nav class="flex flex-wrap gap-x-6 gap-y-2 text-sm">
+              <a href="home.html" class="text-white/80 hover:text-white"
+                >Home</a
+              >
+              <a href="about.html" class="text-white/80 hover:text-white"
+                >About us</a
+              >
+              <a
+                href="#Our-best-services"
+                class="text-white/80 hover:text-white"
+                >Services</a
+              >
+              <a href="#Latest-News" class="text-white/80 hover:text-white"
+                >News</a
+              >
+              <a href="contact-us.html" class="text-white/80 hover:text-white"
+                >Contact Us</a
+              >
+              <a
+                href="https://www.instagram.com/"
+                target="_blank"
+                rel="noopener"
+                class="text-brand hover:text-white"
+                >Instagram</a
+              >
+              <a
+                href="https://twitter.com/"
+                target="_blank"
+                rel="noopener"
+                class="text-brand hover:text-white"
+                >Twitter</a
+              >
+            </nav>
+            <p class="text-sm text-white/60">
+              © Healthcare Institution. All Rights Reserved.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back-to-top (visible without JS; JS reveals it after scrolling and smooth-scrolls) -->
+    <a
+      href="#"
+      id="back-to-top"
+      class="fixed bottom-6 right-6 z-50 inline-flex h-12 w-12 items-center justify-center rounded-full bg-brand text-white shadow-lg transition hover:bg-brand/90"
+      aria-label="Back to top"
+    >
+      <svg
+        class="h-6 w-6"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <line x1="12" y1="19" x2="12" y2="5" />
+        <polyline points="5 12 12 5 19 12" />
+      </svg>
+    </a>
+
+    <!-- ================= VIDEO LIGHTBOX MODAL ================= -->
+    <div
+      id="video-modal"
+      class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/80 p-4 backdrop-blur-sm"
+      role="dialog"
+      aria-modal="true"
+      aria-label="How We Work video"
+    >
+      <div class="relative w-full max-w-3xl">
+        <button
+          type="button"
+          data-video-close
+          aria-label="Close video"
+          class="absolute -top-11 right-0 inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-white/20"
+        >
+          <svg
+            class="h-6 w-6"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
+        <div
+          class="aspect-video w-full overflow-hidden rounded-2xl bg-black shadow-2xl"
+        >
+          <div data-video-frame class="h-full w-full"></div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        "use strict";
+        var reduceMotion = window.matchMedia(
+          "(prefers-reduced-motion: reduce)",
+        ).matches;
+
+        /* ---------- 1. SCROLL REVEAL ---------- */
+        (function () {
+          var els = document.querySelectorAll("[data-reveal]");
+          if (!els.length) return;
+          if (reduceMotion || !("IntersectionObserver" in window)) {
+            els.forEach(function (el) {
+              el.classList.add("is-visible");
+            });
+            return;
+          }
+          var io = new IntersectionObserver(
+            function (entries) {
+              entries.forEach(function (e) {
+                if (e.isIntersecting) {
+                  e.target.classList.add("is-visible");
+                  io.unobserve(e.target);
+                }
+              });
+            },
+            { threshold: 0.12, rootMargin: "0px 0px -8% 0px" },
+          );
+          els.forEach(function (el) {
+            io.observe(el);
+          });
+        })();
+
+        /* ---------- 2. STAT COUNT-UP + BENEFIT LINES ---------- */
+        (function () {
+          var section = document.querySelector("[data-benefits]");
+          if (!section) return;
+          var nums = section.querySelectorAll("[data-count]");
+          var lines = section.querySelectorAll(".benefit-line");
+
+          function fill() {
+            lines.forEach(function (l) {
+              l.classList.add("is-filled");
+            });
+          }
+          function countUp(el) {
+            var target = parseInt(el.getAttribute("data-count"), 10) || 0;
+            var suffix = el.getAttribute("data-suffix") || "";
+            var duration = 1600,
+              start = null;
+            function step(ts) {
+              if (start === null) start = ts;
+              var p = Math.min((ts - start) / duration, 1);
+              var eased = 1 - Math.pow(1 - p, 3);
+              el.textContent = Math.round(eased * target) + suffix;
+              if (p < 1) requestAnimationFrame(step);
+              else el.textContent = target + suffix;
+            }
+            requestAnimationFrame(step);
+          }
+
+          function run() {
+            fill();
+            nums.forEach(countUp);
+          }
+
+          if (reduceMotion || !("IntersectionObserver" in window)) {
+            fill();
+            return;
+          }
+          // Pre-set to 0 so the count animates from zero when it scrolls into view.
+          nums.forEach(function (el) {
+            el.textContent = "0" + (el.getAttribute("data-suffix") || "");
+          });
+          var io = new IntersectionObserver(
+            function (entries, obs) {
+              entries.forEach(function (e) {
+                if (e.isIntersecting) {
+                  run();
+                  obs.disconnect();
+                }
+              });
+            },
+            { threshold: 0.35 },
+          );
+          io.observe(section);
+        })();
+
+        /* ---------- 3. TESTIMONIALS CAROUSEL ---------- */
+        (function () {
+          var root = document.querySelector("[data-carousel]");
+          if (!root) return;
+          var track = root.querySelector(".t-track");
+          var slides = Array.prototype.slice.call(
+            root.querySelectorAll(".t-slide"),
+          );
+          var prevBtn = root.querySelector("[data-prev]");
+          var nextBtn = root.querySelector("[data-next]");
+          var dotsWrap = root.querySelector(".t-dots");
+          if (!track || slides.length === 0) return;
+
+          var index = 0;
+          var controls = root.querySelector(".t-controls");
+
+          // How many slides are visible per view (matches CSS breakpoints).
+          function perView() {
+            var w = window.innerWidth;
+            if (w >= 1024) return 3;
+            if (w >= 768) return 2;
+            return 1;
+          }
+          function maxIndex() {
+            return Math.max(0, slides.length - perView());
+          }
+
+          // Build dot indicators (one per page).
+          function buildDots() {
+            dotsWrap.innerHTML = "";
+            var pages = maxIndex() + 1;
+            for (var i = 0; i < pages; i++) {
+              (function (i) {
+                var b = document.createElement("button");
+                b.type = "button";
+                b.setAttribute("role", "tab");
+                b.setAttribute("aria-label", "Go to testimonial " + (i + 1));
+                b.className = "h-2.5 w-2.5 rounded-full bg-gray-300 transition";
+                b.addEventListener("click", function () {
+                  go(i);
+                });
+                dotsWrap.appendChild(b);
+              })(i);
+            }
+          }
+
+          function update() {
+            var offset = -(index * (100 / perView()));
+            track.style.transform = "translateX(" + offset + "%)";
+            // Hide controls entirely when everything fits (nothing to page).
+            if (controls)
+              controls.style.display = maxIndex() === 0 ? "none" : "flex";
+            // aria + dot state
+            var pv = perView();
+            slides.forEach(function (s, i) {
+              var visible = i >= index && i < index + pv;
+              s.setAttribute("aria-hidden", visible ? "false" : "true");
+            });
+            Array.prototype.forEach.call(dotsWrap.children, function (d, i) {
+              var active = i === index;
+              d.classList.toggle("bg-brand", active);
+              d.classList.toggle("w-6", active);
+              d.classList.toggle("bg-gray-300", !active);
+              d.setAttribute("aria-selected", active ? "true" : "false");
+            });
+          }
+
+          function go(i) {
+            var mi = maxIndex();
+            // infinite wrap
+            if (i < 0) i = mi;
+            else if (i > mi) i = 0;
+            index = i;
+            update();
+          }
+          function next() {
+            go(index + 1);
+          }
+          function prev() {
+            go(index - 1);
+          }
+
+          if (nextBtn) nextBtn.addEventListener("click", next);
+          if (prevBtn) prevBtn.addEventListener("click", prev);
+
+          // Keyboard arrows
+          root.setAttribute("tabindex", "0");
+          root.addEventListener("keydown", function (e) {
+            if (e.key === "ArrowRight") {
+              e.preventDefault();
+              next();
+            } else if (e.key === "ArrowLeft") {
+              e.preventDefault();
+              prev();
+            }
+          });
+
+          // Touch / pointer swipe
+          var startX = 0,
+            dragging = false;
+          root.addEventListener(
+            "touchstart",
+            function (e) {
+              startX = e.touches[0].clientX;
+              dragging = true;
+            },
+            { passive: true },
+          );
+          root.addEventListener("touchend", function (e) {
+            if (!dragging) return;
+            dragging = false;
+            var dx = e.changedTouches[0].clientX - startX;
+            if (Math.abs(dx) > 40) {
+              dx < 0 ? next() : prev();
+            }
+          });
+
+          // Rebuild on resize (perView changes).
+          var rt;
+          window.addEventListener("resize", function () {
+            clearTimeout(rt);
+            rt = setTimeout(function () {
+              if (index > maxIndex()) index = maxIndex();
+              buildDots();
+              update();
+            }, 150);
+          });
+
+          buildDots();
+          update();
+        })();
+
+        /* ---------- 4. VIDEO LIGHTBOX ---------- */
+        (function () {
+          var trigger = document.getElementById("watch-video");
+          var modal = document.getElementById("video-modal");
+          if (!trigger || !modal) return;
+          var frame = modal.querySelector("[data-video-frame]");
+          var closeBtn = modal.querySelector("[data-video-close]");
+          var videoId = trigger.getAttribute("data-video-id") || "setu9Ir1miY";
+          var lastFocus = null;
+
+          function open() {
+            lastFocus = document.activeElement;
+            var iframe = document.createElement("iframe");
+            iframe.setAttribute(
+              "src",
+              "https://www.youtube.com/embed/" + videoId + "?autoplay=1&rel=0",
+            );
+            iframe.setAttribute("title", "How We Work video");
+            iframe.setAttribute(
+              "allow",
+              "autoplay; fullscreen; encrypted-media; picture-in-picture",
+            );
+            iframe.setAttribute("allowfullscreen", "true");
+            iframe.className = "h-full w-full border-0";
+            frame.appendChild(iframe);
+            modal.classList.remove("hidden");
+            modal.classList.add("flex");
+            document.body.style.overflow = "hidden";
+            closeBtn.focus();
+          }
+          function close() {
+            modal.classList.add("hidden");
+            modal.classList.remove("flex");
+            frame.innerHTML = ""; // stop playback
+            document.body.style.overflow = "";
+            if (lastFocus && lastFocus.focus) lastFocus.focus();
+          }
+
+          trigger.addEventListener("click", function (e) {
+            e.preventDefault();
+            open();
+          });
+          closeBtn.addEventListener("click", close);
+          modal.addEventListener("click", function (e) {
+            if (e.target === modal) close();
+          });
+          document.addEventListener("keydown", function (e) {
+            if (e.key === "Escape" && !modal.classList.contains("hidden"))
+              close();
+          });
+        })();
+
+        /* ---------- 5. DROPDOWN NAV (mobile click toggle) ---------- */
+        (function () {
+          var isMobile = function () {
+            return window.matchMedia("(max-width: 1023px)").matches;
+          };
+          var btns = document.querySelectorAll("[data-dropdown-btn]");
+          btns.forEach(function (btn) {
+            var menu = btn.parentElement.querySelector(".nav-submenu");
+            if (!menu) return;
+            btn.setAttribute("aria-haspopup", "true");
+            btn.setAttribute("aria-expanded", "false");
+            btn.addEventListener("click", function (e) {
+              if (!isMobile()) {
+                // Desktop opens on hover; a mouse click would latch the panel
+                // open via :focus-within, so drop focus to let it close.
+                if (e.detail !== 0) btn.blur();
+                return;
+              }
+              e.preventDefault();
+              var isOpen = menu.classList.toggle("open");
+              btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+            });
+          });
+          // Reset mobile-open state when returning to desktop.
+          window.addEventListener("resize", function () {
+            if (!isMobile()) {
+              document
+                .querySelectorAll(".nav-submenu.open")
+                .forEach(function (m) {
+                  m.classList.remove("open");
+                });
+              btns.forEach(function (b) {
+                b.setAttribute("aria-expanded", "false");
+              });
+            }
+          });
+        })();
+
+        /* ---------- 6. BACK TO TOP ---------- */
+        (function () {
+          var btn = document.getElementById("back-to-top");
+          if (!btn) return;
+          function onScroll() {
+            if (window.pageYOffset > 400) btn.classList.add("is-visible");
+            else btn.classList.remove("is-visible");
+          }
+          window.addEventListener("scroll", onScroll, { passive: true });
+          onScroll();
+          btn.addEventListener("click", function (e) {
+            e.preventDefault();
+            window.scrollTo({
+              top: 0,
+              behavior: reduceMotion ? "auto" : "smooth",
+            });
+          });
+        })();
+      })();
+    </script>
+  </body>
+</html>

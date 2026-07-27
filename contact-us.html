@@ -1,0 +1,1860 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>Contact Us - Healthcare Institution</title>
+
+    <meta content="Contact Us - Healthcare Institution" property="og:title" />
+    <meta content="Contact Us - Healthcare Institution" name="twitter:title" />
+    <meta
+      content="Get in touch with our healthcare team. We are dedicated to providing excellent healthcare services and answering your inquiries promptly."
+      name="description"
+    />
+    <meta
+      content="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1200&q=80"
+      property="og:image"
+    />
+    <meta
+      content="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1200&q=80"
+      name="twitter:image"
+    />
+
+    <!-- Inline SVG favicon -->
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231C86C9'/%3E%3Cpath d='M14 7h4v7h7v4h-7v7h-4v-7H7v-4h7z' fill='white'/%3E%3C/svg%3E"
+    />
+
+    <!-- Google Fonts replacing WebFont.load (Lato, Poppins, Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Lato:wght@300;400;700;900&family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="theme.css" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: "rgb(var(--color-brand) / <alpha-value>)",
+              "brand-dark": "rgb(var(--color-brand-dark) / <alpha-value>)",
+              accent: "rgb(var(--color-accent) / <alpha-value>)",
+              "accent-dark": "rgb(var(--color-accent-dark) / <alpha-value>)",
+              ink: "rgb(var(--color-ink) / <alpha-value>)",
+            },
+            fontFamily: {
+              sans: [
+                "Inter",
+                "Lato",
+                "ui-sans-serif",
+                "system-ui",
+                "sans-serif",
+              ],
+              display: ["Poppins", "Inter", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <!-- Mark that JS is available BEFORE first paint so reveal-hidden styles only apply when JS can undo them (progressive enhancement, no FOUC). -->
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+
+    <style>
+      body {
+        font-family: "Inter", "Lato", sans-serif;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5 {
+        font-family: "Poppins", "Inter", sans-serif;
+      }
+
+      /* ---- Scroll reveal (only hidden when JS is present) ---- */
+      .js [data-reveal] {
+        opacity: 0;
+        transform: translateY(28px);
+        transition:
+          opacity 0.7s ease,
+          transform 0.7s ease;
+      }
+      .js [data-reveal].is-visible {
+        opacity: 1;
+        transform: none;
+      }
+      .js [data-reveal][data-reveal-delay="1"] {
+        transition-delay: 0.1s;
+      }
+      .js [data-reveal][data-reveal-delay="2"] {
+        transition-delay: 0.2s;
+      }
+      .js [data-reveal][data-reveal-delay="3"] {
+        transition-delay: 0.3s;
+      }
+
+      /* ---- Benefit underline fill ---- */
+      .benefit-line {
+        transform-origin: left center;
+      }
+      .js .benefit-line {
+        transform: scaleX(0);
+        transition: transform 1s ease;
+      }
+      .js .benefit-line.is-filled {
+        transform: scaleX(1);
+      }
+
+      /* ---- Carousels (grid fallback without JS) ---- */
+      .t-controls {
+        display: none;
+      }
+      .js [data-carousel] .t-viewport {
+        overflow: hidden;
+      }
+      .js [data-carousel] .t-track {
+        display: flex;
+        gap: 0;
+        transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .js [data-carousel] .t-slide {
+        flex: 0 0 100%;
+        min-width: 0;
+        padding: 0 0.5rem;
+      }
+      .js [data-carousel] .t-controls {
+        display: flex;
+      }
+      @media (min-width: 768px) {
+        .js [data-carousel][data-per="3"] .t-slide {
+          flex: 0 0 50%;
+        }
+      }
+      @media (min-width: 1024px) {
+        .js [data-carousel][data-per="3"] .t-slide {
+          flex: 0 0 33.3333%;
+        }
+      }
+
+      /* ---- Mobile dropdown submenu (JS click toggle) ---- */
+      .js .nav-submenu.open {
+        display: block;
+      }
+
+      /* ---- Back-to-top: hidden until scrolled (JS only) ---- */
+      .js #back-to-top {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(12px);
+        transition:
+          opacity 0.3s ease,
+          transform 0.3s ease,
+          visibility 0.3s;
+      }
+      .js #back-to-top.is-visible {
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .js [data-reveal],
+        .js .benefit-line,
+        .js [data-carousel] .t-track {
+          transition: none;
+        }
+        .js [data-reveal] {
+          opacity: 1;
+          transform: none;
+        }
+        .js .benefit-line {
+          transform: scaleX(1);
+        }
+      }
+    </style>
+  </head>
+
+  <body class="bg-white text-ink antialiased">
+    <!-- ================= NAV ================= -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur shadow-sm">
+      <div class="mx-auto max-w-7xl px-5 lg:px-8">
+        <div class="flex items-center justify-between h-20">
+          <!-- Logo: inline SVG mark + brand name -->
+          <a href="home.html" class="flex items-center gap-2.5">
+            <span
+              class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-brand"
+            >
+              <svg
+                class="h-5 w-5 text-white"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path d="M10 4h4v6h6v4h-6v6h-4v-6H4v-4h6z" />
+              </svg>
+            </span>
+            <span class="text-lg font-bold text-ink"
+              >Healthcare<span class="text-brand"> Institution</span></span
+            >
+          </a>
+
+          <!-- Mobile toggle (checkbox + label peer pattern) -->
+          <input type="checkbox" id="nav-toggle" class="peer hidden" />
+          <label
+            for="nav-toggle"
+            class="lg:hidden cursor-pointer p-2 text-ink"
+            aria-label="Toggle menu"
+          >
+            <svg
+              class="h-7 w-7"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <line x1="3" y1="6" x2="21" y2="6" />
+              <line x1="3" y1="12" x2="21" y2="12" />
+              <line x1="3" y1="18" x2="21" y2="18" />
+            </svg>
+          </label>
+
+          <!-- Nav menu -->
+          <nav
+            class="hidden peer-checked:block lg:flex lg:items-center lg:gap-1 absolute lg:static top-20 left-0 right-0 bg-white lg:bg-transparent shadow-lg lg:shadow-none px-5 lg:px-0 py-4 lg:py-0 space-y-1 lg:space-y-0"
+          >
+            <!-- Dropdown: Demos -->
+            <div class="group relative">
+              <button
+                data-dropdown-btn
+                class="flex items-center gap-1 px-4 py-2 text-sm font-medium text-ink hover:text-brand w-full lg:w-auto"
+              >
+                Demos
+                <svg
+                  class="h-4 w-4"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </button>
+              <div
+                class="nav-submenu hidden group-hover:block group-focus-within:block lg:absolute lg:top-full lg:left-0 lg:min-w-48 rounded-xl lg:bg-white lg:shadow-xl lg:ring-1 lg:ring-black/5 lg:p-2 pl-4 lg:pl-2"
+              >
+                <a
+                  href="home.html"
+                  class="block rounded-lg px-3 py-2 text-sm text-gray-700 hover:bg-brand/5 hover:text-brand"
+                  >Home 1</a
+                >
+                <a
+                  href="#"
+                  class="block rounded-lg px-3 py-2 text-sm text-gray-700 hover:bg-brand/5 hover:text-brand"
+                  >Home 2</a
+                >
+                <a
+                  href="#"
+                  class="block rounded-lg px-3 py-2 text-sm text-gray-700 hover:bg-brand/5 hover:text-brand"
+                  >Home 3</a
+                >
+              </div>
+            </div>
+
+            <!-- Dropdown: About Us -->
+            <div class="group relative">
+              <button
+                data-dropdown-btn
+                class="flex items-center gap-1 px-4 py-2 text-sm font-medium text-ink hover:text-brand w-full lg:w-auto"
+              >
+                About Us
+                <svg
+                  class="h-4 w-4"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </button>
+              <div
+                class="nav-submenu hidden group-hover:block group-focus-within:block lg:absolute lg:top-full lg:left-0 lg:min-w-48 rounded-xl lg:bg-white lg:shadow-xl lg:ring-1 lg:ring-black/5 lg:p-2 pl-4 lg:pl-2"
+              >
+                <a
+                  href="about.html"
+                  class="block rounded-lg px-3 py-2 text-sm text-gray-700 hover:bg-brand/5 hover:text-brand"
+                  >About Us</a
+                >
+                <a
+                  href="#"
+                  class="block rounded-lg px-3 py-2 text-sm text-gray-700 hover:bg-brand/5 hover:text-brand"
+                  >Our Doctors</a
+                >
+                <a
+                  href="#"
+                  class="block rounded-lg px-3 py-2 text-sm text-gray-700 hover:bg-brand/5 hover:text-brand"
+                  >Join Us</a
+                >
+                <a
+                  href="#"
+                  class="block rounded-lg px-3 py-2 text-sm text-gray-700 hover:bg-brand/5 hover:text-brand"
+                  >Pricing</a
+                >
+                <a
+                  href="testimonials.html"
+                  class="block rounded-lg px-3 py-2 text-sm text-gray-700 hover:bg-brand/5 hover:text-brand"
+                  >Testimonials</a
+                >
+                <a
+                  href="faqs.html"
+                  class="block rounded-lg px-3 py-2 text-sm text-gray-700 hover:bg-brand/5 hover:text-brand"
+                  >FAQ</a
+                >
+              </div>
+            </div>
+
+            <a
+              href="#"
+              class="block px-4 py-2 text-sm font-medium text-ink hover:text-brand"
+              >Departments</a
+            >
+            <a
+              href="#our-services"
+              class="block px-4 py-2 text-sm font-medium text-ink hover:text-brand"
+              >Services</a
+            >
+
+            <!-- Dropdown: All Pages -->
+            <div class="group relative">
+              <button
+                data-dropdown-btn
+                class="flex items-center gap-1 px-4 py-2 text-sm font-medium text-ink hover:text-brand w-full lg:w-auto"
+              >
+                All Pages
+                <svg
+                  class="h-4 w-4"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </button>
+              <div
+                class="nav-submenu hidden group-hover:block group-focus-within:block lg:absolute lg:top-full lg:right-0 lg:min-w-64 rounded-xl lg:bg-white lg:shadow-xl lg:ring-1 lg:ring-black/5 lg:p-2 pl-4 lg:pl-2 lg:grid lg:grid-cols-2 lg:gap-1"
+              >
+                <a
+                  href="#"
+                  class="block rounded-lg px-3 py-2 text-sm text-gray-700 hover:bg-brand/5 hover:text-brand"
+                  >Our Doctors</a
+                >
+                <a
+                  href="#"
+                  class="block rounded-lg px-3 py-2 text-sm text-gray-700 hover:bg-brand/5 hover:text-brand"
+                  >Departments</a
+                >
+                <a
+                  href="#"
+                  class="block rounded-lg px-3 py-2 text-sm text-gray-700 hover:bg-brand/5 hover:text-brand"
+                  >Pricing</a
+                >
+                <a
+                  href="#"
+                  class="block rounded-lg px-3 py-2 text-sm text-gray-700 hover:bg-brand/5 hover:text-brand"
+                  >Working Hours</a
+                >
+                <a
+                  href="#"
+                  class="block rounded-lg px-3 py-2 text-sm text-gray-700 hover:bg-brand/5 hover:text-brand"
+                  >Schedule</a
+                >
+                <a
+                  href="#"
+                  class="block rounded-lg px-3 py-2 text-sm text-gray-700 hover:bg-brand/5 hover:text-brand"
+                  >Gallery</a
+                >
+                <a
+                  href="#"
+                  class="block rounded-lg px-3 py-2 text-sm text-gray-700 hover:bg-brand/5 hover:text-brand"
+                  >Our Blog</a
+                >
+                <a
+                  href="#our-support"
+                  class="block rounded-lg px-3 py-2 text-sm text-brand font-semibold hover:bg-brand/5"
+                  >Contact Us</a
+                >
+              </div>
+            </div>
+
+            <a
+              href="#our-support"
+              class="mt-2 lg:mt-0 lg:ml-3 inline-flex items-center justify-center rounded-full bg-brand px-6 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-brand/90"
+              >Contact Us</a
+            >
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!-- ================= PAGE HERO ================= -->
+    <section class="relative min-h-[520px] flex items-center overflow-hidden">
+      <img
+        src="https://images.unsplash.com/photo-1516841273335-e39b37888115?w=1400&q=80"
+        alt="Healthcare team welcoming patients"
+        class="absolute inset-0 h-full w-full object-cover"
+      />
+      <div
+        class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/25"
+      ></div>
+      <div class="relative mx-auto max-w-7xl px-5 lg:px-8 py-24 w-full">
+        <div class="max-w-2xl" data-reveal>
+          <span
+            class="inline-block rounded-full bg-white/10 px-4 py-1.5 text-sm font-medium text-white ring-1 ring-white/20"
+            >#1 Healthcare Institution in California</span
+          >
+          <h1
+            class="mt-6 text-4xl md:text-6xl font-bold leading-tight text-white"
+          >
+            Contact us
+          </h1>
+          <p class="mt-6 text-lg text-white/85">
+            We are dedicated to providing excellent healthcare services and
+            ensuring that your inquiries and feedback are addressed promptly and
+            efficiently.
+          </p>
+          <div class="mt-9 flex flex-wrap items-center gap-4">
+            <a
+              href="#"
+              class="inline-flex items-center rounded-full bg-white px-7 py-3 text-sm font-semibold text-brand shadow transition hover:bg-gray-100"
+              >Join our team</a
+            >
+            <a
+              href="#our-support"
+              class="inline-flex h-14 w-14 items-center justify-center rounded-full border-2 border-accent text-accent transition hover:bg-accent hover:text-ink"
+              aria-label="Scroll to contact form"
+            >
+              <svg
+                class="h-6 w-6"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <line x1="12" y1="5" x2="12" y2="19" />
+                <polyline points="19 12 12 19 5 12" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CONTACT: LOCATIONS + FORM ================= -->
+    <section id="our-support" class="py-20">
+      <div class="mx-auto max-w-7xl px-5 lg:px-8">
+        <div class="grid gap-12 lg:grid-cols-2 lg:items-start">
+          <!-- Left: intro + locations carousel -->
+          <div data-reveal>
+            <h2 class="text-3xl md:text-4xl font-bold text-ink">
+              Please fill out the form below with your inquiry
+            </h2>
+            <p class="mt-5 text-gray-600">
+              Please provide us with details about your inquiry or message. If
+              you're scheduling an appointment, kindly include your preferred
+              date and time (if applicable).
+            </p>
+            <div class="benefit-line mt-8 h-0.5 w-24 bg-brand"></div>
+
+            <!-- Locations carousel (Webflow slider -> vanilla carousel) -->
+            <div class="mt-10" data-carousel data-per="1">
+              <div class="t-viewport">
+                <div class="t-track grid gap-6 sm:grid-cols-3">
+                  <div class="t-slide">
+                    <div
+                      class="h-full rounded-3xl bg-gray-50 p-7 ring-1 ring-gray-100"
+                    >
+                      <h6 class="text-lg font-semibold text-ink">London</h6>
+                      <ul class="mt-4 space-y-3 text-sm text-gray-700">
+                        <li class="flex items-start gap-3">
+                          <svg
+                            class="mt-0.5 h-5 w-5 shrink-0 text-brand"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            aria-hidden="true"
+                          >
+                            <path
+                              d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
+                            />
+                            <circle cx="12" cy="10" r="3" />
+                          </svg>
+                          <span>14 Tottenham Road, London, England</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                          <svg
+                            class="h-5 w-5 shrink-0 text-brand"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            aria-hidden="true"
+                          >
+                            <path
+                              d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"
+                            />
+                          </svg>
+                          <a href="tel:+12124258617" class="hover:text-brand"
+                            >+1 212 425 8617</a
+                          >
+                        </li>
+                        <li class="flex items-center gap-3">
+                          <svg
+                            class="h-5 w-5 shrink-0 text-brand"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            aria-hidden="true"
+                          >
+                            <rect x="2" y="4" width="20" height="16" rx="2" />
+                            <path d="m22 7-10 5L2 7" />
+                          </svg>
+                          <a
+                            href="mailto:healthcare@office.com"
+                            class="hover:text-brand"
+                            >healthcare@office.com</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div class="t-slide">
+                    <div
+                      class="h-full rounded-3xl bg-gray-50 p-7 ring-1 ring-gray-100"
+                    >
+                      <h6 class="text-lg font-semibold text-ink">Paris</h6>
+                      <ul class="mt-4 space-y-3 text-sm text-gray-700">
+                        <li class="flex items-start gap-3">
+                          <svg
+                            class="mt-0.5 h-5 w-5 shrink-0 text-brand"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            aria-hidden="true"
+                          >
+                            <path
+                              d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
+                            />
+                            <circle cx="12" cy="10" r="3" />
+                          </svg>
+                          <span>27 Rue de Berri, Paris, France</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                          <svg
+                            class="h-5 w-5 shrink-0 text-brand"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            aria-hidden="true"
+                          >
+                            <path
+                              d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"
+                            />
+                          </svg>
+                          <a href="tel:+12124258617" class="hover:text-brand"
+                            >+1 212 425 8617</a
+                          >
+                        </li>
+                        <li class="flex items-center gap-3">
+                          <svg
+                            class="h-5 w-5 shrink-0 text-brand"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            aria-hidden="true"
+                          >
+                            <rect x="2" y="4" width="20" height="16" rx="2" />
+                            <path d="m22 7-10 5L2 7" />
+                          </svg>
+                          <a
+                            href="mailto:healthcare@info.com"
+                            class="hover:text-brand"
+                            >healthcare@info.com</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div class="t-slide">
+                    <div
+                      class="h-full rounded-3xl bg-gray-50 p-7 ring-1 ring-gray-100"
+                    >
+                      <h6 class="text-lg font-semibold text-ink">New York</h6>
+                      <ul class="mt-4 space-y-3 text-sm text-gray-700">
+                        <li class="flex items-start gap-3">
+                          <svg
+                            class="mt-0.5 h-5 w-5 shrink-0 text-brand"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            aria-hidden="true"
+                          >
+                            <path
+                              d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
+                            />
+                            <circle cx="12" cy="10" r="3" />
+                          </svg>
+                          <span>5 Washington Square, New York, USA</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                          <svg
+                            class="h-5 w-5 shrink-0 text-brand"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            aria-hidden="true"
+                          >
+                            <path
+                              d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"
+                            />
+                          </svg>
+                          <a href="tel:+12124258617" class="hover:text-brand"
+                            >+1 212 425 8617</a
+                          >
+                        </li>
+                        <li class="flex items-center gap-3">
+                          <svg
+                            class="h-5 w-5 shrink-0 text-brand"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            aria-hidden="true"
+                          >
+                            <rect x="2" y="4" width="20" height="16" rx="2" />
+                            <path d="m22 7-10 5L2 7" />
+                          </svg>
+                          <a
+                            href="mailto:healthcare@info.com"
+                            class="hover:text-brand"
+                            >healthcare@info.com</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Controls (revealed only when JS runs; hidden when all slides fit) -->
+              <div class="t-controls mt-6 items-center justify-between gap-4">
+                <button
+                  type="button"
+                  data-prev
+                  aria-label="Previous location"
+                  class="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border-2 border-ink text-ink transition hover:bg-ink hover:text-white"
+                >
+                  <svg
+                    class="h-5 w-5"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <polyline points="15 18 9 12 15 6" />
+                  </svg>
+                </button>
+                <div
+                  class="t-dots flex items-center gap-2"
+                  role="tablist"
+                  aria-label="Select location"
+                ></div>
+                <button
+                  type="button"
+                  data-next
+                  aria-label="Next location"
+                  class="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border-2 border-ink text-ink transition hover:bg-ink hover:text-white"
+                >
+                  <svg
+                    class="h-5 w-5"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <polyline points="9 18 15 12 9 6" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: contact form -->
+          <div
+            class="rounded-3xl bg-gray-50 p-7 sm:p-9 ring-1 ring-gray-100 shadow-sm"
+            data-reveal
+            data-reveal-delay="1"
+          >
+            <h3 class="text-2xl font-bold text-ink">Send us a message</h3>
+            <form id="contact-form" novalidate class="mt-6 space-y-5">
+              <div>
+                <label for="name" class="block text-sm font-medium text-ink"
+                  >Your name</label
+                >
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  autocomplete="name"
+                  placeholder="Jane Doe"
+                  class="mt-2 w-full rounded-xl border border-gray-300 bg-white px-4 py-3 text-sm outline-none transition focus:border-brand focus:ring-2 focus:ring-brand/20"
+                />
+              </div>
+              <div>
+                <label for="email" class="block text-sm font-medium text-ink"
+                  >Your email</label
+                >
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  autocomplete="email"
+                  placeholder="jane@example.com"
+                  class="mt-2 w-full rounded-xl border border-gray-300 bg-white px-4 py-3 text-sm outline-none transition focus:border-brand focus:ring-2 focus:ring-brand/20"
+                />
+              </div>
+              <div>
+                <label for="phone" class="block text-sm font-medium text-ink"
+                  >Phone <span class="text-gray-400">(optional)</span></label
+                >
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  autocomplete="tel"
+                  placeholder="+1 212 425 8617"
+                  class="mt-2 w-full rounded-xl border border-gray-300 bg-white px-4 py-3 text-sm outline-none transition focus:border-brand focus:ring-2 focus:ring-brand/20"
+                />
+              </div>
+              <div>
+                <label for="message" class="block text-sm font-medium text-ink"
+                  >Your message</label
+                >
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="5"
+                  required
+                  maxlength="5000"
+                  placeholder="How can we help you?"
+                  class="mt-2 w-full rounded-xl border border-gray-300 bg-white px-4 py-3 text-sm outline-none transition focus:border-brand focus:ring-2 focus:ring-brand/20"
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                class="w-full rounded-full bg-brand px-6 py-3.5 text-sm font-semibold text-white shadow-sm transition hover:bg-brand/90"
+              >
+                Submit
+              </button>
+
+              <!-- Success / error status (aria-live for screen readers) -->
+              <p
+                id="form-status"
+                role="status"
+                aria-live="polite"
+                class="hidden rounded-xl px-4 py-3 text-sm font-medium"
+              ></p>
+            </form>
+          </div>
+        </div>
+
+        <!-- Map embed (original had no map; added an OpenStreetMap iframe for location context) -->
+        <div
+          class="mt-14 overflow-hidden rounded-3xl ring-1 ring-gray-100 shadow-sm"
+          data-reveal
+        >
+          <iframe
+            title="Our location on the map"
+            class="h-[360px] w-full border-0"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=-74.0060%2C40.7009%2C-73.9860%2C40.7130&layer=mapnik&marker=40.7069%2C-73.9960"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= OUR SERVICES ================= -->
+    <section id="our-services" class="bg-gray-50 py-20">
+      <div class="mx-auto max-w-7xl px-5 lg:px-8">
+        <div class="mx-auto max-w-2xl text-center" data-reveal>
+          <h2 class="text-3xl md:text-4xl font-bold text-ink">
+            With our services, we are always ready to help
+          </h2>
+          <p class="mt-4 text-gray-600">
+            We offer a comprehensive range of healthcare services designed to
+            meet the diverse needs of our patients.
+          </p>
+        </div>
+
+        <div
+          class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
+          data-reveal
+          data-reveal-delay="1"
+        >
+          <div
+            class="rounded-3xl bg-white p-7 ring-1 ring-gray-100 transition hover:shadow-lg"
+          >
+            <span
+              class="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-brand/10 text-brand"
+            >
+              <svg
+                class="h-7 w-7"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path
+                  d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"
+                />
+                <line x1="4" y1="22" x2="4" y2="15" />
+              </svg>
+            </span>
+            <h5 class="mt-5 text-lg font-semibold text-ink">Primary Care</h5>
+            <p class="mt-2 text-sm text-gray-600">
+              Our primary care services serve as the foundation of your
+              healthcare journey.
+            </p>
+          </div>
+          <div
+            class="rounded-3xl bg-white p-7 ring-1 ring-gray-100 transition hover:shadow-lg"
+          >
+            <span
+              class="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-brand/10 text-brand"
+            >
+              <svg
+                class="h-7 w-7"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path
+                  d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"
+                />
+                <path d="M19 10v2a7 7 0 0 1-14 0v-2" />
+                <line x1="12" y1="19" x2="12" y2="22" />
+              </svg>
+            </span>
+            <h5 class="mt-5 text-lg font-semibold text-ink">
+              Specialized Treatments
+            </h5>
+            <p class="mt-2 text-sm text-gray-600">
+              Our specialized care ensures you receive holistic treatment
+              addressing all aspects of your health.
+            </p>
+          </div>
+          <div
+            class="rounded-3xl bg-white p-7 ring-1 ring-gray-100 transition hover:shadow-lg"
+          >
+            <span
+              class="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-brand/10 text-brand"
+            >
+              <svg
+                class="h-7 w-7"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M8 2v4" />
+                <path d="M16 2v4" />
+                <path d="M12 6v6l4 2" />
+                <circle cx="12" cy="14" r="8" />
+              </svg>
+            </span>
+            <h5 class="mt-5 text-lg font-semibold text-ink">
+              Surgical Procedures
+            </h5>
+            <p class="mt-2 text-sm text-gray-600">
+              Advanced surgical care delivered by experienced specialists using
+              modern techniques.
+            </p>
+          </div>
+          <div
+            class="rounded-3xl bg-white p-7 ring-1 ring-gray-100 transition hover:shadow-lg"
+          >
+            <span
+              class="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-brand/10 text-brand"
+            >
+              <svg
+                class="h-7 w-7"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <rect x="3" y="3" width="18" height="18" rx="2" />
+                <circle cx="12" cy="12" r="4" />
+                <line x1="12" y1="3" x2="12" y2="21" />
+              </svg>
+            </span>
+            <h5 class="mt-5 text-lg font-semibold text-ink">
+              Diagnostic Imaging
+            </h5>
+            <p class="mt-2 text-sm text-gray-600">
+              State-of-the-art imaging for accurate diagnosis and effective
+              treatment planning.
+            </p>
+          </div>
+          <div
+            class="rounded-3xl bg-white p-7 ring-1 ring-gray-100 transition hover:shadow-lg"
+          >
+            <span
+              class="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-brand/10 text-brand"
+            >
+              <svg
+                class="h-7 w-7"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <rect x="2" y="3" width="20" height="14" rx="2" />
+                <line x1="8" y1="21" x2="16" y2="21" />
+                <line x1="12" y1="17" x2="12" y2="21" />
+              </svg>
+            </span>
+            <h5 class="mt-5 text-lg font-semibold text-ink">
+              Telemedicine Consultations
+            </h5>
+            <p class="mt-2 text-sm text-gray-600">
+              Offer virtual appointments with healthcare professionals for
+              non-emergency concerns.
+            </p>
+          </div>
+          <div
+            class="rounded-3xl bg-white p-7 ring-1 ring-gray-100 transition hover:shadow-lg"
+          >
+            <span
+              class="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-brand/10 text-brand"
+            >
+              <svg
+                class="h-7 w-7"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M3 3v18h18" />
+                <path d="m7 14 3-3 3 3 5-5" />
+              </svg>
+            </span>
+            <h5 class="mt-5 text-lg font-semibold text-ink">
+              Laboratory Services
+            </h5>
+            <p class="mt-2 text-sm text-gray-600">
+              Comprehensive lab testing including blood work, screenings, and
+              diagnostics.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= GET IN TOUCH BANNER ================= -->
+    <section class="py-20">
+      <div class="mx-auto max-w-7xl px-5 lg:px-8">
+        <div class="relative overflow-hidden rounded-3xl" data-reveal>
+          <img
+            src="https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=1400&q=80"
+            loading="lazy"
+            alt="Modern medical facility"
+            class="absolute inset-0 h-full w-full object-cover"
+          />
+          <div class="absolute inset-0 bg-black/65"></div>
+          <div class="relative px-8 py-16 md:px-14 md:py-20">
+            <div class="max-w-xl">
+              <h2 class="text-3xl md:text-4xl font-bold text-white">
+                Easily find our contact information
+              </h2>
+              <p class="mt-4 text-white/85">
+                Ensuring seamless communication and access to our services.
+              </p>
+              <div class="mt-6 flex items-center gap-3 text-white">
+                <svg
+                  class="h-5 w-5"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"
+                  />
+                </svg>
+                <a
+                  href="tel:(704)555-0127"
+                  class="font-medium hover:text-accent"
+                  >(704) 555-0127</a
+                >
+              </div>
+              <a
+                href="#our-support"
+                class="mt-8 inline-flex items-center gap-3 rounded-full bg-white px-6 py-3 text-sm font-semibold text-brand transition hover:bg-gray-100"
+              >
+                Get in Touch
+                <svg
+                  class="h-4 w-4"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <line x1="7" y1="17" x2="17" y2="7" />
+                  <polyline points="7 7 17 7 17 17" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= TESTIMONIALS CAROUSEL (grid fallback without JS) ================= -->
+    <section class="bg-brand py-20">
+      <div class="mx-auto max-w-7xl px-5 lg:px-8">
+        <p
+          class="font-semibold uppercase tracking-wide text-white/80"
+          data-reveal
+        >
+          Testimonials
+        </p>
+        <h2
+          class="mt-2 text-3xl md:text-4xl font-bold text-white"
+          data-reveal
+          data-reveal-delay="1"
+        >
+          What our patients say
+        </h2>
+
+        <div
+          class="mt-12"
+          data-carousel
+          data-per="3"
+          data-reveal
+          data-reveal-delay="2"
+        >
+          <div class="t-viewport">
+            <div class="t-track grid gap-8 md:grid-cols-3">
+              <figure class="t-slide">
+                <div class="h-full rounded-3xl bg-white p-8">
+                  <div
+                    class="flex gap-1 text-brand"
+                    aria-label="5 out of 5 stars"
+                  >
+                    <svg
+                      class="h-5 w-5"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      aria-hidden="true"
+                    >
+                      <polygon
+                        points="12 2 15 9 22 9.3 17 14 18.5 21 12 17.3 5.5 21 7 14 2 9.3 9 9"
+                      />
+                    </svg>
+                    <svg
+                      class="h-5 w-5"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      aria-hidden="true"
+                    >
+                      <polygon
+                        points="12 2 15 9 22 9.3 17 14 18.5 21 12 17.3 5.5 21 7 14 2 9.3 9 9"
+                      />
+                    </svg>
+                    <svg
+                      class="h-5 w-5"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      aria-hidden="true"
+                    >
+                      <polygon
+                        points="12 2 15 9 22 9.3 17 14 18.5 21 12 17.3 5.5 21 7 14 2 9.3 9 9"
+                      />
+                    </svg>
+                    <svg
+                      class="h-5 w-5"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      aria-hidden="true"
+                    >
+                      <polygon
+                        points="12 2 15 9 22 9.3 17 14 18.5 21 12 17.3 5.5 21 7 14 2 9.3 9 9"
+                      />
+                    </svg>
+                    <svg
+                      class="h-5 w-5"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      aria-hidden="true"
+                    >
+                      <polygon
+                        points="12 2 15 9 22 9.3 17 14 18.5 21 12 17.3 5.5 21 7 14 2 9.3 9 9"
+                      />
+                    </svg>
+                  </div>
+                  <blockquote class="mt-5 text-gray-700">
+                    The doctors went above and beyond to ensure I received the
+                    best possible treatment. I am grateful for their dedication
+                    and would trust them with my health any day.
+                  </blockquote>
+                  <figcaption class="mt-6 flex items-center gap-3">
+                    <img
+                      src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=1080&q=80"
+                      loading="lazy"
+                      alt="Daniela Mellinetor"
+                      class="h-11 w-11 rounded-full object-cover"
+                    />
+                    <span class="font-semibold text-ink"
+                      >Daniela Mellinetor</span
+                    >
+                  </figcaption>
+                </div>
+              </figure>
+
+              <figure class="t-slide">
+                <div class="h-full rounded-3xl bg-white p-8">
+                  <div
+                    class="flex gap-1 text-brand"
+                    aria-label="5 out of 5 stars"
+                  >
+                    <svg
+                      class="h-5 w-5"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      aria-hidden="true"
+                    >
+                      <polygon
+                        points="12 2 15 9 22 9.3 17 14 18.5 21 12 17.3 5.5 21 7 14 2 9.3 9 9"
+                      />
+                    </svg>
+                    <svg
+                      class="h-5 w-5"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      aria-hidden="true"
+                    >
+                      <polygon
+                        points="12 2 15 9 22 9.3 17 14 18.5 21 12 17.3 5.5 21 7 14 2 9.3 9 9"
+                      />
+                    </svg>
+                    <svg
+                      class="h-5 w-5"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      aria-hidden="true"
+                    >
+                      <polygon
+                        points="12 2 15 9 22 9.3 17 14 18.5 21 12 17.3 5.5 21 7 14 2 9.3 9 9"
+                      />
+                    </svg>
+                    <svg
+                      class="h-5 w-5"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      aria-hidden="true"
+                    >
+                      <polygon
+                        points="12 2 15 9 22 9.3 17 14 18.5 21 12 17.3 5.5 21 7 14 2 9.3 9 9"
+                      />
+                    </svg>
+                    <svg
+                      class="h-5 w-5"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      aria-hidden="true"
+                    >
+                      <polygon
+                        points="12 2 15 9 22 9.3 17 14 18.5 21 12 17.3 5.5 21 7 14 2 9.3 9 9"
+                      />
+                    </svg>
+                  </div>
+                  <blockquote class="mt-5 text-gray-700">
+                    I cannot thank the medical team enough for their exceptional
+                    care and expertise. From the moment I walked in, I felt
+                    reassured and supported.
+                  </blockquote>
+                  <figcaption class="mt-6 flex items-center gap-3">
+                    <img
+                      src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=1080&q=80"
+                      loading="lazy"
+                      alt="Cameron Williamson"
+                      class="h-11 w-11 rounded-full object-cover"
+                    />
+                    <span class="font-semibold text-ink"
+                      >Cameron Williamson</span
+                    >
+                  </figcaption>
+                </div>
+              </figure>
+
+              <figure class="t-slide">
+                <div class="h-full rounded-3xl bg-white p-8">
+                  <div
+                    class="flex gap-1 text-brand"
+                    aria-label="5 out of 5 stars"
+                  >
+                    <svg
+                      class="h-5 w-5"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      aria-hidden="true"
+                    >
+                      <polygon
+                        points="12 2 15 9 22 9.3 17 14 18.5 21 12 17.3 5.5 21 7 14 2 9.3 9 9"
+                      />
+                    </svg>
+                    <svg
+                      class="h-5 w-5"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      aria-hidden="true"
+                    >
+                      <polygon
+                        points="12 2 15 9 22 9.3 17 14 18.5 21 12 17.3 5.5 21 7 14 2 9.3 9 9"
+                      />
+                    </svg>
+                    <svg
+                      class="h-5 w-5"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      aria-hidden="true"
+                    >
+                      <polygon
+                        points="12 2 15 9 22 9.3 17 14 18.5 21 12 17.3 5.5 21 7 14 2 9.3 9 9"
+                      />
+                    </svg>
+                    <svg
+                      class="h-5 w-5"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      aria-hidden="true"
+                    >
+                      <polygon
+                        points="12 2 15 9 22 9.3 17 14 18.5 21 12 17.3 5.5 21 7 14 2 9.3 9 9"
+                      />
+                    </svg>
+                    <svg
+                      class="h-5 w-5"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      aria-hidden="true"
+                    >
+                      <polygon
+                        points="12 2 15 9 22 9.3 17 14 18.5 21 12 17.3 5.5 21 7 14 2 9.3 9 9"
+                      />
+                    </svg>
+                  </div>
+                  <blockquote class="mt-5 text-gray-700">
+                    The doctors went above and beyond to ensure I received the
+                    best possible treatment. I am grateful for their dedication
+                    and would trust them with my health any day.
+                  </blockquote>
+                  <figcaption class="mt-6 flex items-center gap-3">
+                    <img
+                      src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=1080&q=80"
+                      loading="lazy"
+                      alt="Michel Karanazivius"
+                      class="h-11 w-11 rounded-full object-cover"
+                    />
+                    <span class="font-semibold text-ink"
+                      >Michel Karanazivius</span
+                    >
+                  </figcaption>
+                </div>
+              </figure>
+            </div>
+          </div>
+
+          <!-- Controls (revealed only when JS runs) -->
+          <div class="t-controls mt-8 items-center justify-between gap-4">
+            <button
+              type="button"
+              data-prev
+              aria-label="Previous testimonial"
+              class="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border-2 border-white text-white transition hover:bg-white hover:text-brand"
+            >
+              <svg
+                class="h-5 w-5"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <polyline points="15 18 9 12 15 6" />
+              </svg>
+            </button>
+            <div
+              class="t-dots flex items-center gap-2"
+              role="tablist"
+              aria-label="Select testimonial"
+            ></div>
+            <button
+              type="button"
+              data-next
+              aria-label="Next testimonial"
+              class="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border-2 border-white text-white transition hover:bg-white hover:text-brand"
+            >
+              <svg
+                class="h-5 w-5"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <polyline points="9 18 15 12 9 6" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer id="contact" class="bg-ink text-white">
+      <!-- Top footer -->
+      <div class="mx-auto max-w-7xl px-5 lg:px-8 py-16">
+        <div
+          class="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between"
+        >
+          <div class="flex items-center gap-2.5">
+            <span
+              class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-brand"
+            >
+              <svg
+                class="h-5 w-5 text-white"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path d="M10 4h4v6h6v4h-6v6h-4v-6H4v-4h6z" />
+              </svg>
+            </span>
+            <span class="text-lg font-bold">Healthcare Institution</span>
+          </div>
+
+          <div class="grid gap-6 sm:grid-cols-3">
+            <div class="flex items-start gap-3">
+              <svg
+                class="mt-0.5 h-5 w-5 shrink-0 text-brand"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+              <p class="text-sm text-white/80">
+                8502 Preston Rd. Inglewood, Maine 98380
+              </p>
+            </div>
+            <div class="flex items-start gap-3">
+              <svg
+                class="mt-0.5 h-5 w-5 shrink-0 text-brand"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"
+                />
+              </svg>
+              <div class="flex flex-col text-sm text-white/80">
+                <a href="tel:(704)555-0127" class="hover:text-white"
+                  >(704) 555-0127</a
+                >
+                <a href="tel:(704)358-1528" class="hover:text-white"
+                  >(704) 358-1528</a
+                >
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <svg
+                class="mt-0.5 h-5 w-5 shrink-0 text-brand"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <rect x="2" y="4" width="20" height="16" rx="2" />
+                <path d="m22 7-10 5L2 7" />
+              </svg>
+              <a
+                href="mailto:healthcare@office.com"
+                class="text-sm text-white/80 hover:text-white"
+                >healthcare@office.com</a
+              >
+            </div>
+          </div>
+
+          <a
+            href="#our-support"
+            class="inline-flex items-center gap-3 rounded-full bg-brand px-6 py-3 text-sm font-semibold text-white transition hover:bg-brand/90"
+          >
+            Get in Touch
+            <svg
+              class="h-4 w-4"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <line x1="7" y1="17" x2="17" y2="7" />
+              <polyline points="7 7 17 7 17 17" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Bottom footer -->
+      <div class="border-t border-white/10">
+        <div class="mx-auto max-w-7xl px-5 lg:px-8 py-8">
+          <div
+            class="flex flex-col gap-6 md:flex-row md:items-center md:justify-between"
+          >
+            <nav class="flex flex-wrap gap-x-6 gap-y-2 text-sm">
+              <a href="home.html" class="text-white/80 hover:text-white">Home</a>
+              <a href="about.html" class="text-white/80 hover:text-white"
+                >About us</a
+              >
+              <a href="#our-services" class="text-white/80 hover:text-white"
+                >Services</a
+              >
+              <a href="#" class="text-white/80 hover:text-white">News</a>
+              <a href="#our-support" class="text-white/80 hover:text-white"
+                >Contact Us</a
+              >
+              <a
+                href="https://www.instagram.com/"
+                target="_blank"
+                rel="noopener"
+                class="text-brand hover:text-white"
+                >Instagram</a
+              >
+              <a
+                href="https://twitter.com/"
+                target="_blank"
+                rel="noopener"
+                class="text-brand hover:text-white"
+                >Twitter</a
+              >
+            </nav>
+            <p class="text-sm text-white/60">
+              © Healthcare Institution 128. All Rights Reserved.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back-to-top (visible without JS; JS reveals it after scrolling and smooth-scrolls) -->
+    <a
+      href="#"
+      id="back-to-top"
+      class="fixed bottom-6 right-6 z-50 inline-flex h-12 w-12 items-center justify-center rounded-full bg-brand text-white shadow-lg transition hover:bg-brand/90"
+      aria-label="Back to top"
+    >
+      <svg
+        class="h-6 w-6"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <line x1="12" y1="19" x2="12" y2="5" />
+        <polyline points="5 12 12 5 19 12" />
+      </svg>
+    </a>
+
+    <script>
+      (function () {
+        "use strict";
+        var reduceMotion = window.matchMedia(
+          "(prefers-reduced-motion: reduce)",
+        ).matches;
+
+        /* ---------- 1. SCROLL REVEAL ---------- */
+        (function () {
+          var els = document.querySelectorAll("[data-reveal]");
+          if (!els.length) return;
+          if (reduceMotion || !("IntersectionObserver" in window)) {
+            els.forEach(function (el) {
+              el.classList.add("is-visible");
+            });
+            return;
+          }
+          var io = new IntersectionObserver(
+            function (entries) {
+              entries.forEach(function (e) {
+                if (e.isIntersecting) {
+                  e.target.classList.add("is-visible");
+                  io.unobserve(e.target);
+                }
+              });
+            },
+            { threshold: 0.12, rootMargin: "0px 0px -8% 0px" },
+          );
+          els.forEach(function (el) {
+            io.observe(el);
+          });
+        })();
+
+        /* ---------- 2. BENEFIT LINES (fill on scroll) ---------- */
+        (function () {
+          var lines = document.querySelectorAll(".benefit-line");
+          if (!lines.length) return;
+          if (reduceMotion || !("IntersectionObserver" in window)) {
+            lines.forEach(function (l) {
+              l.classList.add("is-filled");
+            });
+            return;
+          }
+          var io = new IntersectionObserver(
+            function (entries, obs) {
+              entries.forEach(function (e) {
+                if (e.isIntersecting) {
+                  e.target.classList.add("is-filled");
+                  obs.unobserve(e.target);
+                }
+              });
+            },
+            { threshold: 0.5 },
+          );
+          lines.forEach(function (l) {
+            io.observe(l);
+          });
+        })();
+
+        /* ---------- 3. CAROUSELS (locations + testimonials) ---------- */
+        document.querySelectorAll("[data-carousel]").forEach(function (root) {
+          var track = root.querySelector(".t-track");
+          var slides = Array.prototype.slice.call(
+            root.querySelectorAll(".t-slide"),
+          );
+          var prevBtn = root.querySelector("[data-prev]");
+          var nextBtn = root.querySelector("[data-next]");
+          var dotsWrap = root.querySelector(".t-dots");
+          var controls = root.querySelector(".t-controls");
+          if (!track || slides.length === 0) return;
+
+          var per = root.getAttribute("data-per") === "3" ? 3 : 1;
+          var index = 0;
+
+          // How many slides are visible per view (matches CSS breakpoints).
+          function perView() {
+            if (per === 1) return 1;
+            var w = window.innerWidth;
+            if (w >= 1024) return 3;
+            if (w >= 768) return 2;
+            return 1;
+          }
+          function maxIndex() {
+            return Math.max(0, slides.length - perView());
+          }
+
+          function buildDots() {
+            if (!dotsWrap) return;
+            dotsWrap.innerHTML = "";
+            var pages = maxIndex() + 1;
+            for (var i = 0; i < pages; i++) {
+              (function (i) {
+                var b = document.createElement("button");
+                b.type = "button";
+                b.setAttribute("role", "tab");
+                b.setAttribute("aria-label", "Go to item " + (i + 1));
+                b.className = "h-2.5 w-2.5 rounded-full bg-gray-300 transition";
+                b.addEventListener("click", function () {
+                  go(i);
+                });
+                dotsWrap.appendChild(b);
+              })(i);
+            }
+          }
+
+          function update() {
+            var offset = -(index * (100 / perView()));
+            track.style.transform = "translateX(" + offset + "%)";
+            if (controls)
+              controls.style.display = maxIndex() === 0 ? "none" : "flex";
+            var pv = perView();
+            slides.forEach(function (s, i) {
+              var visible = i >= index && i < index + pv;
+              s.setAttribute("aria-hidden", visible ? "false" : "true");
+            });
+            if (dotsWrap) {
+              Array.prototype.forEach.call(dotsWrap.children, function (d, i) {
+                var active = i === index;
+                d.classList.toggle("bg-brand", active);
+                d.classList.toggle("w-6", active);
+                d.classList.toggle("bg-gray-300", !active);
+                d.setAttribute("aria-selected", active ? "true" : "false");
+              });
+            }
+          }
+
+          function go(i) {
+            var mi = maxIndex();
+            if (i < 0)
+              i = mi; // infinite wrap
+            else if (i > mi) i = 0;
+            index = i;
+            update();
+          }
+          function next() {
+            go(index + 1);
+          }
+          function prev() {
+            go(index - 1);
+          }
+
+          if (nextBtn) nextBtn.addEventListener("click", next);
+          if (prevBtn) prevBtn.addEventListener("click", prev);
+
+          // Keyboard arrows
+          root.setAttribute("tabindex", "0");
+          root.addEventListener("keydown", function (e) {
+            if (e.key === "ArrowRight") {
+              e.preventDefault();
+              next();
+            } else if (e.key === "ArrowLeft") {
+              e.preventDefault();
+              prev();
+            }
+          });
+
+          // Touch / swipe
+          var startX = 0,
+            dragging = false;
+          root.addEventListener(
+            "touchstart",
+            function (e) {
+              startX = e.touches[0].clientX;
+              dragging = true;
+            },
+            { passive: true },
+          );
+          root.addEventListener("touchend", function (e) {
+            if (!dragging) return;
+            dragging = false;
+            var dx = e.changedTouches[0].clientX - startX;
+            if (Math.abs(dx) > 40) {
+              dx < 0 ? next() : prev();
+            }
+          });
+
+          var rt;
+          window.addEventListener("resize", function () {
+            clearTimeout(rt);
+            rt = setTimeout(function () {
+              if (index > maxIndex()) index = maxIndex();
+              buildDots();
+              update();
+            }, 150);
+          });
+
+          buildDots();
+          update();
+        });
+
+        /* ---------- 4. CONTACT FORM (no backend: inline success state) ---------- */
+        (function () {
+          var form = document.getElementById("contact-form");
+          if (!form) return;
+          var status = document.getElementById("form-status");
+          form.addEventListener("submit", function (e) {
+            e.preventDefault();
+            if (!form.checkValidity()) {
+              form.reportValidity();
+              if (status) {
+                status.textContent =
+                  "Oops! Please complete the required fields before submitting.";
+                status.className =
+                  "rounded-xl bg-brand/10 px-4 py-3 text-sm font-medium text-brand";
+              }
+              return;
+            }
+            if (status) {
+              status.textContent =
+                "Thank you! Your submission has been received. We will get back to you shortly.";
+              status.className =
+                "rounded-xl bg-green-50 px-4 py-3 text-sm font-medium text-green-700";
+            }
+            form.reset();
+          });
+        })();
+
+        /* ---------- 5. DROPDOWN NAV (mobile click toggle) ---------- */
+        (function () {
+          var isMobile = function () {
+            return window.matchMedia("(max-width: 1023px)").matches;
+          };
+          var btns = document.querySelectorAll("[data-dropdown-btn]");
+          btns.forEach(function (btn) {
+            var menu = btn.parentElement.querySelector(".nav-submenu");
+            if (!menu) return;
+            btn.setAttribute("aria-haspopup", "true");
+            btn.setAttribute("aria-expanded", "false");
+            btn.addEventListener("click", function (e) {
+              if (!isMobile()) {
+                // Desktop opens on hover; a mouse click would latch the panel
+                // open via :focus-within, so drop focus to let it close.
+                if (e.detail !== 0) btn.blur();
+                return;
+              }
+              e.preventDefault();
+              var isOpen = menu.classList.toggle("open");
+              btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+            });
+          });
+          window.addEventListener("resize", function () {
+            if (!isMobile()) {
+              document
+                .querySelectorAll(".nav-submenu.open")
+                .forEach(function (m) {
+                  m.classList.remove("open");
+                });
+              btns.forEach(function (b) {
+                b.setAttribute("aria-expanded", "false");
+              });
+            }
+          });
+        })();
+
+        /* ---------- 6. BACK TO TOP ---------- */
+        (function () {
+          var btn = document.getElementById("back-to-top");
+          if (!btn) return;
+          function onScroll() {
+            if (window.pageYOffset > 400) btn.classList.add("is-visible");
+            else btn.classList.remove("is-visible");
+          }
+          window.addEventListener("scroll", onScroll, { passive: true });
+          onScroll();
+          btn.addEventListener("click", function (e) {
+            e.preventDefault();
+            window.scrollTo({
+              top: 0,
+              behavior: reduceMotion ? "auto" : "smooth",
+            });
+          });
+        })();
+      })();
+    </script>
+  </body>
+</html>

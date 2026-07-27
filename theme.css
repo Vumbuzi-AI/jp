@@ -1,0 +1,19 @@
+/* ============================================================
+   J.P. Muia Medicine — Site Theme (single source of truth)
+
+   👉 EDIT COLORS HERE. This is the ONLY place you need to change
+      to recolor the whole site. Every page loads this file and
+      maps these variables into its Tailwind config, so a change
+      here flows to all pages.
+
+   Values are "R G B" channels (space-separated, no commas) so
+   Tailwind opacity modifiers like bg-brand/90 keep working.
+   The hex in each comment is just there to make editing easier.
+   ============================================================ */
+:root {
+  --color-brand: 28 134 201;      /* #1C86C9 — primary blue (from the J.P. Muia logo) */
+  --color-brand-dark: 13 84 133;  /* #0D5485 — deeper blue for hovers / strong text */
+  --color-accent: 251 191 36;     /* #FBBF24 — yellow accent */
+  --color-accent-dark: 217 154 0; /* #D99A00 — deeper yellow for hovers */
+  --color-ink: 15 27 42;          /* #0F1B2A — near-black body text */
+}

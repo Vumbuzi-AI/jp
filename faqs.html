@@ -1,0 +1,1075 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>FAQ - Healthcare Institution</title>
+
+    <meta content="FAQ - Healthcare Institution" property="og:title" />
+    <meta content="FAQ - Healthcare Institution" name="twitter:title" />
+    <meta
+      content="Answers to the questions we hear most about appointments, insurance, telemedicine, and visiting our facilities."
+      name="description"
+    />
+    <meta
+      content="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1200&q=80"
+      property="og:image"
+    />
+    <meta
+      content="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1200&q=80"
+      name="twitter:image"
+    />
+
+    <!-- Inline SVG favicon -->
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231C86C9'/%3E%3Cpath d='M14 7h4v7h7v4h-7v7h-4v-7H7v-4h7z' fill='white'/%3E%3C/svg%3E"
+    />
+
+    <!-- Google Fonts replacing WebFont.load (Lato, Poppins, Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Lato:wght@300;400;700;900&family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="theme.css" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: "rgb(var(--color-brand) / <alpha-value>)",
+              "brand-dark": "rgb(var(--color-brand-dark) / <alpha-value>)",
+              accent: "rgb(var(--color-accent) / <alpha-value>)",
+              "accent-dark": "rgb(var(--color-accent-dark) / <alpha-value>)",
+              ink: "rgb(var(--color-ink) / <alpha-value>)",
+            },
+            fontFamily: {
+              sans: [
+                "Inter",
+                "Lato",
+                "ui-sans-serif",
+                "system-ui",
+                "sans-serif",
+              ],
+              display: ["Poppins", "Inter", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <!-- Mark that JS is available BEFORE first paint so reveal-hidden styles only apply when JS can undo them (progressive enhancement, no FOUC). -->
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+
+    <style>
+      body {
+        font-family: "Inter", "Lato", sans-serif;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5 {
+        font-family: "Poppins", "Inter", sans-serif;
+      }
+
+      /* ---- Scroll reveal (only hidden when JS is present) ---- */
+      .js [data-reveal] {
+        opacity: 0;
+        transform: translateY(28px);
+        transition:
+          opacity 0.7s ease,
+          transform 0.7s ease;
+      }
+      .js [data-reveal].is-visible {
+        opacity: 1;
+        transform: none;
+      }
+      .js [data-reveal][data-reveal-delay="1"] {
+        transition-delay: 0.1s;
+      }
+      .js [data-reveal][data-reveal-delay="2"] {
+        transition-delay: 0.2s;
+      }
+      .js [data-reveal][data-reveal-delay="3"] {
+        transition-delay: 0.3s;
+      }
+
+      /* ---- FAQ accordion (native <details>/<summary>, works with zero JS) ---- */
+      details.faq > summary {
+        list-style: none;
+        cursor: pointer;
+      }
+      details.faq > summary::-webkit-details-marker {
+        display: none;
+      }
+      /* rotate the plus/chevron when open */
+      details.faq[open] .faq-icon {
+        transform: rotate(45deg);
+      }
+      /* smooth reveal of the answer body */
+      details.faq .faq-body {
+        overflow: hidden;
+      }
+      .js details.faq .faq-body {
+        display: grid;
+        grid-template-rows: 0fr;
+        transition: grid-template-rows 0.35s ease;
+      }
+      .js details.faq[open] .faq-body {
+        grid-template-rows: 1fr;
+      }
+      .js details.faq .faq-body > div {
+        min-height: 0;
+      }
+
+      /* ---- Mobile dropdown submenu (JS click toggle) ---- */
+      .js .nav-submenu.open {
+        display: block;
+      }
+
+      /* ---- Back-to-top: hidden until scrolled (JS only) ---- */
+      .js #back-to-top {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(12px);
+        transition:
+          opacity 0.3s ease,
+          transform 0.3s ease,
+          visibility 0.3s;
+      }
+      .js #back-to-top.is-visible {
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .js [data-reveal] {
+          transition: none;
+          opacity: 1;
+          transform: none;
+        }
+        .js details.faq .faq-body {
+          transition: none;
+        }
+        .faq-icon {
+          transition: none !important;
+        }
+      }
+    </style>
+  </head>
+
+  <body class="bg-white text-ink antialiased">
+    <!-- ================= NAV ================= -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur shadow-sm">
+      <div class="mx-auto max-w-7xl px-5 lg:px-8">
+        <div class="flex items-center justify-between h-20">
+          <!-- Logo: inline SVG mark + brand name -->
+          <a href="home.html" class="flex items-center gap-2.5">
+            <span
+              class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-brand"
+            >
+              <svg
+                class="h-5 w-5 text-white"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path d="M10 4h4v6h6v4h-6v6h-4v-6H4v-4h6z" />
+              </svg>
+            </span>
+            <span class="text-lg font-bold text-ink"
+              >Healthcare<span class="text-brand"> Institution</span></span
+            >
+          </a>
+
+          <!-- Mobile toggle (checkbox + label peer pattern) -->
+          <input type="checkbox" id="nav-toggle" class="peer hidden" />
+          <label
+            for="nav-toggle"
+            class="lg:hidden cursor-pointer p-2 text-ink"
+            aria-label="Toggle menu"
+          >
+            <svg
+              class="h-7 w-7"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <line x1="3" y1="6" x2="21" y2="6" />
+              <line x1="3" y1="12" x2="21" y2="12" />
+              <line x1="3" y1="18" x2="21" y2="18" />
+            </svg>
+          </label>
+
+          <!-- Nav menu -->
+          <nav
+            class="hidden peer-checked:block lg:flex lg:items-center lg:gap-1 absolute lg:static top-20 left-0 right-0 bg-white lg:bg-transparent shadow-lg lg:shadow-none px-5 lg:px-0 py-4 lg:py-0 space-y-1 lg:space-y-0"
+          >
+            <!-- Dropdown: Demos -->
+            <div class="group relative">
+              <button
+                data-dropdown-btn
+                class="flex items-center gap-1 px-4 py-2 text-sm font-medium text-ink hover:text-brand w-full lg:w-auto"
+              >
+                Demos
+                <svg
+                  class="h-4 w-4"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </button>
+              <div
+                class="nav-submenu hidden group-hover:block group-focus-within:block lg:absolute lg:top-full lg:left-0 lg:min-w-48 rounded-xl lg:bg-white lg:shadow-xl lg:ring-1 lg:ring-black/5 lg:p-2 pl-4 lg:pl-2"
+              >
+                <a
+                  href="home.html"
+                  class="block rounded-lg px-3 py-2 text-sm text-gray-700 hover:bg-brand/5 hover:text-brand"
+                  >Home 1</a
+                >
+                <a
+                  href="#"
+                  class="block rounded-lg px-3 py-2 text-sm text-gray-700 hover:bg-brand/5 hover:text-brand"
+                  >Home 2</a
+                >
+                <a
+                  href="#"
+                  class="block rounded-lg px-3 py-2 text-sm text-gray-700 hover:bg-brand/5 hover:text-brand"
+                  >Home 3</a
+                >
+              </div>
+            </div>
+
+            <!-- Dropdown: About Us -->
+            <div class="group relative">
+              <button
+                data-dropdown-btn
+                class="flex items-center gap-1 px-4 py-2 text-sm font-medium text-ink hover:text-brand w-full lg:w-auto"
+              >
+                About Us
+                <svg
+                  class="h-4 w-4"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </button>
+              <div
+                class="nav-submenu hidden group-hover:block group-focus-within:block lg:absolute lg:top-full lg:left-0 lg:min-w-48 rounded-xl lg:bg-white lg:shadow-xl lg:ring-1 lg:ring-black/5 lg:p-2 pl-4 lg:pl-2"
+              >
+                <a
+                  href="about.html"
+                  class="block rounded-lg px-3 py-2 text-sm text-gray-700 hover:bg-brand/5 hover:text-brand"
+                  >About Us</a
+                >
+                <a
+                  href="#"
+                  class="block rounded-lg px-3 py-2 text-sm text-gray-700 hover:bg-brand/5 hover:text-brand"
+                  >Our Doctors</a
+                >
+                <a
+                  href="#"
+                  class="block rounded-lg px-3 py-2 text-sm text-gray-700 hover:bg-brand/5 hover:text-brand"
+                  >Join Us</a
+                >
+                <a
+                  href="#"
+                  class="block rounded-lg px-3 py-2 text-sm text-gray-700 hover:bg-brand/5 hover:text-brand"
+                  >Pricing</a
+                >
+                <a
+                  href="testimonials.html"
+                  class="block rounded-lg px-3 py-2 text-sm text-gray-700 hover:bg-brand/5 hover:text-brand"
+                  >Testimonials</a
+                >
+                <a
+                  href="faqs.html"
+                  aria-current="page"
+                  class="block rounded-lg px-3 py-2 text-sm font-semibold text-brand bg-brand/5"
+                  >FAQ</a
+                >
+              </div>
+            </div>
+
+            <a
+              href="#"
+              class="block px-4 py-2 text-sm font-medium text-ink hover:text-brand"
+              >Departments</a
+            >
+            <a
+              href="services.html"
+              class="block px-4 py-2 text-sm font-medium text-ink hover:text-brand"
+              >Services</a
+            >
+
+            <!-- Dropdown: All Pages -->
+            <div class="group relative">
+              <button
+                data-dropdown-btn
+                class="flex items-center gap-1 px-4 py-2 text-sm font-medium text-ink hover:text-brand w-full lg:w-auto"
+              >
+                All Pages
+                <svg
+                  class="h-4 w-4"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </button>
+              <div
+                class="nav-submenu hidden group-hover:block group-focus-within:block lg:absolute lg:top-full lg:right-0 lg:min-w-64 rounded-xl lg:bg-white lg:shadow-xl lg:ring-1 lg:ring-black/5 lg:p-2 pl-4 lg:pl-2 lg:grid lg:grid-cols-2 lg:gap-1"
+              >
+                <a
+                  href="#"
+                  class="block rounded-lg px-3 py-2 text-sm text-gray-700 hover:bg-brand/5 hover:text-brand"
+                  >Our Doctors</a
+                >
+                <a
+                  href="#"
+                  class="block rounded-lg px-3 py-2 text-sm text-gray-700 hover:bg-brand/5 hover:text-brand"
+                  >Departments</a
+                >
+                <a
+                  href="#"
+                  class="block rounded-lg px-3 py-2 text-sm text-gray-700 hover:bg-brand/5 hover:text-brand"
+                  >Pricing</a
+                >
+                <a
+                  href="#"
+                  class="block rounded-lg px-3 py-2 text-sm text-gray-700 hover:bg-brand/5 hover:text-brand"
+                  >Working Hours</a
+                >
+                <a
+                  href="#"
+                  class="block rounded-lg px-3 py-2 text-sm text-gray-700 hover:bg-brand/5 hover:text-brand"
+                  >Schedule</a
+                >
+                <a
+                  href="#"
+                  class="block rounded-lg px-3 py-2 text-sm text-gray-700 hover:bg-brand/5 hover:text-brand"
+                  >Gallery</a
+                >
+                <a
+                  href="#"
+                  class="block rounded-lg px-3 py-2 text-sm text-gray-700 hover:bg-brand/5 hover:text-brand"
+                  >Our Blog</a
+                >
+                <a
+                  href="contact-us.html"
+                  class="block rounded-lg px-3 py-2 text-sm text-gray-700 hover:bg-brand/5 hover:text-brand"
+                  >Contact Us</a
+                >
+              </div>
+            </div>
+
+            <a
+              href="contact-us.html"
+              class="mt-2 lg:mt-0 lg:ml-3 inline-flex items-center justify-center rounded-full bg-brand px-6 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-brand/90"
+              >Contact Us</a
+            >
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!-- ================= PAGE HERO / BANNER ================= -->
+    <section class="relative flex min-h-[380px] items-center overflow-hidden">
+      <img
+        src="https://images.unsplash.com/photo-1516841273335-e39b37888115?w=1400&q=80"
+        alt="Medical professionals"
+        class="absolute inset-0 h-full w-full object-cover"
+      />
+      <div
+        class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/25"
+      ></div>
+      <div class="relative mx-auto w-full max-w-7xl px-5 py-20 lg:px-8">
+        <div class="max-w-2xl" data-reveal>
+          <nav
+            class="mb-4 flex items-center gap-2 text-sm text-white/70"
+            aria-label="Breadcrumb"
+          >
+            <a href="home.html" class="hover:text-white">Home</a>
+            <span aria-hidden="true">/</span>
+            <span class="text-white">FAQ</span>
+          </nav>
+          <h1 class="text-4xl font-bold leading-tight text-white md:text-6xl">
+            Frequently asked questions
+          </h1>
+          <p class="mt-6 text-lg text-white/85">
+            Everything you need to know about booking appointments, insurance,
+            telemedicine, and visiting our facilities. Can't find your answer?
+            Reach out to our team.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FAQ ACCORDION ================= -->
+    <section class="py-20">
+      <div class="mx-auto max-w-7xl px-5 lg:px-8">
+        <div class="mx-auto max-w-2xl text-center" data-reveal>
+          <p class="font-semibold uppercase tracking-wide text-brand">
+            Have questions?
+          </p>
+          <h2 class="mt-2 text-3xl font-bold text-ink md:text-4xl">
+            We've got answers
+          </h2>
+          <p class="mt-4 text-gray-600">
+            Browse the most common questions our patients ask. Only one answer
+            opens at a time.
+          </p>
+        </div>
+
+        <!-- data-faq-group enables the optional single-open enhancement (native <details> still works with JS off) -->
+        <div
+          class="mt-14 grid gap-6 lg:grid-cols-2"
+          data-faq-group
+          data-reveal
+          data-reveal-delay="1"
+        >
+          <!-- Column 1 -->
+          <div class="space-y-4">
+            <details
+              class="faq group rounded-2xl border border-gray-200 bg-gray-50/60 p-1 transition open:border-brand/40 open:bg-white open:shadow-lg"
+              open
+            >
+              <summary class="flex items-start justify-between gap-4 px-6 py-5">
+                <h3 class="text-base font-semibold text-ink md:text-lg">
+                  How do I schedule an appointment?
+                </h3>
+                <span
+                  class="faq-icon mt-1 inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-brand/10 text-brand transition-transform duration-300"
+                  aria-hidden="true"
+                >
+                  <svg
+                    class="h-4 w-4"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                  </svg>
+                </span>
+              </summary>
+              <div class="faq-body">
+                <div>
+                  <p class="px-6 pb-6 text-sm leading-relaxed text-gray-600">
+                    To schedule an appointment with us, you can call our office
+                    during business hours, or you can use our online appointment
+                    booking system available on our website. Simply select your
+                    preferred date and time, and our scheduling team will
+                    confirm your appointment.
+                  </p>
+                </div>
+              </div>
+            </details>
+
+            <details
+              class="faq group rounded-2xl border border-gray-200 bg-gray-50/60 p-1 transition open:border-brand/40 open:bg-white open:shadow-lg"
+            >
+              <summary class="flex items-start justify-between gap-4 px-6 py-5">
+                <h3 class="text-base font-semibold text-ink md:text-lg">
+                  Do you accept my insurance?
+                </h3>
+                <span
+                  class="faq-icon mt-1 inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-brand/10 text-brand transition-transform duration-300"
+                  aria-hidden="true"
+                >
+                  <svg
+                    class="h-4 w-4"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                  </svg>
+                </span>
+              </summary>
+              <div class="faq-body">
+                <div>
+                  <p class="px-6 pb-6 text-sm leading-relaxed text-gray-600">
+                    We accept most major insurance plans. Before your visit,
+                    contact our billing team with your provider and policy
+                    details, and we'll verify your coverage and explain any
+                    out-of-pocket costs so there are no surprises.
+                  </p>
+                </div>
+              </div>
+            </details>
+
+            <details
+              class="faq group rounded-2xl border border-gray-200 bg-gray-50/60 p-1 transition open:border-brand/40 open:bg-white open:shadow-lg"
+            >
+              <summary class="flex items-start justify-between gap-4 px-6 py-5">
+                <h3 class="text-base font-semibold text-ink md:text-lg">
+                  Do you offer telemedicine appointments?
+                </h3>
+                <span
+                  class="faq-icon mt-1 inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-brand/10 text-brand transition-transform duration-300"
+                  aria-hidden="true"
+                >
+                  <svg
+                    class="h-4 w-4"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                  </svg>
+                </span>
+              </summary>
+              <div class="faq-body">
+                <div>
+                  <p class="px-6 pb-6 text-sm leading-relaxed text-gray-600">
+                    Yes. We offer secure virtual visits for non-emergency
+                    concerns, follow-ups, and consultations. Book a telemedicine
+                    slot through our online system and you'll receive a private
+                    video link before your appointment time.
+                  </p>
+                </div>
+              </div>
+            </details>
+          </div>
+
+          <!-- Column 2 -->
+          <div class="space-y-4">
+            <details
+              class="faq group rounded-2xl border border-gray-200 bg-gray-50/60 p-1 transition open:border-brand/40 open:bg-white open:shadow-lg"
+            >
+              <summary class="flex items-start justify-between gap-4 px-6 py-5">
+                <h3 class="text-base font-semibold text-ink md:text-lg">
+                  What should I bring to my appointment?
+                </h3>
+                <span
+                  class="faq-icon mt-1 inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-brand/10 text-brand transition-transform duration-300"
+                  aria-hidden="true"
+                >
+                  <svg
+                    class="h-4 w-4"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                  </svg>
+                </span>
+              </summary>
+              <div class="faq-body">
+                <div>
+                  <p class="px-6 pb-6 text-sm leading-relaxed text-gray-600">
+                    Please bring a valid photo ID, your insurance card, a list
+                    of current medications, and any relevant medical records or
+                    referrals. Arriving 15 minutes early helps us complete
+                    check-in and paperwork smoothly.
+                  </p>
+                </div>
+              </div>
+            </details>
+
+            <details
+              class="faq group rounded-2xl border border-gray-200 bg-gray-50/60 p-1 transition open:border-brand/40 open:bg-white open:shadow-lg"
+            >
+              <summary class="flex items-start justify-between gap-4 px-6 py-5">
+                <h3 class="text-base font-semibold text-ink md:text-lg">
+                  Can I request prescription refills online?
+                </h3>
+                <span
+                  class="faq-icon mt-1 inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-brand/10 text-brand transition-transform duration-300"
+                  aria-hidden="true"
+                >
+                  <svg
+                    class="h-4 w-4"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                  </svg>
+                </span>
+              </summary>
+              <div class="faq-body">
+                <div>
+                  <p class="px-6 pb-6 text-sm leading-relaxed text-gray-600">
+                    Absolutely. Log in to your patient portal to request refills
+                    for eligible medications. Requests are typically reviewed
+                    within one business day, and you'll be notified once your
+                    prescription is sent to your pharmacy.
+                  </p>
+                </div>
+              </div>
+            </details>
+
+            <details
+              class="faq group rounded-2xl border border-gray-200 bg-gray-50/60 p-1 transition open:border-brand/40 open:bg-white open:shadow-lg"
+            >
+              <summary class="flex items-start justify-between gap-4 px-6 py-5">
+                <h3 class="text-base font-semibold text-ink md:text-lg">
+                  What safety measures are in place for in-person appointments?
+                </h3>
+                <span
+                  class="faq-icon mt-1 inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-brand/10 text-brand transition-transform duration-300"
+                  aria-hidden="true"
+                >
+                  <svg
+                    class="h-4 w-4"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                  </svg>
+                </span>
+              </summary>
+              <div class="faq-body">
+                <div>
+                  <p class="px-6 pb-6 text-sm leading-relaxed text-gray-600">
+                    Your safety is our priority. We maintain rigorous cleaning
+                    protocols, provide sanitizing stations throughout the
+                    facility, and follow current public health guidance. Staff
+                    are trained to keep every visit safe and comfortable.
+                  </p>
+                </div>
+              </div>
+            </details>
+          </div>
+        </div>
+
+        <!-- Still have questions CTA -->
+        <div
+          class="mx-auto mt-16 max-w-3xl rounded-3xl bg-brand p-8 text-center text-white md:p-12"
+          data-reveal
+        >
+          <h3 class="text-2xl font-bold md:text-3xl">Still have a question?</h3>
+          <p class="mx-auto mt-3 max-w-xl text-white/85">
+            Our team is happy to help. Give us a call or send a message and
+            we'll get back to you as soon as possible.
+          </p>
+          <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
+            <a
+              href="tel:(704)555-0127"
+              class="inline-flex items-center gap-2 rounded-full bg-white px-7 py-3 text-sm font-semibold text-brand transition hover:bg-gray-100"
+            >
+              <svg
+                class="h-5 w-5"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"
+                />
+              </svg>
+              (704) 555-0127
+            </a>
+            <a
+              href="contact-us.html"
+              class="inline-flex items-center gap-2 rounded-full border-2 border-white/70 px-7 py-3 text-sm font-semibold text-white transition hover:bg-white hover:text-brand"
+            >
+              <svg
+                class="h-5 w-5"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <rect x="2" y="4" width="20" height="16" rx="2" />
+                <path d="m22 7-10 5L2 7" />
+              </svg>
+              Get in Touch
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer id="contact" class="bg-ink text-white">
+      <!-- Subscribe -->
+      <div class="border-b border-white/10">
+        <div class="mx-auto max-w-7xl px-5 lg:px-8 py-16">
+          <div class="grid gap-8 lg:grid-cols-2 lg:items-center">
+            <div>
+              <span
+                class="inline-flex h-12 w-12 items-center justify-center rounded-full bg-brand"
+              >
+                <svg
+                  class="h-6 w-6 text-white"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M4 4h16v16H4z" />
+                  <polyline points="4 6 12 13 20 6" />
+                </svg>
+              </span>
+              <h2 class="mt-5 text-2xl md:text-3xl font-bold">
+                Subscribe to our latest news
+              </h2>
+            </div>
+            <form
+              onsubmit="return false;"
+              class="flex w-full overflow-hidden rounded-full bg-white/10 ring-1 ring-white/20 focus-within:ring-brand"
+            >
+              <input
+                type="email"
+                placeholder="Email"
+                required
+                class="w-full bg-transparent px-6 py-4 text-sm text-white placeholder-white/60 outline-none"
+              />
+              <button
+                class="shrink-0 bg-brand px-8 py-4 text-sm font-semibold text-white transition hover:bg-brand/90"
+              >
+                Subscribe
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Top footer -->
+      <div class="mx-auto max-w-7xl px-5 lg:px-8 py-16">
+        <div
+          class="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between"
+        >
+          <div class="flex items-center gap-2.5">
+            <span
+              class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-brand"
+            >
+              <svg
+                class="h-5 w-5 text-white"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path d="M10 4h4v6h6v4h-6v6h-4v-6H4v-4h6z" />
+              </svg>
+            </span>
+            <span class="text-lg font-bold">Healthcare Institution</span>
+          </div>
+
+          <div class="grid gap-6 sm:grid-cols-3">
+            <div class="flex items-start gap-3">
+              <svg
+                class="mt-0.5 h-5 w-5 shrink-0 text-brand"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+              <p class="text-sm text-white/80">
+                8502 Preston Rd. Inglewood, Maine 98380
+              </p>
+            </div>
+            <div class="flex items-start gap-3">
+              <svg
+                class="mt-0.5 h-5 w-5 shrink-0 text-brand"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"
+                />
+              </svg>
+              <div class="flex flex-col text-sm text-white/80">
+                <a href="tel:(704)555-0127" class="hover:text-white"
+                  >(704) 555-0127</a
+                >
+                <a href="tel:(704)358-1528" class="hover:text-white"
+                  >(704) 358-1528</a
+                >
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <svg
+                class="mt-0.5 h-5 w-5 shrink-0 text-brand"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <rect x="2" y="4" width="20" height="16" rx="2" />
+                <path d="m22 7-10 5L2 7" />
+              </svg>
+              <a
+                href="mailto:healthcare@office.com"
+                class="text-sm text-white/80 hover:text-white"
+                >healthcare@office.com</a
+              >
+            </div>
+          </div>
+
+          <a
+            href="contact-us.html"
+            class="inline-flex items-center gap-3 rounded-full bg-brand px-6 py-3 text-sm font-semibold text-white transition hover:bg-brand/90"
+          >
+            Get in Touch
+            <svg
+              class="h-4 w-4"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <line x1="7" y1="17" x2="17" y2="7" />
+              <polyline points="7 7 17 7 17 17" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Bottom footer -->
+      <div class="border-t border-white/10">
+        <div class="mx-auto max-w-7xl px-5 lg:px-8 py-8">
+          <div
+            class="flex flex-col gap-6 md:flex-row md:items-center md:justify-between"
+          >
+            <nav class="flex flex-wrap gap-x-6 gap-y-2 text-sm">
+              <a
+                href="home.html"
+                class="text-white/80 hover:text-white"
+                >Home</a
+              >
+              <a href="about.html" class="text-white/80 hover:text-white">About us</a>
+              <a href="services.html" class="text-white/80 hover:text-white">Services</a>
+              <a href="#" class="text-white/80 hover:text-white">News</a>
+              <a href="contact-us.html" class="text-white/80 hover:text-white"
+                >Contact Us</a
+              >
+              <a
+                href="https://www.instagram.com/"
+                target="_blank"
+                rel="noopener"
+                class="text-brand hover:text-white"
+                >Instagram</a
+              >
+              <a
+                href="https://twitter.com/"
+                target="_blank"
+                rel="noopener"
+                class="text-brand hover:text-white"
+                >Twitter</a
+              >
+            </nav>
+            <p class="text-sm text-white/60">
+              © Healthcare Institution. All Rights Reserved.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back-to-top (visible without JS; JS reveals it after scrolling and smooth-scrolls) -->
+    <a
+      href="#"
+      id="back-to-top"
+      class="fixed bottom-6 right-6 z-50 inline-flex h-12 w-12 items-center justify-center rounded-full bg-brand text-white shadow-lg transition hover:bg-brand/90"
+      aria-label="Back to top"
+    >
+      <svg
+        class="h-6 w-6"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <line x1="12" y1="19" x2="12" y2="5" />
+        <polyline points="5 12 12 5 19 12" />
+      </svg>
+    </a>
+
+    <script>
+      (function () {
+        "use strict";
+        var reduceMotion = window.matchMedia(
+          "(prefers-reduced-motion: reduce)",
+        ).matches;
+
+        /* ---------- 1. SCROLL REVEAL ---------- */
+        (function () {
+          var els = document.querySelectorAll("[data-reveal]");
+          if (!els.length) return;
+          if (reduceMotion || !("IntersectionObserver" in window)) {
+            els.forEach(function (el) {
+              el.classList.add("is-visible");
+            });
+            return;
+          }
+          var io = new IntersectionObserver(
+            function (entries) {
+              entries.forEach(function (e) {
+                if (e.isIntersecting) {
+                  e.target.classList.add("is-visible");
+                  io.unobserve(e.target);
+                }
+              });
+            },
+            { threshold: 0.12, rootMargin: "0px 0px -8% 0px" },
+          );
+          els.forEach(function (el) {
+            io.observe(el);
+          });
+        })();
+
+        /* ---------- 2. FAQ ACCORDION: single-open enhancement ---------- */
+        /* Native <details> works with JS off. When JS is present we sync open
+       state across a group so only one answer stays open at a time. */
+        (function () {
+          var groups = document.querySelectorAll("[data-faq-group]");
+          groups.forEach(function (group) {
+            var items = Array.prototype.slice.call(
+              group.querySelectorAll("details.faq"),
+            );
+            items.forEach(function (item) {
+              item.addEventListener("toggle", function () {
+                if (!item.open) return;
+                items.forEach(function (other) {
+                  if (other !== item && other.open) other.open = false;
+                });
+              });
+            });
+          });
+        })();
+
+        /* ---------- 3. DROPDOWN NAV (mobile click toggle) ---------- */
+        (function () {
+          var isMobile = function () {
+            return window.matchMedia("(max-width: 1023px)").matches;
+          };
+          var btns = document.querySelectorAll("[data-dropdown-btn]");
+          btns.forEach(function (btn) {
+            var menu = btn.parentElement.querySelector(".nav-submenu");
+            if (!menu) return;
+            btn.setAttribute("aria-haspopup", "true");
+            btn.setAttribute("aria-expanded", "false");
+            btn.addEventListener("click", function (e) {
+              if (!isMobile()) {
+                // Desktop opens on hover; a mouse click would latch the panel
+                // open via :focus-within, so drop focus to let it close.
+                if (e.detail !== 0) btn.blur();
+                return;
+              }
+              e.preventDefault();
+              var isOpen = menu.classList.toggle("open");
+              btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+            });
+          });
+          window.addEventListener("resize", function () {
+            if (!isMobile()) {
+              document
+                .querySelectorAll(".nav-submenu.open")
+                .forEach(function (m) {
+                  m.classList.remove("open");
+                });
+              btns.forEach(function (b) {
+                b.setAttribute("aria-expanded", "false");
+              });
+            }
+          });
+        })();
+
+        /* ---------- 4. BACK TO TOP ---------- */
+        (function () {
+          var btn = document.getElementById("back-to-top");
+          if (!btn) return;
+          function onScroll() {
+            if (window.pageYOffset > 400) btn.classList.add("is-visible");
+            else btn.classList.remove("is-visible");
+          }
+          window.addEventListener("scroll", onScroll, { passive: true });
+          onScroll();
+          btn.addEventListener("click", function (e) {
+            e.preventDefault();
+            window.scrollTo({
+              top: 0,
+              behavior: reduceMotion ? "auto" : "smooth",
+            });
+          });
+        })();
+      })();
+    </script>
+  </body>
+</html>
