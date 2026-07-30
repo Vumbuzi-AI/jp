@@ -26,11 +26,7 @@
       name="twitter:image"
     />
 
-    <!-- Inline SVG favicon -->
-    <link
-      rel="icon"
-      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231C86C9'/%3E%3Cpath d='M14 7h4v7h7v4h-7v7h-4v-7H7v-4h7z' fill='white'/%3E%3C/svg%3E"
-    />
+    <link rel="icon" type="image/png" href="images/logo.png" />
 
     <!-- Google Fonts replacing WebFont.load (Lato, Poppins, Inter) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -305,16 +301,12 @@
       <div class="relative mx-auto max-w-7xl px-5 lg:px-8 py-24 w-full">
         <div class="max-w-2xl" data-reveal>
           <h1 class="text-4xl md:text-6xl font-bold leading-tight text-white">
-            Kenya Deserves World-Class Healthcare. We Are Building It.
+            World-Class Healthcare, Built in Kenya.
           </h1>
           <p class="mt-6 text-lg text-white/85">
-            J.P. Muia Health System is system-integrating healthcare
-            infrastructure combining American clinical standards, embedded
-            research, a clinical trials ecosystem, AI-driven diagnostics,
-            integrated digital health records, and structured patient follow-up
-            across five connected levels of care — designed and built at Konza
-            Technopolis, Kenya. We are not building a hospital. We are building
-            a system.
+            J.P. Muia Health System is building an AI-smart, research-ready
+            health system at Konza Technopolis, connecting care from early
+            screening to specialist treatment and follow-up.
           </p>
           <div class="mt-9 flex flex-wrap items-center gap-4">
             <a
@@ -559,23 +551,25 @@
     <!-- ================= SERVICES LIST GRID ================= -->
     <section class="pb-20">
       <div class="mx-auto max-w-7xl px-5 lg:px-8">
-        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3" data-reveal>
-          <article class="group">
-            <a href="services.html" class="block overflow-hidden rounded-3xl">
+        <div
+          class="service-card-grid grid gap-x-8 gap-y-12 md:grid-cols-2 lg:grid-cols-3"
+          data-reveal
+        >
+          <article class="service-card group">
+            <a href="services.html" class="service-card-image">
               <img
                 src="images/P1520470.webp"
                 loading="lazy"
                 alt="Healthcare leaders touring an innovation facility"
-                class="h-60 w-full object-cover transition duration-500 group-hover:scale-105"
               />
             </a>
-            <div class="mt-5">
+            <div class="service-card-panel">
               <a
                 href="services.html"
-                class="text-xl font-semibold text-ink hover:text-brand"
+                class="service-card-title"
                 >Referral Pathways</a
               >
-              <p class="mt-2 text-sm text-gray-600">
+              <p class="service-card-copy">
                 Clear, tracked referral routes so patients know which specialist
                 to see and when, closing the gap between primary and tertiary
                 care.
@@ -583,88 +577,84 @@
             </div>
           </article>
 
-          <article class="group">
-            <a href="services.html" class="block overflow-hidden rounded-3xl">
+          <article class="service-card group">
+            <a href="services.html" class="service-card-image">
               <img
                 src="images/P1580102.webp"
                 loading="lazy"
                 alt="J.P. Muia leaders exploring interactive health technology"
-                class="h-60 w-full object-cover transition duration-500 group-hover:scale-105"
               />
             </a>
-            <div class="mt-5">
+            <div class="service-card-panel">
               <a
                 href="services.html"
-                class="text-xl font-semibold text-ink hover:text-brand"
+                class="service-card-title"
                 >Structured Follow-Up</a
               >
-              <p class="mt-2 text-sm text-gray-600">
+              <p class="service-card-copy">
                 A 48-hour follow-up call plus 7- and 30-day check-ins ensure no
                 patient is discharged into silence.
               </p>
             </div>
           </article>
 
-          <article class="group">
-            <a href="services.html" class="block overflow-hidden rounded-3xl">
+          <article class="service-card group">
+            <a href="services.html" class="service-card-image">
               <img
                 src="images/P1520394.webp"
                 loading="lazy"
                 alt="J.P. Muia Health System partnership delegation"
-                class="h-60 w-full object-cover transition duration-500 group-hover:scale-105"
               />
             </a>
-            <div class="mt-5">
+            <div class="service-card-panel">
               <a
                 href="services.html"
-                class="text-xl font-semibold text-ink hover:text-brand"
+                class="service-card-title"
                 >NCD Awareness & Screening</a
               >
-              <p class="mt-2 text-sm text-gray-600">
+              <p class="service-card-copy">
                 Community screening and education for hypertension, diabetes,
                 stroke, and neurological disease that too often go undiagnosed.
               </p>
             </div>
           </article>
 
-          <article class="group">
-            <a href="services.html" class="block overflow-hidden rounded-3xl">
+          <article class="service-card group">
+            <a href="services.html" class="service-card-image">
               <img
                 src="images/P1580102.webp"
                 loading="lazy"
                 alt="Team exploring advanced clinical technology"
-                class="h-60 w-full object-cover transition duration-500 group-hover:scale-105"
               />
             </a>
-            <div class="mt-5">
+            <div class="service-card-panel">
               <a
                 href="services.html"
-                class="text-xl font-semibold text-ink hover:text-brand"
+                class="service-card-title"
                 >Specialist Clinical Skills</a
               >
-              <p class="mt-2 text-sm text-gray-600">
+              <p class="service-card-copy">
                 Building the neurology, cardiology, and endocrinology specialist
                 capacity that rural counties currently lack.
               </p>
             </div>
           </article>
 
-          <article class="group">
-            <a href="services.html" class="block overflow-hidden rounded-3xl">
+          <article class="service-card group">
+            <a href="services.html" class="service-card-image">
               <img
                 src="images/P1520556.webp"
                 loading="lazy"
                 alt="Konza Technopolis research infrastructure"
-                class="h-60 w-full object-cover transition duration-500 group-hover:scale-105"
               />
             </a>
-            <div class="mt-5">
+            <div class="service-card-panel">
               <a
                 href="services.html"
-                class="text-xl font-semibold text-ink hover:text-brand"
+                class="service-card-title"
                 >Research Infrastructure</a
               >
-              <p class="mt-2 text-sm text-gray-600">
+              <p class="service-card-copy">
                 Good Clinical Practice-ready trial sites, biobanks, and
                 interoperable data that embed research into every patient
                 encounter.
@@ -672,22 +662,21 @@
             </div>
           </article>
 
-          <article class="group">
-            <a href="services.html" class="block overflow-hidden rounded-3xl">
+          <article class="service-card group">
+            <a href="services.html" class="service-card-image">
               <img
                 src="images/P1580060.webp"
                 loading="lazy"
                 alt="Silicon Savannah innovation hub"
-                class="h-60 w-full object-cover transition duration-500 group-hover:scale-105"
               />
             </a>
-            <div class="mt-5">
+            <div class="service-card-panel">
               <a
                 href="services.html"
-                class="text-xl font-semibold text-ink hover:text-brand"
+                class="service-card-title"
                 >Clinical Trials Ecosystem</a
               >
-              <p class="mt-2 text-sm text-gray-600">
+              <p class="service-card-copy">
                 A research-ready hospital infrastructure that brings global
                 clinical trials — and their benefits — to African patients.
               </p>
@@ -747,7 +736,7 @@
               </svg>
             </span>
             <p class="text-sm text-gray-700">
-              Dover, Delaware 19901, United States
+              Konza Technopolis, Machakos County, Kenya
             </p>
           </div>
           <form
@@ -771,101 +760,107 @@
     </section>
 
     <!-- ================= WE ARE ALWAYS READY TO HELP ================= -->
-    <section class="relative bg-gray-50 py-20">
+    <section class="care-follow-section relative py-20">
       <div class="mx-auto max-w-7xl px-5 lg:px-8">
-        <div class="grid gap-12 lg:grid-cols-2 lg:items-center" data-reveal>
-          <div>
-            <h2 class="text-3xl md:text-4xl font-bold text-ink">
+        <div
+          class="grid gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:items-start"
+          data-reveal
+        >
+          <div class="lg:pt-2">
+            <h2 class="max-w-lg text-4xl font-bold leading-tight text-ink md:text-5xl">
               Care That Follows You Home
             </h2>
-            <div class="mt-10 space-y-8">
-              <div>
-                <div class="flex items-center gap-4">
+            <div class="mt-20 space-y-10 lg:mt-24">
+              <div class="grid gap-4 sm:grid-cols-[3.75rem_1fr]">
+                <div>
                   <span
-                    class="inline-flex h-11 w-11 items-center justify-center rounded-full bg-brand text-white font-semibold"
+                    class="inline-flex h-14 w-14 items-center justify-center rounded-full bg-white text-base font-bold text-ink shadow-sm"
                     >1</span
                   >
-                  <h5 class="text-lg font-semibold text-ink">Find You</h5>
                 </div>
-                <p class="mt-3 text-gray-600">
-                  Community health workers and JP Muia on Wheels screen villages
-                  for NCDs, catching disease early instead of waiting for
-                  patients to find us.
-                </p>
+                <div>
+                  <h5 class="text-xl font-bold text-ink">Find You</h5>
+                  <p class="mt-5 max-w-md text-base font-medium leading-relaxed text-ink">
+                    Community health workers and JP Muia on Wheels screen
+                    villages for NCDs, catching disease early instead of waiting
+                    for patients to find us.
+                  </p>
+                </div>
               </div>
-              <div>
-                <div class="flex items-center gap-4">
+              <div class="grid gap-4 sm:grid-cols-[3.75rem_1fr]">
+                <div>
                   <span
-                    class="inline-flex h-11 w-11 items-center justify-center rounded-full bg-brand text-white font-semibold"
+                    class="inline-flex h-14 w-14 items-center justify-center rounded-full bg-white text-base font-bold text-ink shadow-sm"
                     >2</span
                   >
-                  <h5 class="text-lg font-semibold text-ink">Treat You</h5>
                 </div>
-                <p class="mt-3 text-gray-600">
-                  Tertiary specialist care with catheterization labs, operating
-                  theatres, ICU beds, and AI diagnostics powered by Medtronic
-                  technology.
-                </p>
+                <div>
+                  <h5 class="text-xl font-bold text-ink">Treat You</h5>
+                  <p class="mt-5 max-w-md text-base font-medium leading-relaxed text-ink">
+                    Tertiary specialist care with catheterization labs,
+                    operating theatres, ICU beds, and AI diagnostics powered by
+                    Medtronic technology.
+                  </p>
+                </div>
               </div>
-              <div>
-                <div class="flex items-center gap-4">
+              <div class="grid gap-4 sm:grid-cols-[3.75rem_1fr]">
+                <div>
                   <span
-                    class="inline-flex h-11 w-11 items-center justify-center rounded-full bg-brand text-white font-semibold"
+                    class="inline-flex h-14 w-14 items-center justify-center rounded-full bg-white text-base font-bold text-ink shadow-sm"
                     >3</span
                   >
-                  <h5 class="text-lg font-semibold text-ink">
-                    Follow You Home
-                  </h5>
                 </div>
-                <p class="mt-3 text-gray-600">
-                  A structured post-discharge pathway — a 48-hour call, 7- and
-                  30-day check-ins — so no patient is discharged into silence.
-                </p>
+                <div>
+                  <h5 class="text-xl font-bold text-ink">Follow You Home</h5>
+                  <p class="mt-5 max-w-md text-base font-medium leading-relaxed text-ink">
+                    A structured post-discharge pathway, with a 48-hour call
+                    plus 7- and 30-day check-ins, so no patient is discharged
+                    into silence.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
 
-          <!-- Image with floating contact card -->
-          <div class="relative">
+          <div class="relative min-h-[520px] overflow-hidden lg:min-h-[560px]">
             <img
               src="images/P1520470.webp"
               loading="lazy"
               alt="Healthcare leaders touring an innovation facility"
-              class="h-[480px] w-full rounded-3xl object-cover"
+              class="absolute inset-0 h-full w-full object-cover"
             />
-            <div
-              class="absolute bottom-6 left-6 right-6 rounded-2xl bg-brand p-6 text-white shadow-xl md:right-auto md:max-w-xs"
-            >
-              <h3 class="text-lg font-semibold">
-                Easily find our contact information
-              </h3>
-              <p class="mt-1 text-sm text-white/85">
-                Ensuring seamless communication and access to our services.
-              </p>
-              <div class="mt-4 flex items-center gap-2">
-                <svg
-                  class="h-5 w-5"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  aria-hidden="true"
-                >
-                  <path
-                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"
-                  />
-                </svg>
-                <a href="tel:+19733568322" class="font-medium"
-                  >+1 973 356 8322</a
+            <div class="absolute inset-0 bg-ink/65"></div>
+            <div class="relative flex min-h-[520px] items-center px-8 py-12 text-white md:px-14 lg:min-h-[560px]">
+              <div class="max-w-md">
+                <h3 class="text-3xl font-bold leading-tight md:text-4xl">
+                  Easily find our contact information
+                </h3>
+                <p class="mt-6 text-lg font-medium leading-relaxed text-white/90">
+                  Ensuring seamless communication and access to our services.
+                </p>
+                <div class="mt-6 flex items-center gap-3 text-lg font-bold">
+                  <svg
+                    class="h-6 w-6"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"
+                    />
+                  </svg>
+                  <a href="tel:+19733568322">+1 973 356 8322</a>
+                </div>
+                <a
+                  href="contact-us.html"
+                  class="mt-10 inline-flex min-w-52 items-center justify-center rounded-full bg-white px-8 py-4 text-base font-semibold text-ink transition hover:bg-gray-100"
+                  >Get in Touch</a
                 >
               </div>
-              <a
-                href="contact-us.html"
-                class="mt-5 inline-flex items-center rounded-full bg-white px-6 py-2.5 text-sm font-semibold text-brand transition hover:bg-gray-100"
-                >Get in Touch</a
-              >
             </div>
           </div>
         </div>
@@ -919,295 +914,122 @@
       </div>
     </section>
 
-    <!-- ================= TESTIMONIALS CAROUSEL (grid fallback without JS) ================= -->
+    <!-- ================= OUR VISION ================= -->
     <section class="py-20">
       <div class="mx-auto max-w-7xl px-5 lg:px-8">
-        <p class="text-brand font-semibold uppercase tracking-wide" data-reveal>
-          Our Vision
-        </p>
-        <h2
-          class="mt-2 text-3xl md:text-4xl font-bold text-ink"
+        <div
+          class="grid gap-12 lg:grid-cols-[0.9fr_1.4fr] lg:items-center"
           data-reveal
-          data-reveal-delay="1"
         >
-          Why We Are Building This
-        </h2>
+          <div class="aspect-square overflow-hidden bg-brand/5">
+            <img
+              src="images/P1520370.webp"
+              loading="lazy"
+              alt="J.P. Muia Health System leaders formalizing a partnership"
+              class="h-full w-full object-cover"
+            />
+          </div>
 
-        <div class="mt-12" data-carousel data-reveal data-reveal-delay="2">
-          <div class="t-viewport">
-            <div class="t-track grid gap-8 md:grid-cols-3">
-              <!-- slide -->
-              <figure class="t-slide">
-                <div class="rounded-3xl bg-gray-50 p-8 h-full">
-                  <div
-                    class="flex gap-1 text-brand"
-                    aria-label="5 out of 5 stars"
-                  >
-                    <svg
-                      class="h-5 w-5"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                      aria-hidden="true"
-                    >
-                      <polygon
-                        points="12 2 15 9 22 9.3 17 14 18.5 21 12 17.3 5.5 21 7 14 2 9.3 9 9"
-                      />
-                    </svg>
-                    <svg
-                      class="h-5 w-5"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                      aria-hidden="true"
-                    >
-                      <polygon
-                        points="12 2 15 9 22 9.3 17 14 18.5 21 12 17.3 5.5 21 7 14 2 9.3 9 9"
-                      />
-                    </svg>
-                    <svg
-                      class="h-5 w-5"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                      aria-hidden="true"
-                    >
-                      <polygon
-                        points="12 2 15 9 22 9.3 17 14 18.5 21 12 17.3 5.5 21 7 14 2 9.3 9 9"
-                      />
-                    </svg>
-                    <svg
-                      class="h-5 w-5"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                      aria-hidden="true"
-                    >
-                      <polygon
-                        points="12 2 15 9 22 9.3 17 14 18.5 21 12 17.3 5.5 21 7 14 2 9.3 9 9"
-                      />
-                    </svg>
-                    <svg
-                      class="h-5 w-5"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                      aria-hidden="true"
-                    >
-                      <polygon
-                        points="12 2 15 9 22 9.3 17 14 18.5 21 12 17.3 5.5 21 7 14 2 9.3 9 9"
-                      />
-                    </svg>
-                  </div>
-                  <blockquote class="mt-5 text-gray-700">
-                    "We are not building a hospital. We are building a system."
-                  </blockquote>
-                  <figcaption class="mt-6 flex items-center gap-3">
-                    <img
-                      src="images/P1520370.webp"
-                      loading="lazy"
-                      alt=""
-                      class="h-11 w-11 rounded-full object-cover"
-                    />
-                    <span class="font-semibold text-ink"
-                      >Dr. Timothy Muia, Founder & CEO</span
-                    >
-                  </figcaption>
-                </div>
-              </figure>
+          <figure>
+            <p class="font-semibold uppercase tracking-[0.22em] text-brand">
+              Our Vision
+            </p>
+            <blockquote
+              class="mt-8 max-w-4xl text-4xl font-extrabold leading-tight text-ink md:text-5xl"
+            >
+              We are not building a hospital. We are building a system that
+              finds people early, treats them deeply, and follows them home.
+            </blockquote>
+            <figcaption class="mt-10">
+              <p class="text-lg font-bold text-ink">
+                Dr. Timothy Muia, Founder &amp; CEO
+              </p>
+              <div
+                class="mt-4 flex gap-1 text-brand"
+                aria-label="5 out of 5 vision pillars"
+              >
+                <svg
+                  class="h-5 w-5"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <polygon points="12 2 15 9 22 9.3 17 14 18.5 21 12 17.3 5.5 21 7 14 2 9.3 9 9" />
+                </svg>
+                <svg
+                  class="h-5 w-5"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <polygon points="12 2 15 9 22 9.3 17 14 18.5 21 12 17.3 5.5 21 7 14 2 9.3 9 9" />
+                </svg>
+                <svg
+                  class="h-5 w-5"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <polygon points="12 2 15 9 22 9.3 17 14 18.5 21 12 17.3 5.5 21 7 14 2 9.3 9 9" />
+                </svg>
+                <svg
+                  class="h-5 w-5"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <polygon points="12 2 15 9 22 9.3 17 14 18.5 21 12 17.3 5.5 21 7 14 2 9.3 9 9" />
+                </svg>
+                <svg
+                  class="h-5 w-5"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <polygon points="12 2 15 9 22 9.3 17 14 18.5 21 12 17.3 5.5 21 7 14 2 9.3 9 9" />
+                </svg>
+              </div>
+            </figcaption>
 
-              <figure class="t-slide">
-                <div class="rounded-3xl bg-gray-50 p-8 h-full">
-                  <div
-                    class="flex gap-1 text-brand"
-                    aria-label="5 out of 5 stars"
-                  >
-                    <svg
-                      class="h-5 w-5"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                      aria-hidden="true"
-                    >
-                      <polygon
-                        points="12 2 15 9 22 9.3 17 14 18.5 21 12 17.3 5.5 21 7 14 2 9.3 9 9"
-                      />
-                    </svg>
-                    <svg
-                      class="h-5 w-5"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                      aria-hidden="true"
-                    >
-                      <polygon
-                        points="12 2 15 9 22 9.3 17 14 18.5 21 12 17.3 5.5 21 7 14 2 9.3 9 9"
-                      />
-                    </svg>
-                    <svg
-                      class="h-5 w-5"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                      aria-hidden="true"
-                    >
-                      <polygon
-                        points="12 2 15 9 22 9.3 17 14 18.5 21 12 17.3 5.5 21 7 14 2 9.3 9 9"
-                      />
-                    </svg>
-                    <svg
-                      class="h-5 w-5"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                      aria-hidden="true"
-                    >
-                      <polygon
-                        points="12 2 15 9 22 9.3 17 14 18.5 21 12 17.3 5.5 21 7 14 2 9.3 9 9"
-                      />
-                    </svg>
-                    <svg
-                      class="h-5 w-5"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                      aria-hidden="true"
-                    >
-                      <polygon
-                        points="12 2 15 9 22 9.3 17 14 18.5 21 12 17.3 5.5 21 7 14 2 9.3 9 9"
-                      />
-                    </svg>
-                  </div>
-                  <blockquote class="mt-5 text-gray-700">
-                    "Care that follows you home."
-                  </blockquote>
-                  <figcaption class="mt-6 flex items-center gap-3">
-                    <img
-                      src="images/P1520375.webp"
-                      loading="lazy"
-                      alt=""
-                      class="h-11 w-11 rounded-full object-cover"
-                    />
-                    <span class="font-semibold text-ink"
-                      >Dr. Timothy Muia, Founder &amp; CEO</span
-                    >
-                  </figcaption>
-                </div>
-              </figure>
-
-              <figure class="t-slide">
-                <div class="rounded-3xl bg-gray-50 p-8 h-full">
-                  <div
-                    class="flex gap-1 text-brand"
-                    aria-label="5 out of 5 stars"
-                  >
-                    <svg
-                      class="h-5 w-5"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                      aria-hidden="true"
-                    >
-                      <polygon
-                        points="12 2 15 9 22 9.3 17 14 18.5 21 12 17.3 5.5 21 7 14 2 9.3 9 9"
-                      />
-                    </svg>
-                    <svg
-                      class="h-5 w-5"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                      aria-hidden="true"
-                    >
-                      <polygon
-                        points="12 2 15 9 22 9.3 17 14 18.5 21 12 17.3 5.5 21 7 14 2 9.3 9 9"
-                      />
-                    </svg>
-                    <svg
-                      class="h-5 w-5"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                      aria-hidden="true"
-                    >
-                      <polygon
-                        points="12 2 15 9 22 9.3 17 14 18.5 21 12 17.3 5.5 21 7 14 2 9.3 9 9"
-                      />
-                    </svg>
-                    <svg
-                      class="h-5 w-5"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                      aria-hidden="true"
-                    >
-                      <polygon
-                        points="12 2 15 9 22 9.3 17 14 18.5 21 12 17.3 5.5 21 7 14 2 9.3 9 9"
-                      />
-                    </svg>
-                    <svg
-                      class="h-5 w-5"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                      aria-hidden="true"
-                    >
-                      <polygon
-                        points="12 2 15 9 22 9.3 17 14 18.5 21 12 17.3 5.5 21 7 14 2 9.3 9 9"
-                      />
-                    </svg>
-                  </div>
-                  <blockquote class="mt-5 text-gray-700">
-                    "We do not lower the standard to meet the timeline. We hold
-                    the standard and adjust the timeline."
-                  </blockquote>
-                  <figcaption class="mt-6 flex items-center gap-3">
-                    <img
-                      src="images/P1520394.webp"
-                      loading="lazy"
-                      alt=""
-                      class="h-11 w-11 rounded-full object-cover"
-                    />
-                    <span class="font-semibold text-ink"
-                      >Dr. Timothy Muia, Founder &amp; CEO</span
-                    >
-                  </figcaption>
-                </div>
-              </figure>
+            <div class="mt-12 flex justify-end gap-5">
+              <button
+                type="button"
+                aria-label="Previous vision statement"
+                class="inline-flex h-14 w-14 items-center justify-center rounded-full bg-brand/10 text-ink transition hover:bg-brand hover:text-white"
+              >
+                <svg
+                  class="h-6 w-6"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <polyline points="15 18 9 12 15 6" />
+                </svg>
+              </button>
+              <button
+                type="button"
+                aria-label="Next vision statement"
+                class="inline-flex h-14 w-14 items-center justify-center rounded-full bg-brand/10 text-ink transition hover:bg-brand hover:text-white"
+              >
+                <svg
+                  class="h-6 w-6"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <polyline points="9 18 15 12 9 6" />
+                </svg>
+              </button>
             </div>
-          </div>
-
-          <!-- Controls (revealed only when JS runs) -->
-          <div class="t-controls mt-8 items-center justify-between gap-4">
-            <button
-              type="button"
-              data-prev
-              aria-label="Previous testimonial"
-              class="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border-2 border-ink text-ink transition hover:bg-ink hover:text-white"
-            >
-              <svg
-                class="h-5 w-5"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                aria-hidden="true"
-              >
-                <polyline points="15 18 9 12 15 6" />
-              </svg>
-            </button>
-            <div
-              class="t-dots flex items-center gap-2"
-              role="tablist"
-              aria-label="Select testimonial"
-            ></div>
-            <button
-              type="button"
-              data-next
-              aria-label="Next testimonial"
-              class="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border-2 border-ink text-ink transition hover:bg-ink hover:text-white"
-            >
-              <svg
-                class="h-5 w-5"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                aria-hidden="true"
-              >
-                <polyline points="9 18 15 12 9 6" />
-              </svg>
-            </button>
-          </div>
+          </figure>
         </div>
       </div>
     </section>
@@ -1411,7 +1233,7 @@
                 <circle cx="12" cy="10" r="3" />
               </svg>
               <p class="text-sm text-white/80">
-                Dover, Delaware 19901, United States
+                Konza Technopolis, Machakos County, Kenya
               </p>
             </div>
             <div class="flex items-start gap-3">
