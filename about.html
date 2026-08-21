@@ -1,31 +1,29 @@
 <!doctype html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <title>About — J.P. Muia Health System</title>
-
-    <meta content="About — J.P. Muia Health System" property="og:title" />
-    <meta content="About — J.P. Muia Health System" name="twitter:title" />
+    <script>document.documentElement.classList.add("js");</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>About — J.P. Muia Healthcare</title>
     <meta
-      content="A promise made in a village. A system built for a continent. J.P. Muia Health System is an African-led, AI-native integrated health system being built at Konza Technopolis, Kenya."
       name="description"
+      content="J.P. Muia Health System exists to close the gap between the healthcare Kenya deserves and the healthcare that has been available. Built with purpose, designed for Africa."
     />
-    <meta property="og:image" content="images/P1520375.webp" />
-    <meta name="twitter:image" content="images/P1520375.webp" />
+    <meta property="og:title" content="About — J.P. Muia Healthcare" />
+    <meta property="og:description" content="Built with Purpose, Designed for Africa." />
+    <meta property="og:image" content="images/P1580060-Dw3yMRDx.webp" />
+    <meta name="twitter:card" content="summary_large_image" />
 
-    <link rel="icon" type="image/png" href="images/logo.png" />
+    <link rel="icon" type="image/png" href="images/jp-muia-healthcare-logo-1gt7bfqC.png" />
 
-    <!-- Fonts (replaces WebFont.load) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="theme.css" />
 
-    <!-- Only permitted external dependency -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -33,1387 +31,362 @@
           extend: {
             colors: {
               brand: "rgb(var(--color-brand) / <alpha-value>)",
+              "brand-deep": "rgb(var(--color-brand-deep) / <alpha-value>)",
               "brand-dark": "rgb(var(--color-brand-dark) / <alpha-value>)",
-              accent: "rgb(var(--color-accent) / <alpha-value>)",
-              "accent-dark": "rgb(var(--color-accent-dark) / <alpha-value>)",
+              "brand-mid": "rgb(var(--color-brand-mid) / <alpha-value>)",
+              "brand-light": "rgb(var(--color-brand-light) / <alpha-value>)",
+              "brand-xlight": "rgb(var(--color-brand-xlight) / <alpha-value>)",
+              "brand-yellow": "rgb(var(--color-brand-yellow) / <alpha-value>)",
               ink: "rgb(var(--color-ink) / <alpha-value>)",
+              "ink-muted": "rgb(var(--color-ink-muted) / <alpha-value>)",
+              "ink-faint": "rgb(var(--color-ink-faint) / <alpha-value>)",
+              surface: "rgb(var(--color-surface) / <alpha-value>)",
             },
             fontFamily: {
-              sans: ["Lato", "sans-serif"],
-              head: ["Poppins", "sans-serif"],
-              alt: ["Inter", "sans-serif"],
+              sans: ["Inter", "system-ui", "-apple-system", "sans-serif"],
+              display: ["DM Serif Display", "Georgia", "serif"],
             },
           },
         },
       };
     </script>
-    <style>
-      body {
-        font-family: "Lato", sans-serif;
-      }
-      h1,
-      h2,
-      h3,
-      h4,
-      h5 {
-        font-family: "Poppins", sans-serif;
-      }
-
-      /* Partner logo marquee (CSS-only, no JS required) */
-      @keyframes marquee {
-        from {
-          transform: translateX(0);
-        }
-        to {
-          transform: translateX(-50%);
-        }
-      }
-      .animate-marquee {
-        animation: marquee 25s linear infinite;
-        will-change: transform;
-      }
-      .animate-marquee:hover {
-        animation-play-state: paused;
-      }
-
-      /* Reveal-on-scroll: only hide content when JS is active (progressive enhancement) */
-      .js .reveal {
-        opacity: 0;
-        transform: translateY(28px);
-        transition:
-          opacity 0.7s ease,
-          transform 0.7s ease;
-      }
-      .js .reveal.is-visible {
-        opacity: 1;
-        transform: none;
-      }
-      @media (prefers-reduced-motion: reduce) {
-        .js .reveal {
-          opacity: 1 !important;
-          transform: none !important;
-          transition: none;
-        }
-        .animate-marquee {
-          animation: none;
-        }
-      }
-
-      /* Testimonials carousel. Without JS it stays a responsive grid showing every card. */
-      .carousel-track {
-        display: grid;
-        gap: 2rem;
-        grid-template-columns: 1fr;
-      }
-      @media (min-width: 768px) {
-        .carousel-track {
-          grid-template-columns: repeat(3, 1fr);
-        }
-      }
-      .js .carousel-track {
-        display: flex;
-        gap: 0;
-        grid-template-columns: none;
-        transition: transform 0.5s ease;
-      }
-      .js .carousel-slide {
-        flex: 0 0 auto;
-        padding-left: 1rem;
-        padding-right: 1rem;
-        box-sizing: border-box;
-      }
-      /* Carousel controls are useless without JS, so hide them until enhanced */
-      .carousel-ctrl {
-        display: none;
-      }
-      .js .carousel-ctrl {
-        display: inline-flex;
-      }
-      .js .carousel-dots {
-        display: flex;
-      }
-      .carousel-dots {
-        display: none;
-      }
-
-      /* Video lightbox + back-to-top hidden until opened/needed */
-      #video-modal[hidden] {
-        display: none;
-      }
-      #to-top {
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(12px);
-        transition:
-          opacity 0.3s ease,
-          transform 0.3s ease,
-          visibility 0.3s;
-      }
-      #to-top.show {
-        opacity: 1;
-        visibility: visible;
-        transform: none;
-      }
-
-      /* Touch/mobile dropdown toggle enhancement */
-      .js [data-dropdown].open > [data-dropdown-panel] {
-        display: block;
-      }
-    </style>
   </head>
   <body class="bg-white text-ink antialiased">
-    <!-- ===================== NAV ===================== -->
-    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur shadow-sm">
-      <div class="mx-auto max-w-7xl px-5 lg:px-8">
-        <div class="flex items-center justify-between h-20">
-          <!-- Brand logo -->
-          <a href="index.html" class="flex items-center">
-            <img
-              src="images/logo.png"
-              alt="J.P. Muia Medicine"
-              class="h-14 w-auto"
-            />
+    <!-- ================= HEADER ================= -->
+    <header data-header class="fixed inset-x-0 top-0 z-40 transition-all duration-300 bg-white border-b border-brand-mid/20 [&.is-scrolled]:bg-white/[96%] [&.is-scrolled]:backdrop-blur-md [&.is-scrolled]:shadow-[0_2px_20px_rgba(10,46,95,.09)]">
+      <div class="max-w-7xl mx-auto px-5 lg:px-10">
+        <div class="flex items-center justify-between h-[68px]">
+          <a href="index.html" class="site-logo shrink-0" aria-label="J.P. Muia Healthcare home">
+            <img src="images/jp-muia-healthcare-logo-1gt7bfqC.png" alt="J.P. Muia Healthcare" />
           </a>
 
-          <!-- Mobile toggle (checkbox + label peer pattern) -->
-          <input type="checkbox" id="nav-toggle" class="peer hidden" />
-          <label
-            for="nav-toggle"
-            class="lg:hidden cursor-pointer p-2 text-ink"
-            aria-label="Toggle menu"
-          >
-            <svg
-              class="h-7 w-7"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              aria-hidden="true"
-            >
-              <line x1="3" y1="6" x2="21" y2="6" />
-              <line x1="3" y1="12" x2="21" y2="12" />
-              <line x1="3" y1="18" x2="21" y2="18" />
-            </svg>
-          </label>
-
-          <!-- Nav menu -->
-          <nav
-            class="hidden peer-checked:block lg:flex lg:items-center lg:gap-1 absolute lg:static top-20 left-0 right-0 bg-white lg:bg-transparent shadow-lg lg:shadow-none px-5 lg:px-0 py-4 lg:py-0 space-y-1 lg:space-y-0"
-          >
-            <a
-              href="index.html"
-              class="block px-4 py-2 text-sm font-medium text-ink hover:text-brand"
-              >Home</a
-            >
-            <div class="group relative">
-              <button
-                data-dropdown-btn
-                class="flex items-center gap-1 px-4 py-2 text-sm font-medium text-ink hover:text-brand w-full lg:w-auto"
-              >
+          <nav class="hidden lg:flex items-center gap-0.5" aria-label="Primary navigation">
+            <a href="index.html" class="px-3.5 py-2.5 rounded-xl text-[13px] font-medium transition-colors text-ink-muted hover:text-ink hover:bg-surface">Home</a>
+            <div class="relative" data-dropdown>
+              <button data-dropdown-btn aria-expanded="false" class="flex items-center gap-1 px-3.5 py-2.5 rounded-xl text-[13px] font-medium transition-colors text-brand bg-brand-light">
                 About
-                <svg
-                  class="h-4 w-4"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  aria-hidden="true"
-                >
-                  <polyline points="6 9 12 15 18 9" />
-                </svg>
+                <svg class="h-3.5 w-3.5" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4l4 4 4-4" /></svg>
               </button>
-              <div
-                class="nav-submenu hidden group-hover:block group-focus-within:block lg:absolute lg:top-full lg:left-0 lg:min-w-48 rounded-xl lg:bg-white lg:shadow-xl lg:ring-1 lg:ring-black/5 lg:p-2 pl-4 lg:pl-2"
-              >
-                <a
-                  href="about.html"
-                  class="block rounded-lg px-3 py-2 text-sm text-gray-700 hover:bg-brand/5 hover:text-brand"
-                  >Our Story</a
-                >
-                <a
-                  href="testimonials.html"
-                  class="block rounded-lg px-3 py-2 text-sm text-gray-700 hover:bg-brand/5 hover:text-brand"
-                  >Our Team</a
-                >
+              <div data-dropdown-panel class="hidden animate-dropdown absolute top-full left-0 mt-2 w-52 bg-white rounded-2xl shadow-[0_8px_32px_rgba(10,46,95,.14)] border border-brand-mid/30 overflow-hidden py-1.5">
+                <a href="about.html#story" class="flex items-center gap-2.5 px-4 py-2.5 text-[13px] text-ink-muted hover:text-brand hover:bg-brand-xlight transition-colors"><span class="w-1.5 h-1.5 rounded-full bg-brand-mid shrink-0" aria-hidden="true"></span>Our Story</a>
+                <a href="about.html#leadership" class="flex items-center gap-2.5 px-4 py-2.5 text-[13px] text-ink-muted hover:text-brand hover:bg-brand-xlight transition-colors"><span class="w-1.5 h-1.5 rounded-full bg-brand-mid shrink-0" aria-hidden="true"></span>Leadership</a>
+                <a href="about.html#mission" class="flex items-center gap-2.5 px-4 py-2.5 text-[13px] text-ink-muted hover:text-brand hover:bg-brand-xlight transition-colors"><span class="w-1.5 h-1.5 rounded-full bg-brand-mid shrink-0" aria-hidden="true"></span>Mission &amp; Vision</a>
               </div>
             </div>
-            <a
-              href="faqs.html"
-              class="block px-4 py-2 text-sm font-medium text-ink hover:text-brand"
-              >The Problem</a
-            >
-            <a
-              href="services.html"
-              class="block px-4 py-2 text-sm font-medium text-ink hover:text-brand"
-              >Solutions</a
-            >
-            <a
-              href="testimonials.html"
-              class="block px-4 py-2 text-sm font-medium text-ink hover:text-brand"
-              >Team</a
-            >
-            <a
-              href="contact-us.html"
-              class="mt-2 lg:mt-0 lg:ml-3 inline-flex items-center justify-center rounded-full bg-brand px-6 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-brand/90"
-              >Partner With Us</a
-            >
+            <a href="services.html" class="px-3.5 py-2.5 rounded-xl text-[13px] font-medium transition-colors text-ink-muted hover:text-ink hover:bg-surface">Services</a>
+            <a href="testimonials.html" class="px-3.5 py-2.5 rounded-xl text-[13px] font-medium transition-colors text-ink-muted hover:text-ink hover:bg-surface">Testimonials</a>
+            <a href="faqs.html" class="px-3.5 py-2.5 rounded-xl text-[13px] font-medium transition-colors text-ink-muted hover:text-ink hover:bg-surface">FAQs</a>
+            <a href="contact-us.html" class="px-3.5 py-2.5 rounded-xl text-[13px] font-medium transition-colors text-ink-muted hover:text-ink hover:bg-surface">Contact Us</a>
           </nav>
+
+          <div class="hidden lg:block">
+            <a href="contact-us.html" class="btn btn-primary text-[13px] py-2.5 px-5 ml-2">
+              Partner With Us
+              <svg width="14" height="14" fill="none" viewBox="0 0 16 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" /></svg>
+            </a>
+          </div>
+
+          <button data-menu-btn class="lg:hidden flex flex-col gap-[5px] p-2.5 rounded-xl hover:bg-surface transition-colors" aria-label="Open menu" aria-expanded="false">
+            <span class="block w-5 h-[2px] bg-ink rounded transition-all duration-300 origin-center"></span>
+            <span class="block w-5 h-[2px] bg-ink rounded transition-all duration-300"></span>
+            <span class="block w-5 h-[2px] bg-ink rounded transition-all duration-300 origin-center"></span>
+          </button>
         </div>
+      </div>
+
+      <div data-mobile-nav class="hidden lg:hidden bg-white border-t border-brand-mid/20 max-h-[calc(100svh-68px)] overflow-y-auto">
+        <nav class="px-5 py-4 flex flex-col gap-1" aria-label="Mobile navigation">
+          <a href="index.html" class="px-4 py-3.5 rounded-xl text-sm font-medium min-h-[44px] flex items-center text-ink hover:bg-surface transition-colors">Home</a>
+          <div>
+            <button data-accordion-btn aria-expanded="false" class="w-full flex items-center justify-between px-4 py-3.5 rounded-xl text-sm font-medium text-brand bg-brand-light min-h-[44px]">
+              About
+              <svg class="w-4 h-4 transition-transform duration-200" fill="none" viewBox="0 0 12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4l4 4 4-4" /></svg>
+            </button>
+            <div data-accordion-panel class="hidden pl-4 flex flex-col gap-0.5">
+              <a href="about.html#story" class="px-4 py-3 rounded-xl text-sm text-ink-muted hover:text-brand hover:bg-brand-xlight transition-colors min-h-[44px] flex items-center">Our Story</a>
+              <a href="about.html#leadership" class="px-4 py-3 rounded-xl text-sm text-ink-muted hover:text-brand hover:bg-brand-xlight transition-colors min-h-[44px] flex items-center">Leadership</a>
+              <a href="about.html#mission" class="px-4 py-3 rounded-xl text-sm text-ink-muted hover:text-brand hover:bg-brand-xlight transition-colors min-h-[44px] flex items-center">Mission &amp; Vision</a>
+            </div>
+          </div>
+          <a href="services.html" class="px-4 py-3.5 rounded-xl text-sm font-medium min-h-[44px] flex items-center text-ink hover:bg-surface transition-colors">Services</a>
+          <a href="testimonials.html" class="px-4 py-3.5 rounded-xl text-sm font-medium min-h-[44px] flex items-center text-ink hover:bg-surface transition-colors">Testimonials</a>
+          <a href="faqs.html" class="px-4 py-3.5 rounded-xl text-sm font-medium min-h-[44px] flex items-center text-ink hover:bg-surface transition-colors">FAQs</a>
+          <a href="contact-us.html" class="px-4 py-3.5 rounded-xl text-sm font-medium min-h-[44px] flex items-center text-ink hover:bg-surface transition-colors">Contact Us</a>
+          <div class="pt-2">
+            <a href="contact-us.html" class="btn btn-primary w-full justify-center">Partner With Us</a>
+          </div>
+        </nav>
       </div>
     </header>
 
-    <!-- ===================== HERO ===================== -->
-    <section class="relative overflow-hidden bg-ink text-white">
-      <div class="absolute inset-0">
-        <img
-          src="images/P1520375.webp"
-          alt="J.P. Muia Health System leadership team"
-          class="h-full w-full object-cover opacity-30"
-        />
-        <div
-          class="absolute inset-0 bg-gradient-to-r from-ink via-ink/80 to-ink/40"
-        ></div>
-      </div>
-      <div class="relative mx-auto max-w-7xl px-5 py-24 lg:px-8 lg:py-32">
-        <div class="max-w-2xl reveal">
-          <div
-            class="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/5 px-4 py-1.5"
-          >
-            <span class="h-2 w-2 rounded-full bg-accent"></span>
-            <span class="font-alt text-sm font-medium">Who We Are</span>
+    <main>
+      <!-- ================= ABOUT HEADER ================= -->
+      <section class="pt-[68px] hero-bg" aria-label="About header">
+        <div class="max-w-7xl mx-auto px-5 lg:px-10 py-20 lg:py-28">
+          <div class="max-w-3xl reveal">
+            <div class="label-tag mb-6">About Us</div>
+            <h1 class="font-display text-5xl lg:text-6xl text-ink mb-5">Built with Purpose,<br />Designed for Africa.</h1>
+            <p class="text-ink-muted text-xl leading-relaxed">J.P. Muia Health System exists to close the gap between the healthcare Kenya deserves and the healthcare that has been available.</p>
           </div>
-          <h1
-            class="mt-6 font-head text-5xl font-bold leading-tight lg:text-6xl"
-          >
-            A Promise Made in a Village. A System Built for a Continent.
-          </h1>
-          <p class="mt-5 max-w-xl text-lg text-white/80">
-            J.P. Muia Health System began with one physician's five-hour journey
-            with his sick mother, and the promise that followed: no Kenyan
-            family should have to travel that far for advanced medical care.
-          </p>
-          <div class="mt-8 flex flex-wrap items-center gap-4">
-            <a
-              href="#our-services"
-              class="inline-flex items-center gap-2 rounded-full bg-white px-7 py-3 font-alt text-sm font-semibold text-brand transition hover:bg-accent hover:text-ink"
-            >
-              Our Mission &amp; Vision
+        </div>
+      </section>
+
+      <!-- ================= OUR STORY ================= -->
+      <section id="story" class="py-24 bg-white" aria-label="Our story">
+        <div class="max-w-7xl mx-auto px-5 lg:px-10">
+          <div class="grid lg:grid-cols-2 gap-14 lg:gap-20 items-center reveal">
+            <div>
+              <div class="label-tag mb-6">Our Story</div>
+              <h2 class="font-display text-4xl text-ink mb-6">From Vision to Foundation</h2>
+              <div class="space-y-4 text-ink-muted leading-relaxed">
+                <p>Dr. Timothy Muia grew up witnessing the consequences of a fragmented health system — patients referred too late, follow-up lost, specialist care inaccessible. He trained across the world's most advanced health systems with one conviction: Kenya could build this.</p>
+                <p>J.P. Muia Health System was founded on the belief that Africa's healthcare challenge is not a shortage of compassion, but a shortage of <em>system</em> — one that connects community screening to specialist treatment to follow-up, and uses AI not as a gimmick but as an essential clinical tool.</p>
+                <p>Konza Technopolis, Kenya's smart city, is the natural home for Africa's first AI-smart hospital.</p>
+              </div>
+            </div>
+            <div class="img-wrap rounded-[1.75rem] overflow-hidden shadow-md bg-brand-light" style="aspect-ratio: 4/3">
+              <img src="images/P1580060-Dw3yMRDx.webp" alt="Specialist surgical team" class="w-full h-full object-cover" loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= MISSION & VISION ================= -->
+      <section id="mission" class="py-24 section-alt" aria-label="Mission and vision">
+        <div class="max-w-7xl mx-auto px-5 lg:px-10">
+          <div class="grid md:grid-cols-2 gap-8">
+            <div class="card-featured p-10 reveal">
+              <div class="w-12 h-12 bg-brand/10 text-brand rounded-2xl flex items-center justify-center mb-6">
+                <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+              </div>
+              <h2 class="font-display text-2xl text-ink mb-3">Our Mission</h2>
+              <p class="text-ink-muted leading-relaxed">To build Africa's first AI-smart, research-ready health system — connecting community health, specialist care, and structured follow-up in an integrated, technology-driven ecosystem accessible to all.</p>
+            </div>
+            <div class="rounded-[1.5rem] p-10 shadow-md reveal" style="background: linear-gradient(135deg, #0a2e5f 0%, #1560bd 100%)">
+              <div class="w-12 h-12 bg-white/15 rounded-2xl flex items-center justify-center mb-6">
+                <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" /></svg>
+              </div>
+              <h2 class="font-display text-2xl text-white mb-3">Our Vision</h2>
+              <p class="text-white/70 leading-relaxed">A Kenya — and an Africa — where geography, income, and circumstance no longer determine the quality of healthcare a person receives. Where the best of global medicine is available at home.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= OUR VALUES ================= -->
+      <section class="py-24 bg-white" aria-label="Our values">
+        <div class="max-w-7xl mx-auto px-5 lg:px-10">
+          <div class="text-center mb-12 reveal">
+            <div class="label-tag mb-5 mx-auto w-fit">What We Stand For</div>
+            <h2 class="font-display text-4xl text-ink">Our Values</h2>
+          </div>
+          <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="card-featured p-7 hover:-translate-y-1 transition-transform reveal">
+              <div class="text-3xl mb-4">🌍</div>
+              <h3 class="font-display text-xl text-ink mb-2">Access</h3>
+              <p class="text-ink-muted text-sm leading-relaxed">World-class care is not a privilege. We build systems that reach every patient, regardless of where they live.</p>
+            </div>
+            <div class="card-featured p-7 hover:-translate-y-1 transition-transform reveal" style="transition-delay: 80ms">
+              <div class="text-3xl mb-4">⚡</div>
+              <h3 class="font-display text-xl text-ink mb-2">Innovation</h3>
+              <p class="text-ink-muted text-sm leading-relaxed">AI and technology are embedded into every clinical decision, workflow, and patient interaction from day one.</p>
+            </div>
+            <div class="card-featured p-7 hover:-translate-y-1 transition-transform reveal" style="transition-delay: 160ms">
+              <div class="text-3xl mb-4">🔗</div>
+              <h3 class="font-display text-xl text-ink mb-2">Continuity</h3>
+              <p class="text-ink-muted text-sm leading-relaxed">Care does not end at the hospital door. Our follow-up systems ensure every patient stays well after discharge.</p>
+            </div>
+            <div class="card-featured p-7 hover:-translate-y-1 transition-transform reveal" style="transition-delay: 240ms">
+              <div class="text-3xl mb-4">🔬</div>
+              <h3 class="font-display text-xl text-ink mb-2">Research</h3>
+              <p class="text-ink-muted text-sm leading-relaxed">Every patient interaction generates knowledge that improves care for future patients across Africa and the world.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= MILESTONES ================= -->
+      <section id="leadership" class="py-24 section-alt" aria-label="Milestones">
+        <div class="max-w-7xl mx-auto px-5 lg:px-10">
+          <div class="grid lg:grid-cols-2 gap-14 lg:gap-20 items-start">
+            <div>
+              <div class="label-tag mb-6">Timeline</div>
+              <h2 class="font-display text-4xl text-ink mb-10">Milestones</h2>
+              <div class="space-y-0">
+                <div class="flex gap-5 reveal">
+                  <div class="flex flex-col items-center shrink-0">
+                    <div class="w-9 h-9 rounded-full bg-brand text-white flex items-center justify-center text-[11px] font-bold shrink-0">19</div>
+                    <div class="w-px flex-1 bg-brand-mid my-1.5"></div>
+                  </div>
+                  <div class="pb-8 pt-1.5">
+                    <p class="text-brand font-semibold text-xs mb-1 tracking-wide">2019</p>
+                    <p class="text-ink-muted text-sm leading-relaxed">J.P. Muia Health System incorporated in Kenya with the founding vision of an AI-smart hospital at Konza Technopolis.</p>
+                  </div>
+                </div>
+                <div class="flex gap-5 reveal" style="transition-delay: 70ms">
+                  <div class="flex flex-col items-center shrink-0">
+                    <div class="w-9 h-9 rounded-full bg-brand text-white flex items-center justify-center text-[11px] font-bold shrink-0">21</div>
+                    <div class="w-px flex-1 bg-brand-mid my-1.5"></div>
+                  </div>
+                  <div class="pb-8 pt-1.5">
+                    <p class="text-brand font-semibold text-xs mb-1 tracking-wide">2021</p>
+                    <p class="text-ink-muted text-sm leading-relaxed">Site selection confirmed at Konza Technopolis — Africa's first planned smart city.</p>
+                  </div>
+                </div>
+                <div class="flex gap-5 reveal" style="transition-delay: 140ms">
+                  <div class="flex flex-col items-center shrink-0">
+                    <div class="w-9 h-9 rounded-full bg-brand text-white flex items-center justify-center text-[11px] font-bold shrink-0">22</div>
+                    <div class="w-px flex-1 bg-brand-mid my-1.5"></div>
+                  </div>
+                  <div class="pb-8 pt-1.5">
+                    <p class="text-brand font-semibold text-xs mb-1 tracking-wide">2022</p>
+                    <p class="text-ink-muted text-sm leading-relaxed">Master Plan and Phase 1 clinical design completed; community health programme launched in Machakos County.</p>
+                  </div>
+                </div>
+                <div class="flex gap-5 reveal" style="transition-delay: 210ms">
+                  <div class="flex flex-col items-center shrink-0">
+                    <div class="w-9 h-9 rounded-full bg-brand text-white flex items-center justify-center text-[11px] font-bold shrink-0">23</div>
+                    <div class="w-px flex-1 bg-brand-mid my-1.5"></div>
+                  </div>
+                  <div class="pb-8 pt-1.5">
+                    <p class="text-brand font-semibold text-xs mb-1 tracking-wide">2023</p>
+                    <p class="text-ink-muted text-sm leading-relaxed">International partnerships established with AI health research institutes in the US, UK, and East Africa.</p>
+                  </div>
+                </div>
+                <div class="flex gap-5 reveal" style="transition-delay: 280ms">
+                  <div class="flex flex-col items-center shrink-0">
+                    <div class="w-9 h-9 rounded-full bg-brand text-white flex items-center justify-center text-[11px] font-bold shrink-0">25</div>
+                    <div class="w-px flex-1 bg-brand-mid my-1.5"></div>
+                  </div>
+                  <div class="pb-8 pt-1.5">
+                    <p class="text-brand font-semibold text-xs mb-1 tracking-wide">2025</p>
+                    <p class="text-ink-muted text-sm leading-relaxed">Foundation works commence at Konza Technopolis. Phase 1: 120 beds, 6 operating theatres.</p>
+                  </div>
+                </div>
+                <div class="flex gap-5 reveal" style="transition-delay: 350ms">
+                  <div class="flex flex-col items-center shrink-0">
+                    <div class="w-9 h-9 rounded-full bg-brand text-white flex items-center justify-center text-[11px] font-bold shrink-0">31</div>
+                  </div>
+                  <div class="pb-8 pt-1.5">
+                    <p class="text-brand font-semibold text-xs mb-1 tracking-wide">2031</p>
+                    <p class="text-ink-muted text-sm leading-relaxed">First patients expected to be received at the fully operational J.P. Muia Health System hospital.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="img-wrap rounded-[1.75rem] overflow-hidden shadow-md bg-brand-light" style="aspect-ratio: 3/4">
+              <img src="images/P1580102-DO-KVxEp.webp" alt="Medical professional" class="w-full h-full object-cover object-top" loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= CTA ================= -->
+      <section class="py-20 text-white text-center" style="background: linear-gradient(135deg, #0a2e5f 0%, #1560bd 100%)" aria-label="CTA">
+        <div class="max-w-2xl mx-auto px-5">
+          <h2 class="font-display text-4xl mb-4">Ready to Build Kenya's Healthcare Future?</h2>
+          <p class="text-white/70 text-lg mb-8">Join us as a partner, investor, or clinical collaborator.</p>
+          <a href="contact-us.html" class="btn btn-primary inline-flex">Partner With Us</a>
+        </div>
+      </section>
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="bg-ink text-white relative overflow-hidden" aria-label="Site footer">
+      <div class="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-brand/40 to-transparent pointer-events-none" aria-hidden="true"></div>
+      <div class="relative max-w-7xl mx-auto px-5 lg:px-10 pt-16 pb-8">
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-[2fr_1fr_1fr_1fr_1.5fr] gap-10 mb-14">
+          <div class="col-span-2 sm:col-span-3 lg:col-span-1">
+            <a href="index.html" class="footer-logo mb-5" aria-label="J.P. Muia Healthcare home">
+              <img src="images/jp-muia-healthcare-logo-1gt7bfqC.png" alt="J.P. Muia Healthcare" />
             </a>
-            <a
-              href="#our-services"
-              class="inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/30 text-white transition hover:bg-white hover:text-ink"
-              aria-label="Scroll to services"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                aria-hidden="true"
-              >
-                <line x1="12" y1="5" x2="12" y2="19" />
-                <polyline points="19 12 12 19 5 12" />
-              </svg>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Partner logo marquee -->
-      <div class="relative border-t border-white/10 bg-ink/60 py-6">
-        <div class="mx-auto max-w-7xl overflow-hidden px-5 lg:px-8">
-          <div
-            class="flex w-max animate-marquee items-center gap-16 opacity-70"
-          >
-            <!-- one set + duplicate for seamless loop -->
-            <span
-              class="font-head text-xl font-bold tracking-wide text-white/70"
-              >Medtronic</span
-            >
-            <span
-              class="font-head text-xl font-bold tracking-wide text-white/70"
-              >Columbia Mailman</span
-            >
-            <span
-              class="font-head text-xl font-bold tracking-wide text-white/70"
-              >Oliver Wyman</span
-            >
-            <span
-              class="font-head text-xl font-bold tracking-wide text-white/70"
-              >USA Healthcare Alliance</span
-            >
-            <span
-              class="font-head text-xl font-bold tracking-wide text-white/70"
-              >Konza Technopolis</span
-            >
-            <span
-              class="font-head text-xl font-bold tracking-wide text-white/70"
-              >DeSales University</span
-            >
-            <span
-              class="font-head text-xl font-bold tracking-wide text-white/70"
-              >Medtronic</span
-            >
-            <span
-              class="font-head text-xl font-bold tracking-wide text-white/70"
-              >Columbia Mailman</span
-            >
-            <span
-              class="font-head text-xl font-bold tracking-wide text-white/70"
-              >Oliver Wyman</span
-            >
-            <span
-              class="font-head text-xl font-bold tracking-wide text-white/70"
-              >USA Healthcare Alliance</span
-            >
-            <span
-              class="font-head text-xl font-bold tracking-wide text-white/70"
-              >Konza Technopolis</span
-            >
-            <span
-              class="font-head text-xl font-bold tracking-wide text-white/70"
-              >DeSales University</span
-            >
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===================== SERVICES ===================== -->
-    <section id="our-services" class="py-20 lg:py-24">
-      <div class="mx-auto max-w-7xl px-5 lg:px-8">
-        <div class="mx-auto max-w-2xl text-center reveal">
-          <h2 class="font-head text-3xl font-bold lg:text-4xl">
-            Mission, Vision &amp; the Values That Hold the Line
-          </h2>
-          <p class="mt-4 text-gray-500">
-            Our mission is to build an AI-native, integrated health system for
-            the roughly four million people who live closest to the disease
-            burden but furthest from advanced treatment — five connected levels
-            of care, from village to tertiary center, supported by AI
-            diagnostics, integrated records, referral systems, and structured
-            follow-up.
-          </p>
-          <a
-            href="services.html"
-            class="mt-6 inline-flex items-center gap-2 rounded-full border border-ink px-6 py-2.5 font-alt text-sm font-semibold text-ink transition hover:bg-brand hover:border-brand hover:text-white"
-          >
-            See the Solutions
-          </a>
-        </div>
-
-        <div class="mt-14 grid gap-8 md:grid-cols-3">
-          <!-- Card 1 -->
-          <article
-            class="reveal group overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm transition hover:shadow-xl"
-          >
-            <div class="overflow-hidden">
-              <img
-                loading="lazy"
-                src="images/P1520470.webp"
-                alt="Healthcare leaders touring an innovation facility"
-                class="h-56 w-full object-cover transition duration-500 group-hover:scale-105"
-              />
-            </div>
-            <div class="p-6">
-              <h3
-                class="font-head text-xl font-semibold text-ink group-hover:text-brand"
-              >
-                Dignity and Justice
-              </h3>
-              <p class="mt-3 text-sm text-gray-500">
-                Every person deserves high-quality healthcare regardless of
-                tribe, income, location, or social status — treated always with
-                dignity, justice, mercy, and humility.
-              </p>
-            </div>
-          </article>
-          <!-- Card 2 -->
-          <article
-            class="reveal group overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm transition hover:shadow-xl md:mt-8"
-          >
-            <div class="overflow-hidden">
-              <img
-                loading="lazy"
-                src="images/P1580102.webp"
-                alt="J.P. Muia leaders exploring interactive health technology"
-                class="h-56 w-full object-cover transition duration-500 group-hover:scale-105"
-              />
-            </div>
-            <div class="p-6">
-              <h3
-                class="font-head text-xl font-semibold text-ink group-hover:text-brand"
-              >
-                Care That Finds You
-              </h3>
-              <p class="mt-3 text-sm text-gray-500">
-                The system carries the burden of reaching patients — finding
-                them early, screening communities, referring correctly, and
-                following up after treatment — instead of forcing vulnerable
-                families to search for distant care.
-              </p>
-            </div>
-          </article>
-          <!-- Card 3 -->
-          <article
-            class="reveal group overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm transition hover:shadow-xl"
-          >
-            <div class="overflow-hidden">
-              <img
-                loading="lazy"
-                src="images/P1580060.webp"
-                alt="Silicon Savannah innovation hub"
-                class="h-56 w-full object-cover transition duration-500 group-hover:scale-105"
-              />
-            </div>
-            <div class="p-6">
-              <h3
-                class="font-head text-xl font-semibold text-ink group-hover:text-brand"
-              >
-                Africa Builds Its Own
-              </h3>
-              <p class="mt-3 text-sm text-gray-500">
-                Africa is an investment case, not a charity case. We prioritize
-                African professionals, African data, African solutions, and
-                systems built to last — the vision of an Africa that develops
-                and leads world-class healthcare for itself and the world.
-              </p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===================== VIDEO / HOW WE WORK ===================== -->
-    <section class="relative overflow-hidden">
-      <div class="absolute inset-0">
-        <img
-          loading="lazy"
-          src="images/P1520470.webp"
-          alt="Leaders touring a healthcare innovation facility"
-          class="h-full w-full object-cover"
-        />
-        <div class="absolute inset-0 bg-ink/70"></div>
-      </div>
-      <div
-        class="relative mx-auto flex max-w-7xl flex-col items-start gap-8 px-5 py-24 lg:flex-row lg:items-center lg:justify-between lg:px-8 lg:py-28"
-      >
-        <div class="max-w-xl text-white reveal">
-          <h2 class="font-head text-3xl font-bold lg:text-4xl">The Origin</h2>
-          <p class="mt-4 text-white/80">
-            "We are not building a hospital. We are building a
-            system-integrating infrastructure meant to make world-class care
-            routine for Kenyans." — Dr. Timothy Muia, Founder &amp; CEO
-          </p>
-        </div>
-        <button
-          type="button"
-          data-video="setu9Ir1miY"
-          data-video-list="PLPmnoMVpkxfj-DzMkYNf7LM3ebjwoY6b2"
-          class="reveal inline-flex items-center gap-3 rounded-full bg-white px-7 py-3 font-alt text-sm font-semibold text-ink transition hover:bg-accent"
-          aria-haspopup="dialog"
-        >
-          Watch
-          <span
-            class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-brand text-white"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-4 w-4"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              aria-hidden="true"
-            >
-              <polygon points="5 3 19 12 5 21 5 3" />
-            </svg>
-          </span>
-        </button>
-      </div>
-    </section>
-
-    <!-- ===================== STATISTICS ===================== -->
-    <section class="py-20 lg:py-28">
-      <div class="mx-auto max-w-7xl px-5 lg:px-8">
-        <div class="relative">
-          <div class="grid items-start gap-12 lg:grid-cols-[0.82fr_1.18fr]">
-            <div class="reveal lg:pt-3">
-              <h2
-                class="font-head max-w-xl text-4xl font-bold leading-tight text-ink lg:text-5xl"
-              >
-                Pioneering a New Standard of Health
-              </h2>
-              <p
-                class="mt-8 max-w-lg text-lg font-medium leading-relaxed text-ink/80"
-              >
-                Founded in 2025 at Konza Technopolis, Kenya — an African-led,
-                AI-native health system built to hold the standard and adjust
-                the timeline, never the other way around.
-              </p>
-            </div>
-
-            <div class="overflow-hidden reveal">
-              <img
-                loading="lazy"
-                src="images/P1520394.webp"
-                alt="J.P. Muia Health System partners"
-                class="h-[420px] w-full object-cover lg:h-[460px]"
-              />
+            <p class="text-white/55 text-sm leading-relaxed mb-6 max-w-xs">Africa's first AI-smart hospital — connecting community health, specialist care, and structured follow-up at Konza Technopolis, Kenya.</p>
+            <div class="flex gap-2.5">
+              <a href="#" aria-label="Follow us on Twitter / X" class="w-9 h-9 rounded-full border border-white/15 flex items-center justify-center text-white/45 hover:text-white hover:border-white/40 hover:bg-white/10 transition-all">
+                <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" /></svg>
+              </a>
+              <a href="#" aria-label="Follow us on LinkedIn" class="w-9 h-9 rounded-full border border-white/15 flex items-center justify-center text-white/45 hover:text-white hover:border-white/40 hover:bg-white/10 transition-all">
+                <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" /></svg>
+              </a>
+              <a href="#" aria-label="Follow us on Facebook" class="w-9 h-9 rounded-full border border-white/15 flex items-center justify-center text-white/45 hover:text-white hover:border-white/40 hover:bg-white/10 transition-all">
+                <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" /></svg>
+              </a>
             </div>
           </div>
 
-          <div
-            class="relative z-10 mt-10 grid gap-8 bg-[#eaf4fb] p-8 text-ink shadow-sm sm:grid-cols-3 sm:p-10 lg:absolute lg:bottom-12 lg:left-0 lg:w-[52rem]"
-            data-countup-group
-          >
-            <div>
-              <p
-                class="font-head text-5xl font-bold lg:text-6xl"
-                data-countup="2025"
-                data-suffix=""
-              >
-                2025
-              </p>
-              <p class="mt-4 text-base font-semibold text-ink/80">Founded</p>
-            </div>
-            <div>
-              <p
-                class="font-head text-5xl font-bold lg:text-6xl"
-                data-countup="4"
-                data-suffix="M+"
-              >
-                4M+
-              </p>
-              <p class="mt-4 text-base font-semibold text-ink/80">
-                Primary Catchment
-              </p>
-            </div>
-            <div>
-              <p
-                class="font-head text-5xl font-bold lg:text-6xl"
-                data-countup="120"
-                data-suffix=""
-              >
-                120
-              </p>
-              <p class="mt-4 text-base font-semibold text-ink/80">
-                Phase 1 Beds
-              </p>
-            </div>
+          <div>
+            <h3 class="text-[10px] font-bold uppercase tracking-[.18em] text-white/40 mb-4">Company</h3>
+            <ul class="space-y-2.5">
+              <li><a href="about.html" class="text-white/55 hover:text-white text-sm transition-colors">Our Story</a></li>
+              <li><a href="about.html" class="text-white/55 hover:text-white text-sm transition-colors">Leadership</a></li>
+              <li><a href="about.html" class="text-white/55 hover:text-white text-sm transition-colors">Mission &amp; Vision</a></li>
+              <li><a href="about.html" class="text-white/55 hover:text-white text-sm transition-colors">Careers</a></li>
+              <li><a href="about.html" class="text-white/55 hover:text-white text-sm transition-colors">News</a></li>
+            </ul>
           </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- ===================== CTA CONTACT ===================== -->
-    <section class="pb-20 lg:pb-24">
-      <div class="mx-auto max-w-7xl px-5 lg:px-8">
-        <div
-          class="relative overflow-hidden rounded-3xl bg-ink px-8 py-14 lg:px-16 lg:py-20 reveal"
-        >
-          <img
-            loading="lazy"
-            src="images/P1580102.webp"
-            alt="Healthcare leaders exploring digital technology"
-            class="absolute inset-0 h-full w-full object-cover opacity-25"
-          />
-          <div
-            class="relative flex flex-col items-start gap-8 lg:flex-row lg:items-center lg:justify-between"
-          >
-            <div class="max-w-lg text-white">
-              <h2 class="font-head text-3xl font-bold lg:text-4xl">
-                We Hold the Standard, Not the Timeline
-              </h2>
-              <p class="mt-4 text-white/80">
-                We do not lower the standard to meet the timeline. We hold the
-                standard and adjust the timeline.
-              </p>
-              <div class="mt-6 flex items-center gap-3 text-white">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-5 w-5 text-accent"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  aria-hidden="true"
-                >
-                  <path
-                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"
-                  />
-                </svg>
-                <a
-                  href="tel:+19733568322"
-                  class="text-lg font-semibold hover:text-accent"
-                  >+1 973 356 8322</a
-                >
-              </div>
-            </div>
-            <a
-              href="contact-us.html"
-              class="inline-flex items-center gap-2 rounded-full bg-white px-7 py-3 font-alt text-sm font-semibold text-brand transition hover:bg-accent hover:text-ink"
-              >Partner With Us</a
-            >
+          <div>
+            <h3 class="text-[10px] font-bold uppercase tracking-[.18em] text-white/40 mb-4">Services</h3>
+            <ul class="space-y-2.5">
+              <li><a href="services.html" class="text-white/55 hover:text-white text-sm transition-colors">Referral Pathways</a></li>
+              <li><a href="services.html" class="text-white/55 hover:text-white text-sm transition-colors">Structured Follow-Up</a></li>
+              <li><a href="services.html" class="text-white/55 hover:text-white text-sm transition-colors">NCD Screening</a></li>
+              <li><a href="services.html" class="text-white/55 hover:text-white text-sm transition-colors">Research Infrastructure</a></li>
+              <li><a href="services.html" class="text-white/55 hover:text-white text-sm transition-colors">Clinical Trials</a></li>
+            </ul>
           </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- ===================== LATEST NEWS ===================== -->
-    <section id="Latest-News" class="py-20 lg:py-24">
-      <div class="mx-auto max-w-7xl px-5 lg:px-8">
-        <div
-          class="flex flex-col gap-6 md:flex-row md:items-end md:justify-between reveal"
-        >
-          <div class="max-w-xl">
-            <h2 class="font-head text-3xl font-bold lg:text-4xl">
-              Building Momentum
-            </h2>
-            <p class="mt-4 text-gray-500">
-              From the Medtronic partnership to the Konza land allocation, each
-              milestone moves the vision closer to feasibility and
-              infrastructure planning.
-            </p>
+          <div>
+            <h3 class="text-[10px] font-bold uppercase tracking-[.18em] text-white/40 mb-4">Patients</h3>
+            <ul class="space-y-2.5">
+              <li><a href="faqs.html" class="text-white/55 hover:text-white text-sm transition-colors">FAQs</a></li>
+              <li><a href="contact-us.html" class="text-white/55 hover:text-white text-sm transition-colors">Contact Us</a></li>
+              <li><a href="testimonials.html" class="text-white/55 hover:text-white text-sm transition-colors">Testimonials</a></li>
+              <li><a href="contact-us.html" class="text-white/55 hover:text-white text-sm transition-colors">Partner With Us</a></li>
+            </ul>
           </div>
-          <a
-            href="services.html"
-            class="inline-flex w-max items-center gap-2 rounded-full border border-ink px-6 py-2.5 font-alt text-sm font-semibold text-ink transition hover:bg-brand hover:border-brand hover:text-white"
-            >View All</a
-          >
-        </div>
 
-        <div class="mt-12 grid gap-8 md:grid-cols-3">
-          <!-- Post 1 -->
-          <article
-            class="reveal group overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm transition hover:shadow-xl"
-          >
-            <div class="overflow-hidden">
-              <img
-                loading="lazy"
-                src="images/P1520370.webp"
-                alt="J.P. Muia Health System partnership signing"
-                class="h-52 w-full object-cover transition duration-500 group-hover:scale-105"
-              />
-            </div>
-            <div class="p-6">
-              <h3
-                class="font-head text-lg font-semibold text-ink group-hover:text-brand"
-              >
-                Medtronic Partnership Agreement
-              </h3>
-              <p class="mt-3 text-sm text-gray-500">
-                Signed April 29, 2026 at Medtronic's Nairobi office, the
-                agreement initiated a feasibility study with the Greenfield team
-                and support from former Medtronic chairman and CEO Arthur D.
-                Collins Jr.
-              </p>
-              <div class="mt-5 flex items-center justify-between">
-                <a
-                  href="services.html"
-                  class="font-alt text-sm font-semibold text-brand hover:underline"
-                  >Learn More</a
-                >
-                <span class="text-xs text-gray-400">Apr 29, 2026</span>
-              </div>
-            </div>
-          </article>
-          <!-- Post 2 -->
-          <article
-            class="reveal group overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm transition hover:shadow-xl"
-          >
-            <div class="overflow-hidden">
-              <img
-                loading="lazy"
-                src="images/P1580075.webp"
-                alt="Konza Technopolis innovation hub"
-                class="h-52 w-full object-cover transition duration-500 group-hover:scale-105"
-              />
-            </div>
-            <div class="p-6">
-              <h3
-                class="font-head text-lg font-semibold text-ink group-hover:text-brand"
-              >
-                Feasibility Study Underway
-              </h3>
-              <p class="mt-3 text-sm text-gray-500">
-                Conducted with Medtronic Greenfield Accounts, Integrated Health
-                Solutions, and neuroscience and cardiovascular teams — with
-                Oliver Wyman supporting financial modeling and economic
-                pressure-testing.
-              </p>
-              <div class="mt-5 flex items-center justify-between">
-                <a
-                  href="services.html"
-                  class="font-alt text-sm font-semibold text-brand hover:underline"
-                  >Learn More</a
-                >
-                <span class="text-xs text-gray-400">2026</span>
-              </div>
-            </div>
-          </article>
-          <!-- Post 3 -->
-          <article
-            class="reveal group overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm transition hover:shadow-xl"
-          >
-            <div class="overflow-hidden">
-              <img
-                loading="lazy"
-                src="images/P1520394.webp"
-                alt="J.P. Muia Health System partnership delegation"
-                class="h-52 w-full object-cover transition duration-500 group-hover:scale-105"
-              />
-            </div>
-            <div class="p-6">
-              <h3
-                class="font-head text-lg font-semibold text-ink group-hover:text-brand"
-              >
-                Konza Letter of Intent
-              </h3>
-              <p class="mt-3 text-sm text-gray-500">
-                A Letter of Intent was submitted to the Konza Technopolis
-                Development Authority to lease land in the Special Economic Zone
-                — land has now been allocated for the medical center.
-              </p>
-              <div class="mt-5 flex items-center justify-between">
-                <a
-                  href="services.html"
-                  class="font-alt text-sm font-semibold text-brand hover:underline"
-                  >Learn More</a
-                >
-                <span class="text-xs text-gray-400">2026</span>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===================== FOOTER ===================== -->
-    <footer id="contact" class="bg-ink text-white">
-      <!-- Subscribe -->
-      <div class="border-b border-white/10">
-        <div class="mx-auto max-w-7xl px-5 lg:px-8 py-16">
-          <div class="grid gap-8 lg:grid-cols-2 lg:items-center">
-            <div>
-              <span
-                class="inline-flex h-12 w-12 items-center justify-center rounded-full bg-brand"
-              >
-                <svg
-                  class="h-6 w-6 text-white"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  aria-hidden="true"
-                >
-                  <path d="M4 4h16v16H4z" />
-                  <polyline points="4 6 12 13 20 6" />
-                </svg>
-              </span>
-              <h2 class="mt-5 text-2xl md:text-3xl font-bold">
-                Subscribe to our latest news
-              </h2>
-            </div>
-            <form
-              onsubmit="return false;"
-              class="flex w-full overflow-hidden rounded-full bg-white/10 ring-1 ring-white/20 focus-within:ring-brand"
-            >
-              <input
-                type="email"
-                placeholder="Email"
-                required
-                class="w-full bg-transparent px-6 py-4 text-sm text-white placeholder-white/60 outline-none"
-              />
-              <button
-                class="shrink-0 bg-brand px-8 py-4 text-sm font-semibold text-white transition hover:bg-brand/90"
-              >
-                Subscribe
-              </button>
+          <div>
+            <h3 class="text-[10px] font-bold uppercase tracking-[.18em] text-white/40 mb-4">Get in Touch</h3>
+            <ul class="space-y-3 mb-7">
+              <li>
+                <p class="text-[10px] text-white/35 uppercase tracking-widest mb-1">Phone</p>
+                <a href="tel:+19733568322" class="text-white/55 hover:text-white text-sm transition-colors block">+1 973 356 8322</a>
+                <a href="tel:+16063560179" class="text-white/55 hover:text-white text-sm transition-colors block">+1 606 356 0179</a>
+              </li>
+              <li>
+                <p class="text-[10px] text-white/35 uppercase tracking-widest mb-1">Location</p>
+                <p class="text-white/55 text-sm leading-relaxed">Konza Technopolis,<br />Machakos County, Kenya</p>
+              </li>
+            </ul>
+            <p class="text-[10px] text-white/35 uppercase tracking-widest mb-2.5">Newsletter</p>
+            <form class="flex flex-col gap-2" data-fake-form="newsletter-success">
+              <label for="footer-email" class="sr-only">Email address</label>
+              <input id="footer-email" type="email" placeholder="your@email.com" required class="bg-white/[8%] border border-white/15 rounded-xl px-3.5 py-2.5 text-sm text-white placeholder:text-white/30 focus:outline-none focus:border-brand focus:bg-white/[12%] transition-all" />
+              <button type="submit" class="bg-brand text-white py-2.5 rounded-xl text-sm font-semibold hover:bg-brand-deep transition-colors">Subscribe</button>
             </form>
+            <p id="newsletter-success" class="hidden text-brand text-sm font-semibold">Thank you for subscribing!</p>
           </div>
         </div>
-      </div>
 
-      <!-- Top footer -->
-      <div class="mx-auto max-w-7xl px-5 lg:px-8 py-16">
-        <div
-          class="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between"
-        >
-          <a href="index.html" class="flex items-center">
-            <img
-              src="images/logo.png"
-              alt="J.P. Muia Medicine"
-              class="h-16 w-auto rounded bg-white p-1"
-            />
-          </a>
-
-          <div class="grid gap-6 sm:grid-cols-3">
-            <div class="flex items-start gap-3">
-              <svg
-                class="mt-0.5 h-5 w-5 shrink-0 text-brand"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                aria-hidden="true"
-              >
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                <circle cx="12" cy="10" r="3" />
-              </svg>
-              <p class="text-sm text-white/80">
-                Konza Technopolis, Machakos County, Kenya
-              </p>
-            </div>
-            <div class="flex items-start gap-3">
-              <svg
-                class="mt-0.5 h-5 w-5 shrink-0 text-brand"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                aria-hidden="true"
-              >
-                <path
-                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"
-                />
-              </svg>
-              <div class="flex flex-col text-sm text-white/80">
-                <a href="tel:+19733568322" class="hover:text-white"
-                  >+1 973 356 8322</a
-                >
-                <a href="tel:+16063560179" class="hover:text-white"
-                  >+1 606 356 0179</a
-                >
-              </div>
-            </div>
-            <div class="flex items-start gap-3">
-              <svg
-                class="mt-0.5 h-5 w-5 shrink-0 text-brand"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                aria-hidden="true"
-              >
-                <rect x="2" y="4" width="20" height="16" rx="2" />
-                <path d="m22 7-10 5L2 7" />
-              </svg>
-              <a
-                href="mailto:info@jpmuiahealthsystem.org"
-                class="text-sm text-white/80 hover:text-white"
-                >info@jpmuiahealthsystem.org</a
-              >
-            </div>
-          </div>
-
-          <a
-            href="contact-us.html"
-            class="inline-flex items-center gap-3 rounded-full bg-brand px-6 py-3 text-sm font-semibold text-white transition hover:bg-brand/90"
-          >
-            Get in Touch
-            <svg
-              class="h-4 w-4"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              aria-hidden="true"
-            >
-              <line x1="7" y1="17" x2="17" y2="7" />
-              <polyline points="7 7 17 7 17 17" />
-            </svg>
-          </a>
-        </div>
-      </div>
-
-      <!-- Bottom footer -->
-      <div class="border-t border-white/10">
-        <div class="mx-auto max-w-7xl px-5 lg:px-8 py-8">
-          <div
-            class="flex flex-col gap-6 md:flex-row md:items-center md:justify-between"
-          >
-            <nav class="flex flex-wrap gap-x-6 gap-y-2 text-sm">
-              <a href="index.html" class="text-white/80 hover:text-white"
-                >Home</a
-              >
-              <a href="about.html" class="text-white/80 hover:text-white"
-                >About</a
-              >
-              <a href="faqs.html" class="text-white/80 hover:text-white"
-                >The Problem</a
-              >
-              <a href="services.html" class="text-white/80 hover:text-white"
-                >Solutions</a
-              >
-              <a href="testimonials.html" class="text-white/80 hover:text-white"
-                >Team</a
-              >
-              <a href="contact-us.html" class="text-white/80 hover:text-white"
-                >Contact</a
-              >
-              <a
-                href="https://www.instagram.com/"
-                target="_blank"
-                rel="noopener"
-                class="text-brand hover:text-white"
-                >Instagram</a
-              >
-              <a
-                href="https://twitter.com/"
-                target="_blank"
-                rel="noopener"
-                class="text-brand hover:text-white"
-                >Twitter</a
-              >
-            </nav>
-            <p class="text-sm text-white/60">
-              © J.P. Muia Health System. All Rights Reserved.
-            </p>
+        <div class="border-t border-white/[8%] pt-7 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <p class="text-white/30 text-xs">&copy; <span id="footer-year"></span> J.P. Muia Health System. All rights reserved.</p>
+          <div class="flex gap-5">
+            <a href="#" class="text-white/30 hover:text-white/60 text-xs transition-colors">Privacy Policy</a>
+            <a href="#" class="text-white/30 hover:text-white/60 text-xs transition-colors">Terms of Use</a>
+            <a href="#" class="text-white/30 hover:text-white/60 text-xs transition-colors">Accessibility</a>
           </div>
         </div>
       </div>
     </footer>
 
-    <!-- ===================== VIDEO LIGHTBOX MODAL ===================== -->
-    <div
-      id="video-modal"
-      hidden
-      role="dialog"
-      aria-modal="true"
-      aria-label="Video player"
-      class="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 p-4 opacity-0 transition-opacity duration-300"
-    >
-      <div class="relative w-full max-w-4xl">
-        <button
-          type="button"
-          data-video-close
-          aria-label="Close video"
-          class="absolute -top-3 -right-3 z-10 inline-flex h-10 w-10 items-center justify-center rounded-full bg-white text-ink shadow-lg transition hover:bg-accent"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-5 w-5"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2.4"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            aria-hidden="true"
-          >
-            <line x1="18" y1="6" x2="6" y2="18" />
-            <line x1="6" y1="6" x2="18" y2="18" />
-          </svg>
-        </button>
-        <div
-          class="aspect-video w-full overflow-hidden rounded-xl bg-black shadow-2xl"
-        >
-          <div data-video-frame class="h-full w-full"></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ===================== BACK TO TOP ===================== -->
-    <button
-      type="button"
-      id="to-top"
-      aria-label="Back to top"
-      class="fixed bottom-6 right-6 z-[90] inline-flex h-12 w-12 items-center justify-center rounded-full bg-brand text-white shadow-lg transition hover:bg-brand-dark"
-    >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        class="h-5 w-5"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2.2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        aria-hidden="true"
-      >
-        <line x1="12" y1="19" x2="12" y2="5" />
-        <polyline points="5 12 12 5 19 12" />
-      </svg>
+    <button data-back-top class="back-top hidden" aria-label="Back to top">
+      <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 15l-6-6-6 6" /></svg>
     </button>
 
-    <!-- ===================== SELF-CONTAINED VANILLA JS (progressive enhancement) ===================== -->
     <script>
-      (function () {
-        "use strict";
-        var docEl = document.documentElement;
-        docEl.classList.add("js");
-
-        var prefersReduced =
-          window.matchMedia &&
-          window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-        /* ---------- 1. Reveal-on-scroll ---------- */
-        (function () {
-          var items = document.querySelectorAll(".reveal");
-          if (!items.length) return;
-          if (prefersReduced || !("IntersectionObserver" in window)) {
-            items.forEach(function (el) {
-              el.classList.add("is-visible");
-            });
-            return;
-          }
-          var io = new IntersectionObserver(
-            function (entries) {
-              entries.forEach(function (e) {
-                if (e.isIntersecting) {
-                  e.target.classList.add("is-visible");
-                  io.unobserve(e.target);
-                }
-              });
-            },
-            { threshold: 0.12, rootMargin: "0px 0px -8% 0px" },
-          );
-          items.forEach(function (el) {
-            io.observe(el);
-          });
-        })();
-
-        /* ---------- 2. Stat count-up ---------- */
-        (function () {
-          var groups = document.querySelectorAll("[data-countup-group]");
-          if (!groups.length) return;
-
-          function runGroup(group) {
-            group.querySelectorAll("[data-countup]").forEach(function (el) {
-              var target = parseFloat(el.getAttribute("data-countup")) || 0;
-              var suffix = el.getAttribute("data-suffix") || "";
-              if (prefersReduced) {
-                el.textContent = target + suffix;
-                return;
-              }
-              var duration = 1600,
-                start = null;
-              function step(ts) {
-                if (start === null) start = ts;
-                var p = Math.min((ts - start) / duration, 1);
-                var eased = 1 - Math.pow(1 - p, 3); // ease-out cubic
-                el.textContent = Math.round(eased * target) + suffix;
-                if (p < 1) requestAnimationFrame(step);
-                else el.textContent = target + suffix;
-              }
-              requestAnimationFrame(step);
-            });
-          }
-
-          if (!("IntersectionObserver" in window)) {
-            groups.forEach(runGroup);
-            return;
-          }
-          var io = new IntersectionObserver(
-            function (entries) {
-              entries.forEach(function (e) {
-                if (e.isIntersecting) {
-                  runGroup(e.target);
-                  io.unobserve(e.target);
-                }
-              });
-            },
-            { threshold: 0.4 },
-          );
-          groups.forEach(function (g) {
-            io.observe(g);
-          });
-        })();
-
-        /* ---------- 3. Testimonials carousel ---------- */
-        (function () {
-          var root = document.querySelector("[data-carousel]");
-          if (!root) return;
-          var track = root.querySelector("[data-carousel-track]");
-          var slides = Array.prototype.slice.call(
-            root.querySelectorAll("[data-carousel-slide], .carousel-slide"),
-          );
-          var prevBtn = root.querySelector("[data-carousel-prev]");
-          var nextBtn = root.querySelector("[data-carousel-next]");
-          var dotsWrap = root.querySelector("[data-carousel-dots]");
-          if (!track || slides.length === 0) return;
-
-          var index = 0;
-
-          function perView() {
-            var w = window.innerWidth;
-            if (w >= 1024) return 3;
-            if (w >= 768) return 2;
-            return 1;
-          }
-          function maxIndex() {
-            return Math.max(0, slides.length - perView());
-          }
-
-          function layout() {
-            var pv = perView();
-            slides.forEach(function (s) {
-              s.style.flexBasis = 100 / pv + "%";
-              s.style.maxWidth = 100 / pv + "%";
-            });
-            if (index > maxIndex()) index = maxIndex();
-            update();
-          }
-
-          function buildDots() {
-            if (!dotsWrap) return;
-            dotsWrap.innerHTML = "";
-            var pages = maxIndex() + 1;
-            for (var i = 0; i < pages; i++) {
-              (function (i) {
-                var b = document.createElement("button");
-                b.type = "button";
-                b.setAttribute("role", "tab");
-                b.setAttribute("aria-label", "Go to slide " + (i + 1));
-                b.className =
-                  "h-2.5 w-2.5 rounded-full bg-white/40 transition hover:bg-white/70";
-                b.addEventListener("click", function () {
-                  go(i);
-                });
-                dotsWrap.appendChild(b);
-              })(i);
-            }
-          }
-
-          function update() {
-            track.style.transform =
-              "translateX(" + -index * (100 / perView()) + "%)";
-            if (dotsWrap) {
-              Array.prototype.forEach.call(
-                dotsWrap.children,
-                function (dot, i) {
-                  var active = i === index;
-                  dot.classList.toggle("bg-white", active);
-                  dot.classList.toggle("w-6", active);
-                  dot.classList.toggle("bg-white/40", !active);
-                  dot.setAttribute("aria-selected", active ? "true" : "false");
-                },
-              );
-            }
-            slides.forEach(function (s, i) {
-              var visible = i >= index && i < index + perView();
-              s.setAttribute("aria-hidden", visible ? "false" : "true");
-            });
-          }
-
-          function go(i) {
-            var mx = maxIndex();
-            if (i < 0)
-              i = mx; // wrap (infinite)
-            else if (i > mx) i = 0;
-            index = i;
-            update();
-          }
-
-          if (prevBtn)
-            prevBtn.addEventListener("click", function () {
-              go(index - 1);
-            });
-          if (nextBtn)
-            nextBtn.addEventListener("click", function () {
-              go(index + 1);
-            });
-
-          // Keyboard arrows
-          root.setAttribute("tabindex", "0");
-          root.addEventListener("keydown", function (e) {
-            if (e.key === "ArrowLeft") {
-              e.preventDefault();
-              go(index - 1);
-            } else if (e.key === "ArrowRight") {
-              e.preventDefault();
-              go(index + 1);
-            }
-          });
-
-          // Touch swipe
-          var startX = 0,
-            startY = 0,
-            dragging = false;
-          track.addEventListener(
-            "touchstart",
-            function (e) {
-              startX = e.touches[0].clientX;
-              startY = e.touches[0].clientY;
-              dragging = true;
-            },
-            { passive: true },
-          );
-          track.addEventListener(
-            "touchend",
-            function (e) {
-              if (!dragging) return;
-              dragging = false;
-              var dx = e.changedTouches[0].clientX - startX;
-              var dy = e.changedTouches[0].clientY - startY;
-              if (Math.abs(dx) > 45 && Math.abs(dx) > Math.abs(dy)) {
-                go(dx < 0 ? index + 1 : index - 1);
-              }
-            },
-            { passive: true },
-          );
-
-          var rt;
-          window.addEventListener("resize", function () {
-            clearTimeout(rt);
-            rt = setTimeout(function () {
-              buildDots();
-              layout();
-            }, 150);
-          });
-
-          buildDots();
-          layout();
-        })();
-
-        /* ---------- 4. Video lightbox ---------- */
-        (function () {
-          var modal = document.getElementById("video-modal");
-          if (!modal) return;
-          var frame = modal.querySelector("[data-video-frame]");
-          var closeBtn = modal.querySelector("[data-video-close]");
-          var triggers = document.querySelectorAll("[data-video]");
-          var lastFocus = null;
-
-          function open(id, list) {
-            lastFocus = document.activeElement;
-            var params = "autoplay=1&rel=0";
-            if (list) params += "&list=" + encodeURIComponent(list);
-            var iframe = document.createElement("iframe");
-            iframe.src =
-              "https://www.youtube.com/embed/" +
-              encodeURIComponent(id) +
-              "?" +
-              params;
-            iframe.className = "h-full w-full";
-            iframe.setAttribute("frameborder", "0");
-            iframe.setAttribute(
-              "allow",
-              "autoplay; fullscreen; encrypted-media; picture-in-picture",
-            );
-            iframe.setAttribute("allowfullscreen", "true");
-            iframe.setAttribute("title", "Video");
-            frame.appendChild(iframe);
-            modal.hidden = false;
-            document.body.style.overflow = "hidden";
-            requestAnimationFrame(function () {
-              modal.classList.remove("opacity-0");
-            });
-            if (closeBtn) closeBtn.focus();
-          }
-
-          function close() {
-            modal.classList.add("opacity-0");
-            document.body.style.overflow = "";
-            frame.innerHTML = ""; // stop playback
-            window.setTimeout(function () {
-              modal.hidden = true;
-            }, 300);
-            if (lastFocus && lastFocus.focus) lastFocus.focus();
-          }
-
-          triggers.forEach(function (t) {
-            t.addEventListener("click", function (e) {
-              e.preventDefault();
-              open(
-                t.getAttribute("data-video"),
-                t.getAttribute("data-video-list"),
-              );
-            });
-          });
-          if (closeBtn) closeBtn.addEventListener("click", close);
-          modal.addEventListener("click", function (e) {
-            if (e.target === modal) close();
-          });
-          document.addEventListener("keydown", function (e) {
-            if (e.key === "Escape" && !modal.hidden) close();
-          });
-        })();
-
-        /* ---------- 5. Dropdown nav (touch / click toggle) ---------- */
-        (function () {
-          var dropdowns = document.querySelectorAll("[data-dropdown]");
-          if (!dropdowns.length) return;
-
-          var canHover = window.matchMedia("(hover: hover)").matches;
-
-          function closeAll(except) {
-            dropdowns.forEach(function (d) {
-              if (d !== except) {
-                d.classList.remove("open");
-                var btn = d.querySelector("[data-dropdown-toggle]");
-                if (btn) btn.setAttribute("aria-expanded", "false");
-              }
-            });
-          }
-
-          dropdowns.forEach(function (d) {
-            var btn = d.querySelector("[data-dropdown-toggle]");
-            if (!btn) return;
-            btn.addEventListener("click", function (e) {
-              // Desktop opens on hover; a real pointer click would latch the
-              // panel open via :focus-within, so just drop focus and let hover
-              // own opening. Keyboard activation (detail === 0) still toggles.
-              if (canHover && e.detail !== 0) {
-                e.preventDefault();
-                btn.blur();
-                return;
-              }
-              e.preventDefault();
-              var isOpen = d.classList.toggle("open");
-              btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
-              closeAll(d);
-            });
-          });
-
-          document.addEventListener("click", function (e) {
-            if (!e.target.closest("[data-dropdown]")) closeAll(null);
-          });
-          // Closing the mobile menu also collapses open submenus
-          var navToggle = document.getElementById("nav-toggle");
-          if (navToggle)
-            navToggle.addEventListener("change", function () {
-              closeAll(null);
-            });
-        })();
-
-        /* ---------- 6. Back to top ---------- */
-        (function () {
-          var btn = document.getElementById("to-top");
-          if (!btn) return;
-          function onScroll() {
-            if (window.pageYOffset > 400) btn.classList.add("show");
-            else btn.classList.remove("show");
-          }
-          window.addEventListener("scroll", onScroll, { passive: true });
-          onScroll();
-          btn.addEventListener("click", function () {
-            window.scrollTo({
-              top: 0,
-              behavior: prefersReduced ? "auto" : "smooth",
-            });
-          });
-        })();
-      })();
+      document.getElementById("footer-year").textContent = new Date().getFullYear();
     </script>
+    <script src="script.js"></script>
   </body>
 </html>

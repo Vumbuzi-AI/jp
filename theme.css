@@ -1,123 +1,293 @@
 /* ============================================================
-   J.P. Muia Medicine — Site Theme (single source of truth)
+   J.P. Muia Health System — Site Theme (single source of truth)
 
-   👉 EDIT COLORS HERE. This is the ONLY place you need to change
-      to recolor the whole site. Every page loads this file and
-      maps these variables into its Tailwind config, so a change
-      here flows to all pages.
-
-   Values are "R G B" channels (space-separated, no commas) so
-   Tailwind opacity modifiers like bg-brand/90 keep working.
-   The hex in each comment is just there to make editing easier.
+   Tokens below are pulled directly from the production Figma
+   build (1-jp.figma.site). Colors are "R G B" channels so
+   Tailwind opacity modifiers like bg-brand/10 keep working.
    ============================================================ */
 :root {
-  --color-brand: 28 134 201;      /* #1C86C9 — primary blue (from the J.P. Muia logo) */
-  --color-brand-dark: 13 84 133;  /* #0D5485 — deeper blue for hovers / strong text */
-  --color-accent: 251 191 36;     /* #FBBF24 — yellow accent */
-  --color-accent-dark: 217 154 0; /* #D99A00 — deeper yellow for hovers */
-  --color-ink: 15 27 42;          /* #0F1B2A — near-black body text */
+  --color-brand: 21 96 189;         /* #1560bd — primary blue */
+  --color-brand-deep: 13 79 160;    /* #0d4fa0 — deep blue (hovers) */
+  --color-brand-dark: 10 46 95;     /* #0a2e5f — navy (headings/dark sections) */
+  --color-brand-mid: 168 200 242;   /* #a8c8f2 — mid blue (borders/dividers) */
+  --color-brand-light: 238 245 253; /* #eef5fd — light blue section bg */
+  --color-brand-xlight: 244 248 255;/* #f4f8ff — extra-light blue */
+  --color-brand-yellow: 240 180 41; /* #f0b429 — gold accent */
+  --color-ink: 10 35 72;            /* #0a2348 — heading/body text */
+  --color-ink-muted: 107 130 164;   /* #6b82a4 — muted body text */
+  --color-ink-faint: 176 192 216;   /* #b0c0d8 — placeholder text */
+  --color-surface: 248 251 255;     /* #f8fbff — form field bg */
 }
 
-.service-card-grid {
-  align-items: start;
+html {
+  scroll-behavior: smooth;
 }
 
-.service-card {
-  position: relative;
-  padding-bottom: 2rem;
+body {
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-.service-card-image {
-  display: block;
-  height: 260px;
+.font-display {
+  font-family: "DM Serif Display", Georgia, serif;
+}
+
+/* ---- Buttons ---- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.btn-primary {
+  color: #fff;
+  background: rgb(var(--color-brand));
+  padding: 0.875rem 1.75rem;
+  box-shadow: 0 4px 16px rgb(var(--color-brand) / 0.35);
+}
+.btn-primary:hover {
+  background: rgb(var(--color-brand-dark));
+  transform: translateY(-1px);
+  box-shadow: 0 6px 24px rgb(var(--color-brand) / 0.4);
+}
+.btn-ghost {
+  color: rgb(var(--color-ink));
+  background: transparent;
+  border: 1.5px solid rgb(var(--color-brand) / 0.25);
+  padding: 0.875rem 1.75rem;
+}
+.btn-ghost:hover {
+  background: rgb(var(--color-brand-light));
+  border-color: rgb(var(--color-brand) / 0.5);
+}
+.btn-outline-white {
+  color: #fff;
+  background: rgb(255 255 255 / 0.12);
+  border: 1.5px solid rgb(255 255 255 / 0.35);
+  padding: 0.875rem 1.75rem;
+}
+.btn-outline-white:hover {
+  background: rgb(255 255 255 / 0.22);
+}
+
+/* ---- Label tag / eyebrow ---- */
+.label-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: rgb(var(--color-brand));
+  background: rgb(var(--color-brand) / 0.09);
+  border: 1px solid rgb(var(--color-brand) / 0.18);
+  border-radius: 9999px;
+  padding: 0.35rem 1rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+/* ---- Section backgrounds ---- */
+.hero-bg {
+  background:
+    radial-gradient(at 85% 0, rgb(var(--color-brand) / 0.09) 0%, transparent 55%),
+    radial-gradient(at 10% 90%, rgb(var(--color-brand) / 0.05) 0%, transparent 45%),
+    #fff;
+}
+.section-alt {
+  background: #eef5fd;
+}
+
+/* ---- Cards ---- */
+.card-base {
+  background: #fff;
+  border: 1px solid rgb(var(--color-brand) / 0.1);
+  border-radius: 1.25rem;
+  box-shadow: 0 2px 12px rgb(var(--color-brand-dark) / 0.07);
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+.card-base:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px rgb(var(--color-brand-dark) / 0.13);
+}
+.card-featured {
+  background: #fff;
+  border: 1px solid rgb(var(--color-brand) / 0.12);
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 24px rgb(var(--color-brand-dark) / 0.09);
+}
+.card-stat {
+  background: #fff;
+  border: 1px solid rgb(var(--color-brand) / 0.1);
+  border-radius: 1.75rem;
+  box-shadow:
+    0 8px 40px rgb(var(--color-brand-dark) / 0.12),
+    0 2px 8px rgb(var(--color-brand-dark) / 0.06);
+}
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   overflow: hidden;
-  background: rgb(243 244 246);
+}
+.stats-grid > div {
+  border-left: 1px solid rgb(var(--color-brand) / 0.1);
+}
+.stats-grid > div:first-child {
+  border-left: none;
+}
+@media (max-width: 1023px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .stats-grid > div:nth-child(3) {
+    border-left: none;
+  }
+}
+@media (max-width: 639px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  .stats-grid > div {
+    border-left: none;
+    border-top: 1px solid rgb(var(--color-brand) / 0.1);
+  }
+  .stats-grid > div:first-child {
+    border-top: none;
+  }
 }
 
-.service-card-image img {
+.img-wrap {
+  overflow: hidden;
+}
+
+/* ---- Header logo sizing ---- */
+.site-logo {
+  display: flex;
+  align-items: center;
+  width: clamp(145px, 17vw, 210px);
+  height: 60px;
+  overflow: hidden;
+}
+.site-logo img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  transition: transform 500ms ease;
+  object-fit: contain;
+  object-position: left center;
 }
-
-.service-card:hover .service-card-image img {
-  transform: scale(1.04);
-}
-
-.service-card-panel {
-  position: relative;
-  z-index: 1;
-  width: calc(100% - 3.5rem);
-  min-height: 185px;
-  margin: -4.5rem auto 0;
-  padding: 1.75rem 2rem;
-  background: #fff;
-  box-shadow: 0 18px 34px rgb(15 27 42 / 0.08);
-}
-
-.service-card-panel::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 1.75rem;
-  bottom: 1.75rem;
-  width: 4px;
-  background: rgb(var(--color-brand));
-  transform: translateX(-1px);
-  pointer-events: none;
-}
-
-.service-card-title {
-  display: inline-block;
-  color: rgb(var(--color-ink));
-  font-size: 1.25rem;
-  font-weight: 800;
-  line-height: 1.2;
-}
-
-.service-card-title:hover {
-  color: rgb(var(--color-brand));
-}
-
-.service-card-copy {
-  margin-top: 1rem;
-  color: rgb(55 65 81);
-  font-size: 0.95rem;
-  line-height: 1.65;
-}
-
-@media (max-width: 640px) {
-  .service-card-image {
-    height: 230px;
-  }
-
-  .service-card-panel {
-    width: calc(100% - 1.5rem);
-    min-height: auto;
-    margin-top: -3.5rem;
-    padding: 1.5rem;
-  }
-}
-
-.care-follow-section {
-  background: linear-gradient(
-    to bottom,
-    #fff 0,
-    #fff 31%,
-    rgb(var(--color-brand) / 0.08) 31%,
-    rgb(var(--color-brand) / 0.08) 100%
-  );
-}
-
 @media (max-width: 1023px) {
-  .care-follow-section {
-    background: linear-gradient(
-      to bottom,
-      #fff 0,
-      #fff 14rem,
-      rgb(var(--color-brand) / 0.08) 14rem,
-      rgb(var(--color-brand) / 0.08) 100%
-    );
+  .site-logo {
+    width: 148px;
+    height: 54px;
+  }
+}
+.footer-logo {
+  display: flex;
+  align-items: center;
+  width: min(100%, 240px);
+  min-height: 64px;
+}
+.footer-logo img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  object-position: left center;
+}
+
+/* ---- Scroll-reveal ----
+   Hidden only when the "js" class (set synchronously in <head>,
+   before first paint) is present, so content never gets stuck
+   invisible if JS fails to load or the IntersectionObserver never
+   fires (progressive enhancement, no FOUC). */
+.js .reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.72s, transform 0.72s;
+}
+.js .reveal.revealed {
+  opacity: 1;
+  transform: none;
+}
+
+/* ---- Floating hero badges ---- */
+@keyframes float-up {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+@keyframes float-down {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(10px); }
+}
+.animate-float {
+  animation: float-up 4.5s ease-in-out infinite;
+}
+.animate-float-alt {
+  animation: float-down 5.5s ease-in-out 1.4s infinite;
+}
+
+@keyframes pulse-ring {
+  0% { opacity: 0.65; transform: scale(1); }
+  100% { opacity: 0; transform: scale(1.7); }
+}
+.pulse-ring {
+  animation: pulse-ring 2.2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+.pulse-ring2 {
+  animation: pulse-ring 2.2s cubic-bezier(0.4, 0, 0.6, 1) 0.75s infinite;
+}
+
+/* ---- Header dropdown ---- */
+@keyframes slide-in-down {
+  0% { opacity: 0; transform: translateY(-10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.animate-dropdown {
+  animation: slide-in-down 0.18s forwards;
+}
+
+/* ---- Back to top ---- */
+.back-top {
+  position: fixed;
+  bottom: 1.75rem;
+  right: 1.75rem;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  color: #fff;
+  background: rgb(var(--color-brand));
+  border-radius: 50%;
+  box-shadow: 0 4px 16px rgb(var(--color-brand) / 0.4);
+  cursor: pointer;
+  transition: all 0.25s;
+}
+.back-top:hover {
+  background: rgb(var(--color-brand-dark));
+  transform: translateY(-3px);
+}
+
+/* ---- Video modal ---- */
+.modal-backdrop {
+  background: rgb(8 18 40 / 0.84);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .animate-float,
+  .animate-float-alt,
+  .pulse-ring,
+  .pulse-ring2 {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
   }
 }

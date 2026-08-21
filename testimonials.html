@@ -1,24 +1,29 @@
 <!doctype html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
+    <script>document.documentElement.classList.add("js");</script>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Team — J.P. Muia Health System</title>
-    <meta content="Team — J.P. Muia Health System" property="og:title" />
-    <meta content="Team — J.P. Muia Health System" name="twitter:title" />
+    <title>Testimonials — J.P. Muia Healthcare</title>
     <meta
-      content="The founding benefactors, board, and advisors of J.P. Muia Health System — healthcare, medical technology, academic, legal, and business leaders bridging advanced innovation and patient access in Africa."
       name="description"
+      content="Hear from community health partners, clinical collaborators, and patients whose lives are being shaped by J.P. Muia Health System."
     />
-    <meta
-      property="og:image"
-      content="images/P1520394.webp"
+    <meta property="og:title" content="Testimonials — J.P. Muia Healthcare" />
+    <meta property="og:description" content="4M+ people in our primary catchment. Every voice matters." />
+    <meta property="og:image" content="images/P1520556-D8ysnnLf.webp" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" type="image/png" href="images/jp-muia-healthcare-logo-1gt7bfqC.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
     />
-    <meta
-      name="twitter:image"
-      content="images/P1520394.webp"
-    />
-    <link rel="icon" type="image/png" href="images/logo.png" />
+    <link rel="stylesheet" href="theme.css" />
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -26,1606 +31,231 @@
           extend: {
             colors: {
               brand: "rgb(var(--color-brand) / <alpha-value>)",
+              "brand-deep": "rgb(var(--color-brand-deep) / <alpha-value>)",
               "brand-dark": "rgb(var(--color-brand-dark) / <alpha-value>)",
-              accent: "rgb(var(--color-accent) / <alpha-value>)",
-              "accent-dark": "rgb(var(--color-accent-dark) / <alpha-value>)",
+              "brand-mid": "rgb(var(--color-brand-mid) / <alpha-value>)",
+              "brand-light": "rgb(var(--color-brand-light) / <alpha-value>)",
+              "brand-xlight": "rgb(var(--color-brand-xlight) / <alpha-value>)",
+              "brand-yellow": "rgb(var(--color-brand-yellow) / <alpha-value>)",
               ink: "rgb(var(--color-ink) / <alpha-value>)",
+              "ink-muted": "rgb(var(--color-ink-muted) / <alpha-value>)",
+              "ink-faint": "rgb(var(--color-ink-faint) / <alpha-value>)",
+              surface: "rgb(var(--color-surface) / <alpha-value>)",
+            },
+            fontFamily: {
+              sans: ["Inter", "system-ui", "-apple-system", "sans-serif"],
+              display: ["DM Serif Display", "Georgia", "serif"],
             },
           },
         },
       };
     </script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="theme.css" />
-    <style>
-      body {
-        font-family: "Lato", sans-serif;
-      }
-      h1,
-      h2,
-      h3,
-      h4,
-      h5 {
-        font-family: "Poppins", sans-serif;
-      }
-
-      /* --- Progressive enhancement: reveal-on-scroll (only hidden when JS is on) --- */
-      .js [data-reveal] {
-        opacity: 0;
-        transform: translateY(28px);
-        transition:
-          opacity 0.7s ease,
-          transform 0.7s ease;
-        will-change: opacity, transform;
-      }
-      .js [data-reveal].is-visible {
-        opacity: 1;
-        transform: none;
-      }
-      @media (prefers-reduced-motion: reduce) {
-        .js [data-reveal] {
-          opacity: 1 !important;
-          transform: none !important;
-          transition: none;
-        }
-      }
-
-      /* --- Touch/mobile dropdown open state (JS-toggled) --- */
-      li[data-open="true"] > div {
-        display: block;
-      }
-
-      /* --- Gallery lightbox trigger affordance --- */
-      .js [data-lightbox] {
-        cursor: zoom-in;
-      }
-
-      /* --- Lightbox overlay --- */
-      #lightbox[hidden] {
-        display: none;
-      }
-      #lightbox {
-        opacity: 0;
-        transition: opacity 0.25s ease;
-      }
-      #lightbox.is-open {
-        opacity: 1;
-      }
-      body.no-scroll {
-        overflow: hidden;
-      }
-    </style>
   </head>
-  <body class="bg-white text-neutral-900 antialiased">
-    <!-- ============ NAV ============ -->
-    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur shadow-sm">
-      <div class="mx-auto max-w-7xl px-5 lg:px-8">
-        <div class="flex items-center justify-between h-20">
-          <!-- Brand logo -->
-          <a href="index.html" class="flex items-center">
-            <img
-              src="images/logo.png"
-              alt="J.P. Muia Medicine"
-              class="h-14 w-auto"
-            />
+  <body class="bg-white text-ink antialiased">
+    <!-- ================= HEADER ================= -->
+    <header data-header class="fixed inset-x-0 top-0 z-40 transition-all duration-300 bg-white border-b border-brand-mid/20 [&.is-scrolled]:bg-white/[96%] [&.is-scrolled]:backdrop-blur-md [&.is-scrolled]:shadow-[0_2px_20px_rgba(10,46,95,.09)]">
+      <div class="max-w-7xl mx-auto px-5 lg:px-10">
+        <div class="flex items-center justify-between h-[68px]">
+          <a href="index.html" class="site-logo shrink-0" aria-label="J.P. Muia Healthcare home">
+            <img src="images/jp-muia-healthcare-logo-1gt7bfqC.png" alt="J.P. Muia Healthcare" />
           </a>
 
-          <!-- Mobile toggle (checkbox + label peer pattern) -->
-          <input type="checkbox" id="nav-toggle" class="peer hidden" />
-          <label
-            for="nav-toggle"
-            class="lg:hidden cursor-pointer p-2 text-ink"
-            aria-label="Toggle menu"
-          >
-            <svg
-              class="h-7 w-7"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              aria-hidden="true"
-            >
-              <line x1="3" y1="6" x2="21" y2="6" />
-              <line x1="3" y1="12" x2="21" y2="12" />
-              <line x1="3" y1="18" x2="21" y2="18" />
-            </svg>
-          </label>
-
-          <!-- Nav menu -->
-          <nav
-            class="hidden peer-checked:block lg:flex lg:items-center lg:gap-1 absolute lg:static top-20 left-0 right-0 bg-white lg:bg-transparent shadow-lg lg:shadow-none px-5 lg:px-0 py-4 lg:py-0 space-y-1 lg:space-y-0"
-          >
-            <a
-              href="index.html"
-              class="block px-4 py-2 text-sm font-medium text-ink hover:text-brand"
-              >Home</a
-            >
-            <div class="group relative">
-              <button
-                data-dropdown-btn
-                class="flex items-center gap-1 px-4 py-2 text-sm font-medium text-ink hover:text-brand w-full lg:w-auto"
-              >
+          <nav class="hidden lg:flex items-center gap-0.5" aria-label="Primary navigation">
+            <a href="index.html" class="px-3.5 py-2.5 rounded-xl text-[13px] font-medium transition-colors text-ink-muted hover:text-ink hover:bg-surface">Home</a>
+            <div class="relative" data-dropdown>
+              <button data-dropdown-btn aria-expanded="false" class="flex items-center gap-1 px-3.5 py-2.5 rounded-xl text-[13px] font-medium transition-colors text-ink-muted hover:text-ink hover:bg-surface">
                 About
-                <svg
-                  class="h-4 w-4"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  aria-hidden="true"
-                >
-                  <polyline points="6 9 12 15 18 9" />
-                </svg>
+                <svg class="h-3.5 w-3.5" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4l4 4 4-4" /></svg>
               </button>
-              <div
-                class="nav-submenu hidden group-hover:block group-focus-within:block lg:absolute lg:top-full lg:left-0 lg:min-w-48 rounded-xl lg:bg-white lg:shadow-xl lg:ring-1 lg:ring-black/5 lg:p-2 pl-4 lg:pl-2"
-              >
-                <a
-                  href="about.html"
-                  class="block rounded-lg px-3 py-2 text-sm text-gray-700 hover:bg-brand/5 hover:text-brand"
-                  >Our Story</a
-                >
-                <a
-                  href="testimonials.html"
-                  class="block rounded-lg px-3 py-2 text-sm text-gray-700 hover:bg-brand/5 hover:text-brand"
-                  >Our Team</a
-                >
+              <div data-dropdown-panel class="hidden animate-dropdown absolute top-full left-0 mt-2 w-52 bg-white rounded-2xl shadow-[0_8px_32px_rgba(10,46,95,.14)] border border-brand-mid/30 overflow-hidden py-1.5">
+                <a href="about.html#story" class="flex items-center gap-2.5 px-4 py-2.5 text-[13px] text-ink-muted hover:text-brand hover:bg-brand-xlight transition-colors"><span class="w-1.5 h-1.5 rounded-full bg-brand-mid shrink-0" aria-hidden="true"></span>Our Story</a>
+                <a href="about.html#leadership" class="flex items-center gap-2.5 px-4 py-2.5 text-[13px] text-ink-muted hover:text-brand hover:bg-brand-xlight transition-colors"><span class="w-1.5 h-1.5 rounded-full bg-brand-mid shrink-0" aria-hidden="true"></span>Leadership</a>
+                <a href="about.html#mission" class="flex items-center gap-2.5 px-4 py-2.5 text-[13px] text-ink-muted hover:text-brand hover:bg-brand-xlight transition-colors"><span class="w-1.5 h-1.5 rounded-full bg-brand-mid shrink-0" aria-hidden="true"></span>Mission &amp; Vision</a>
               </div>
             </div>
-            <a
-              href="faqs.html"
-              class="block px-4 py-2 text-sm font-medium text-ink hover:text-brand"
-              >The Problem</a
-            >
-            <a
-              href="services.html"
-              class="block px-4 py-2 text-sm font-medium text-ink hover:text-brand"
-              >Solutions</a
-            >
-            <a
-              href="testimonials.html"
-              class="block px-4 py-2 text-sm font-medium text-ink hover:text-brand"
-              >Team</a
-            >
-            <a
-              href="contact-us.html"
-              class="mt-2 lg:mt-0 lg:ml-3 inline-flex items-center justify-center rounded-full bg-brand px-6 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-brand/90"
-              >Partner With Us</a
-            >
+            <a href="services.html" class="px-3.5 py-2.5 rounded-xl text-[13px] font-medium transition-colors text-ink-muted hover:text-ink hover:bg-surface">Services</a>
+            <a href="testimonials.html" class="px-3.5 py-2.5 rounded-xl text-[13px] font-medium transition-colors text-brand bg-brand-light">Testimonials</a>
+            <a href="faqs.html" class="px-3.5 py-2.5 rounded-xl text-[13px] font-medium transition-colors text-ink-muted hover:text-ink hover:bg-surface">FAQs</a>
+            <a href="contact-us.html" class="px-3.5 py-2.5 rounded-xl text-[13px] font-medium transition-colors text-ink-muted hover:text-ink hover:bg-surface">Contact Us</a>
           </nav>
+
+          <div class="hidden lg:block">
+            <a href="contact-us.html" class="btn btn-primary text-[13px] py-2.5 px-5 ml-2">
+              Partner With Us
+              <svg width="14" height="14" fill="none" viewBox="0 0 16 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" /></svg>
+            </a>
+          </div>
+
+          <button data-menu-btn class="lg:hidden flex flex-col gap-[5px] p-2.5 rounded-xl hover:bg-surface transition-colors" aria-label="Open menu" aria-expanded="false">
+            <span class="block w-5 h-[2px] bg-ink rounded transition-all duration-300 origin-center"></span>
+            <span class="block w-5 h-[2px] bg-ink rounded transition-all duration-300"></span>
+            <span class="block w-5 h-[2px] bg-ink rounded transition-all duration-300 origin-center"></span>
+          </button>
         </div>
+      </div>
+
+      <div data-mobile-nav class="hidden lg:hidden bg-white border-t border-brand-mid/20 max-h-[calc(100svh-68px)] overflow-y-auto">
+        <nav class="px-5 py-4 flex flex-col gap-1" aria-label="Mobile navigation">
+          <a href="index.html" class="px-4 py-3.5 rounded-xl text-sm font-medium min-h-[44px] flex items-center text-ink hover:bg-surface transition-colors">Home</a>
+          <div>
+            <button data-accordion-btn aria-expanded="false" class="w-full flex items-center justify-between px-4 py-3.5 rounded-xl text-sm font-medium text-ink hover:bg-surface transition-colors min-h-[44px]">
+              About
+              <svg class="w-4 h-4 transition-transform duration-200" fill="none" viewBox="0 0 12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4l4 4 4-4" /></svg>
+            </button>
+            <div data-accordion-panel class="hidden pl-4 flex flex-col gap-0.5">
+              <a href="about.html#story" class="px-4 py-3 rounded-xl text-sm text-ink-muted hover:text-brand hover:bg-brand-xlight transition-colors min-h-[44px] flex items-center">Our Story</a>
+              <a href="about.html#leadership" class="px-4 py-3 rounded-xl text-sm text-ink-muted hover:text-brand hover:bg-brand-xlight transition-colors min-h-[44px] flex items-center">Leadership</a>
+              <a href="about.html#mission" class="px-4 py-3 rounded-xl text-sm text-ink-muted hover:text-brand hover:bg-brand-xlight transition-colors min-h-[44px] flex items-center">Mission &amp; Vision</a>
+            </div>
+          </div>
+          <a href="services.html" class="px-4 py-3.5 rounded-xl text-sm font-medium min-h-[44px] flex items-center text-ink hover:bg-surface transition-colors">Services</a>
+          <a href="testimonials.html" class="px-4 py-3.5 rounded-xl text-sm font-medium min-h-[44px] flex items-center text-brand bg-brand-light">Testimonials</a>
+          <a href="faqs.html" class="px-4 py-3.5 rounded-xl text-sm font-medium min-h-[44px] flex items-center text-ink hover:bg-surface transition-colors">FAQs</a>
+          <a href="contact-us.html" class="px-4 py-3.5 rounded-xl text-sm font-medium min-h-[44px] flex items-center text-ink hover:bg-surface transition-colors">Contact Us</a>
+          <div class="pt-2">
+            <a href="contact-us.html" class="btn btn-primary w-full justify-center">Partner With Us</a>
+          </div>
+        </nav>
       </div>
     </header>
 
-    <!-- ============ HERO BANNER ============ -->
-    <section
-      class="relative flex min-h-[420px] items-center justify-center overflow-hidden"
-    >
-      <img
-        src="images/P1520394.webp"
-        alt="J.P. Muia Health System partners"
-        class="absolute inset-0 h-full w-full object-cover"
-      />
-      <div class="absolute inset-0 bg-neutral-900/60"></div>
-      <div class="relative mx-auto max-w-3xl px-5 text-center text-white">
-        <p class="text-sm font-semibold uppercase tracking-widest text-accent">
-          Established for Equity
-        </p>
-        <h1 class="mt-2 text-4xl font-bold sm:text-5xl lg:text-6xl">
-          The Founding Benefactors
-        </h1>
-        <p class="mx-auto mt-5 max-w-xl text-lg text-white/90">
-          A group of healthcare, medical technology, academic, legal, and
-          business leaders supporting healthcare equity in Africa — bridging
-          advanced innovation and patient access.
-        </p>
-      </div>
-    </section>
-
-    <!-- ============ TESTIMONIAL CARDS ============ -->
-    <section class="py-20">
-      <div class="mx-auto max-w-7xl px-5 lg:px-8">
-        <div class="mx-auto max-w-2xl text-center" data-reveal>
-          <h2 class="text-3xl font-bold sm:text-4xl">
-            Leadership behind the mission
-          </h2>
-          <p class="mt-4 text-neutral-600">
-            J.P. Muia Health System is guided by physician leadership and
-            founding benefactors from global healthcare, medical technology, and
-            business who believe access to advanced care is a right, not a
-            privilege.
-          </p>
+    <main>
+      <!-- ================= TESTIMONIALS HEADER ================= -->
+      <section class="pt-[68px] hero-bg" aria-label="Testimonials header">
+        <div class="max-w-7xl mx-auto px-5 lg:px-10 py-20 lg:py-28">
+          <div class="max-w-3xl reveal">
+            <div class="label-tag mb-6">Voices</div>
+            <h1 class="font-display text-5xl lg:text-6xl text-ink mb-5">Testimonials</h1>
+            <p class="text-ink-muted text-xl leading-relaxed">Hear from community health partners, clinical collaborators, and patients whose lives are being shaped by J.P. Muia Health System.</p>
+          </div>
         </div>
+      </section>
 
-        <div class="mt-14 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          <!-- Card 1 -->
-          <article
-            data-reveal
-            class="overflow-hidden rounded-2xl border border-neutral-100 bg-white shadow-sm"
-          >
-            <img
-              src="images/P1520370.webp"
-              alt="J.P. Muia Health System partnership signing"
-              loading="lazy"
-              class="h-56 w-full object-cover"
-            />
-            <div class="flex flex-col justify-between p-7">
-              <p class="text-neutral-700">
-                "The healthcare gap in Sub-Saharan Africa is primarily an
-                infrastructure and methodology problem. Our mission is to build
-                an AI-enabled center of excellence at Konza that combines
-                clinical precision with empathetic, predictive care."
-              </p>
-              <div class="mt-6 flex items-center gap-4">
-                <img
-                  src="images/P1520370.webp"
-                  alt=""
-                  loading="lazy"
-                  class="h-12 w-12 rounded-full object-cover"
-                />
-                <div>
-                  <h5 class="font-semibold">Dr. Timothy Muia, MD, MPH</h5>
-                  <div class="mt-1 flex gap-0.5 text-accent">
-                    <svg
-                      class="h-4 w-4"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                    >
-                      <path
-                        d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14l-5-4.87 6.91-1.01z"
-                      />
-                    </svg>
-                    <svg
-                      class="h-4 w-4"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                    >
-                      <path
-                        d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14l-5-4.87 6.91-1.01z"
-                      />
-                    </svg>
-                    <svg
-                      class="h-4 w-4"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                    >
-                      <path
-                        d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14l-5-4.87 6.91-1.01z"
-                      />
-                    </svg>
-                    <svg
-                      class="h-4 w-4"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                    >
-                      <path
-                        d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14l-5-4.87 6.91-1.01z"
-                      />
-                    </svg>
-                    <svg
-                      class="h-4 w-4"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                    >
-                      <path
-                        d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14l-5-4.87 6.91-1.01z"
-                      />
-                    </svg>
-                  </div>
-                </div>
-              </div>
+      <!-- ================= TESTIMONIALS CONTENT ================= -->
+      <section class="py-24 bg-white" aria-label="Testimonials content">
+        <div class="max-w-4xl mx-auto px-5 lg:px-10">
+          <div class="card-featured p-12 text-center reveal">
+            <div class="w-16 h-16 bg-brand/10 text-brand rounded-full flex items-center justify-center mx-auto mb-6">
+              <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" /></svg>
             </div>
-          </article>
-
-          <!-- Card 2 (middle, image bottom) -->
-          <article
-            data-reveal
-            class="overflow-hidden rounded-2xl border border-neutral-100 bg-white shadow-sm md:flex md:flex-col-reverse lg:mt-8"
-          >
-            <img
-              src="images/P1520375.webp"
-              alt="J.P. Muia Health System leadership team"
-              loading="lazy"
-              class="h-56 w-full object-cover"
-            />
-            <div class="flex flex-col justify-between p-7">
-              <p class="text-neutral-700">
-                "This project connected us to senior healthcare leaders across
-                healthcare systems and medical technology. It is the kind of
-                work worth being the primary connector — and largest contributor
-                — for."
-              </p>
-              <div class="mt-6 flex items-center gap-4">
-                <img
-                  src="images/P1520375.webp"
-                  alt=""
-                  loading="lazy"
-                  class="h-12 w-12 rounded-full object-cover"
-                />
-                <div>
-                  <h5 class="font-semibold">Edward Ludwig</h5>
-                  <div class="mt-1 flex gap-0.5 text-accent">
-                    <svg
-                      class="h-4 w-4"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                    >
-                      <path
-                        d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14l-5-4.87 6.91-1.01z"
-                      />
-                    </svg>
-                    <svg
-                      class="h-4 w-4"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                    >
-                      <path
-                        d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14l-5-4.87 6.91-1.01z"
-                      />
-                    </svg>
-                    <svg
-                      class="h-4 w-4"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                    >
-                      <path
-                        d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14l-5-4.87 6.91-1.01z"
-                      />
-                    </svg>
-                    <svg
-                      class="h-4 w-4"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                    >
-                      <path
-                        d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14l-5-4.87 6.91-1.01z"
-                      />
-                    </svg>
-                    <svg
-                      class="h-4 w-4"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                    >
-                      <path
-                        d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14l-5-4.87 6.91-1.01z"
-                      />
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <!-- Card 3 -->
-          <article
-            data-reveal
-            class="overflow-hidden rounded-2xl border border-neutral-100 bg-white shadow-sm"
-          >
-            <img
-              src="images/P1520394.webp"
-              alt="J.P. Muia Health System partnership delegation"
-              loading="lazy"
-              class="h-56 w-full object-cover"
-            />
-            <div class="flex flex-col justify-between p-7">
-              <p class="text-neutral-700">
-                "I've provided early strategic counsel because I believe in
-                sustainable healthcare delivery in emerging markets. This is the
-                kind of global health systems leadership Africa deserves."
-              </p>
-              <div class="mt-6 flex items-center gap-4">
-                <img
-                  src="images/P1520394.webp"
-                  alt=""
-                  loading="lazy"
-                  class="h-12 w-12 rounded-full object-cover"
-                />
-                <div>
-                  <h5 class="font-semibold">Gary Cohen</h5>
-                  <div class="mt-1 flex gap-0.5 text-accent">
-                    <svg
-                      class="h-4 w-4"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                    >
-                      <path
-                        d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14l-5-4.87 6.91-1.01z"
-                      />
-                    </svg>
-                    <svg
-                      class="h-4 w-4"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                    >
-                      <path
-                        d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14l-5-4.87 6.91-1.01z"
-                      />
-                    </svg>
-                    <svg
-                      class="h-4 w-4"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                    >
-                      <path
-                        d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14l-5-4.87 6.91-1.01z"
-                      />
-                    </svg>
-                    <svg
-                      class="h-4 w-4"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                    >
-                      <path
-                        d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14l-5-4.87 6.91-1.01z"
-                      />
-                    </svg>
-                    <svg
-                      class="h-4 w-4"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                    >
-                      <path
-                        d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14l-5-4.87 6.91-1.01z"
-                      />
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </article>
+            <h2 class="font-display text-2xl text-ink mb-4">Testimonials Coming Soon</h2>
+            <p class="text-ink-muted leading-relaxed max-w-lg mx-auto mb-8">We are collecting testimonials from our community health partners, clinical collaborators, and early programme participants. Check back soon as their stories are shared.</p>
+            <p class="text-ink-muted text-sm mb-8">If you have been part of our programme and would like to share your experience, we would love to hear from you.</p>
+            <a href="contact-us.html" class="btn btn-primary inline-flex">Share Your Story</a>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- ============ GALLERY ============ -->
-    <section class="border-t border-neutral-100 bg-neutral-50 py-20">
-      <div class="mx-auto max-w-7xl px-5 lg:px-8">
-        <div class="max-w-3xl" data-reveal>
-          <h2 class="text-3xl font-bold sm:text-4xl">
-            A global network of partners
-          </h2>
-          <p class="mt-4 text-neutral-600">
-            Our founding benefactors bring institutional relationships across
-            medical technology, academia, and healthcare alliances — the partner
-            network behind the AI-enabled center of excellence.
-          </p>
-          <p class="mt-3 text-neutral-500">
-            From Medtronic's global health systems experience to leading schools
-            of public health and business, this network bridges advanced
-            innovation and patient access in Africa.
-          </p>
+      <!-- ================= OUR COMMUNITY ================= -->
+      <section class="py-20 section-alt text-center" aria-label="Community">
+        <div class="max-w-7xl mx-auto px-5 lg:px-10">
+          <div class="label-tag mb-5 mx-auto w-fit">Our Community</div>
+          <h2 class="font-display text-3xl lg:text-4xl text-ink mb-4 max-w-2xl mx-auto">4M+ people in our primary catchment. Every voice matters.</h2>
+          <p class="text-ink-muted max-w-xl mx-auto mb-10">J.P. Muia Health System was built for the communities of Machakos County and beyond. Their trust is the foundation of everything we do.</p>
+          <div class="flex flex-wrap justify-center gap-4">
+            <a href="contact-us.html" class="btn btn-primary">Contact Us</a>
+            <a href="services.html" class="btn btn-ghost">Our Services</a>
+          </div>
         </div>
+      </section>
+    </main>
 
-        <div class="mt-12 grid gap-6 lg:grid-cols-3">
-          <!-- Large feature photo -->
-          <div
-            class="relative overflow-hidden rounded-2xl lg:col-span-2 lg:row-span-2"
-          >
-            <img
-              src="images/P1520370.webp"
-              alt="Partnership signing and handshake"
-              loading="lazy"
-              class="h-full min-h-[320px] w-full object-cover"
-            />
-            <div
-              class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-8 text-white"
-            >
-              <h3 class="text-2xl font-semibold">
-                Saved
-                <span data-count-up data-count="3800" data-suffix="+"
-                  >3800+</span
-                >
-                Lives
-              </h3>
-              <p class="mt-2 max-w-lg text-sm text-white/85">
-                Medtronic — Technology partner supporting the feasibility study
-                and the medical technology backbone of the center of excellence
-                at Konza.
-              </p>
-              <a
-                href="#"
-                class="mt-3 inline-flex items-center gap-2 font-semibold text-accent hover:underline"
-                >View all Partners
-                <svg
-                  class="h-4 w-4"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <line x1="7" y1="17" x2="17" y2="7" />
-                  <polyline points="7 7 17 7 17 17" />
-                </svg>
+    <!-- ================= FOOTER ================= -->
+    <footer class="bg-ink text-white relative overflow-hidden" aria-label="Site footer">
+      <div class="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-brand/40 to-transparent pointer-events-none" aria-hidden="true"></div>
+      <div class="relative max-w-7xl mx-auto px-5 lg:px-10 pt-16 pb-8">
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-[2fr_1fr_1fr_1fr_1.5fr] gap-10 mb-14">
+          <div class="col-span-2 sm:col-span-3 lg:col-span-1">
+            <a href="index.html" class="footer-logo mb-5" aria-label="J.P. Muia Healthcare home">
+              <img src="images/jp-muia-healthcare-logo-1gt7bfqC.png" alt="J.P. Muia Healthcare" />
+            </a>
+            <p class="text-white/55 text-sm leading-relaxed mb-6 max-w-xs">Africa's first AI-smart hospital — connecting community health, specialist care, and structured follow-up at Konza Technopolis, Kenya.</p>
+            <div class="flex gap-2.5">
+              <a href="#" aria-label="Follow us on Twitter / X" class="w-9 h-9 rounded-full border border-white/15 flex items-center justify-center text-white/45 hover:text-white hover:border-white/40 hover:bg-white/10 transition-all">
+                <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" /></svg>
+              </a>
+              <a href="#" aria-label="Follow us on LinkedIn" class="w-9 h-9 rounded-full border border-white/15 flex items-center justify-center text-white/45 hover:text-white hover:border-white/40 hover:bg-white/10 transition-all">
+                <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" /></svg>
+              </a>
+              <a href="#" aria-label="Follow us on Facebook" class="w-9 h-9 rounded-full border border-white/15 flex items-center justify-center text-white/45 hover:text-white hover:border-white/40 hover:bg-white/10 transition-all">
+                <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" /></svg>
               </a>
             </div>
           </div>
-          <img
-            data-reveal
-            data-lightbox
-            data-full="images/P1520375.webp"
-            src="images/P1520375.webp"
-            alt="Leadership team at a partnership meeting"
-            loading="lazy"
-            class="h-48 w-full rounded-2xl object-cover"
-          />
-          <img
-            data-reveal
-            data-lightbox
-            data-full="images/P1520394.webp"
-            src="images/P1520394.webp"
-            alt="Partners visiting an innovation workspace"
-            loading="lazy"
-            class="h-48 w-full rounded-2xl object-cover"
-          />
-        </div>
 
-        <div class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          <img
-            data-reveal
-            data-lightbox
-            data-full="images/P1520470.webp"
-            src="images/P1520470.webp"
-            alt="Healthcare innovation facility tour"
-            loading="lazy"
-            class="h-44 w-full rounded-2xl object-cover"
-          />
-          <img
-            data-reveal
-            data-lightbox
-            data-full="images/P1520556.webp"
-            src="images/P1520556.webp"
-            alt="Konza Technopolis building"
-            loading="lazy"
-            class="h-44 w-full rounded-2xl object-cover"
-          />
-          <img
-            data-reveal
-            data-lightbox
-            data-full="images/P1580060.webp"
-            src="images/P1580060.webp"
-            alt="Silicon Savannah innovation hub"
-            loading="lazy"
-            class="h-44 w-full rounded-2xl object-cover"
-          />
-          <img
-            data-reveal
-            data-lightbox
-            data-full="images/P1580102.webp"
-            src="images/P1580102.webp"
-            alt="Team exploring interactive healthcare technology"
-            loading="lazy"
-            class="h-44 w-full rounded-2xl object-cover"
-          />
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ FEATURED REVIEWS (was JS slider, now static grid) ============ -->
-    <section class="bg-brand py-20 text-white">
-      <div class="mx-auto max-w-7xl px-5 lg:px-8">
-        <p
-          class="text-center text-sm font-semibold uppercase tracking-widest text-accent"
-          data-reveal
-        >
-          Letters of Support
-        </p>
-        <h2 class="mt-2 text-center text-3xl font-bold sm:text-4xl" data-reveal>
-          Endorsed by institutions and community leaders
-        </h2>
-
-        <!-- Reviews carousel (restored: original cross-fade slider -> real accessible carousel) -->
-        <div
-          id="reviews-carousel"
-          class="relative mt-14"
-          role="region"
-          aria-roledescription="carousel"
-          aria-label="Patient reviews"
-        >
-          <div class="overflow-hidden" data-viewport>
-            <div
-              class="flex transition-transform duration-500 ease-out"
-              data-track
-            >
-              <!-- Review 1 -->
-              <div
-                class="w-full shrink-0 px-2 sm:px-3"
-                role="group"
-                aria-roledescription="slide"
-                aria-label="Review 1 of 3"
-              >
-                <figure
-                  class="h-full rounded-2xl bg-white/10 p-8 backdrop-blur-sm"
-                >
-                  <svg
-                    class="h-10 w-10 text-accent"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    aria-hidden="true"
-                  >
-                    <path
-                      d="M7.17 6A5.17 5.17 0 002 11.17V18h6.83v-6.83H5.5A3.67 3.67 0 019.17 7.5V6zm10 0A5.17 5.17 0 0012 11.17V18h6.83v-6.83H15.5a3.67 3.67 0 013.67-3.67V6z"
-                    />
-                  </svg>
-                  <blockquote class="mt-5 text-white/90">
-                    On behalf of the Korea Advanced Institute of Science and
-                    Technology, I offer our institutional endorsement of this
-                    initiative to build an AI-enabled center of excellence that
-                    bridges advanced innovation and patient access.
-                  </blockquote>
-                  <figcaption class="mt-6 flex items-center gap-4">
-                    <img
-                      src="images/P1520592.webp"
-                      alt=""
-                      loading="lazy"
-                      class="h-12 w-12 rounded-full object-cover"
-                    />
-                    <div>
-                      <h5 class="font-semibold">
-                        Chairman Prof. Emmanuel Mutisya
-                      </h5>
-                      <div class="mt-1 flex gap-0.5 text-accent">
-                        <svg
-                          class="h-4 w-4"
-                          viewBox="0 0 24 24"
-                          fill="currentColor"
-                        >
-                          <path
-                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14l-5-4.87 6.91-1.01z"
-                          />
-                        </svg>
-                        <svg
-                          class="h-4 w-4"
-                          viewBox="0 0 24 24"
-                          fill="currentColor"
-                        >
-                          <path
-                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14l-5-4.87 6.91-1.01z"
-                          />
-                        </svg>
-                        <svg
-                          class="h-4 w-4"
-                          viewBox="0 0 24 24"
-                          fill="currentColor"
-                        >
-                          <path
-                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14l-5-4.87 6.91-1.01z"
-                          />
-                        </svg>
-                        <svg
-                          class="h-4 w-4"
-                          viewBox="0 0 24 24"
-                          fill="currentColor"
-                        >
-                          <path
-                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14l-5-4.87 6.91-1.01z"
-                          />
-                        </svg>
-                        <svg
-                          class="h-4 w-4"
-                          viewBox="0 0 24 24"
-                          fill="currentColor"
-                        >
-                          <path
-                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14l-5-4.87 6.91-1.01z"
-                          />
-                        </svg>
-                      </div>
-                    </div>
-                  </figcaption>
-                </figure>
-              </div>
-
-              <!-- Review 2 -->
-              <div
-                class="w-full shrink-0 px-2 sm:px-3"
-                role="group"
-                aria-roledescription="slide"
-                aria-label="Review 2 of 3"
-              >
-                <figure
-                  class="h-full rounded-2xl bg-white/10 p-8 backdrop-blur-sm"
-                >
-                  <svg
-                    class="h-10 w-10 text-accent"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    aria-hidden="true"
-                  >
-                    <path
-                      d="M7.17 6A5.17 5.17 0 002 11.17V18h6.83v-6.83H5.5A3.67 3.67 0 019.17 7.5V6zm10 0A5.17 5.17 0 0012 11.17V18h6.83v-6.83H15.5a3.67 3.67 0 013.67-3.67V6z"
-                    />
-                  </svg>
-                  <blockquote class="mt-5 text-white/90">
-                    The African Inland Church, Makueni Area, offers its
-                    community and faith support to this healthcare mission — a
-                    partnership grounded in service to the people of Makueni and
-                    beyond.
-                  </blockquote>
-                  <figcaption class="mt-6 flex items-center gap-4">
-                    <img
-                      src="images/P1580102.webp"
-                      alt=""
-                      loading="lazy"
-                      class="h-12 w-12 rounded-full object-cover"
-                    />
-                    <div>
-                      <h5 class="font-semibold">Rev. Bishop Muambi</h5>
-                      <div class="mt-1 flex gap-0.5 text-accent">
-                        <svg
-                          class="h-4 w-4"
-                          viewBox="0 0 24 24"
-                          fill="currentColor"
-                        >
-                          <path
-                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14l-5-4.87 6.91-1.01z"
-                          />
-                        </svg>
-                        <svg
-                          class="h-4 w-4"
-                          viewBox="0 0 24 24"
-                          fill="currentColor"
-                        >
-                          <path
-                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14l-5-4.87 6.91-1.01z"
-                          />
-                        </svg>
-                        <svg
-                          class="h-4 w-4"
-                          viewBox="0 0 24 24"
-                          fill="currentColor"
-                        >
-                          <path
-                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14l-5-4.87 6.91-1.01z"
-                          />
-                        </svg>
-                        <svg
-                          class="h-4 w-4"
-                          viewBox="0 0 24 24"
-                          fill="currentColor"
-                        >
-                          <path
-                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14l-5-4.87 6.91-1.01z"
-                          />
-                        </svg>
-                        <svg
-                          class="h-4 w-4"
-                          viewBox="0 0 24 24"
-                          fill="currentColor"
-                        >
-                          <path
-                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14l-5-4.87 6.91-1.01z"
-                          />
-                        </svg>
-                      </div>
-                    </div>
-                  </figcaption>
-                </figure>
-              </div>
-
-              <!-- Review 3 -->
-              <div
-                class="w-full shrink-0 px-2 sm:px-3"
-                role="group"
-                aria-roledescription="slide"
-                aria-label="Review 3 of 3"
-              >
-                <figure
-                  class="h-full rounded-2xl bg-white/10 p-8 backdrop-blur-sm"
-                >
-                  <svg
-                    class="h-10 w-10 text-accent"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    aria-hidden="true"
-                  >
-                    <path
-                      d="M7.17 6A5.17 5.17 0 002 11.17V18h6.83v-6.83H5.5A3.67 3.67 0 019.17 7.5V6zm10 0A5.17 5.17 0 0012 11.17V18h6.83v-6.83H15.5a3.67 3.67 0 013.67-3.67V6z"
-                    />
-                  </svg>
-                  <blockquote class="mt-5 text-white/90">
-                    The healthcare gap in Sub-Saharan Africa is primarily an
-                    infrastructure and methodology problem. Our mission is to
-                    build an AI-enabled center of excellence at Konza that
-                    unites clinical precision, empathetic care, advanced
-                    diagnostics, and predictive, data-driven delivery.
-                  </blockquote>
-                  <figcaption class="mt-6 flex items-center gap-4">
-                    <img
-                      src="images/P1520370.webp"
-                      alt=""
-                      loading="lazy"
-                      class="h-12 w-12 rounded-full object-cover"
-                    />
-                    <div>
-                      <h5 class="font-semibold">
-                        Dr. Timothy Muia, Founder & CEO
-                      </h5>
-                      <div class="mt-1 flex gap-0.5 text-accent">
-                        <svg
-                          class="h-4 w-4"
-                          viewBox="0 0 24 24"
-                          fill="currentColor"
-                        >
-                          <path
-                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14l-5-4.87 6.91-1.01z"
-                          />
-                        </svg>
-                        <svg
-                          class="h-4 w-4"
-                          viewBox="0 0 24 24"
-                          fill="currentColor"
-                        >
-                          <path
-                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14l-5-4.87 6.91-1.01z"
-                          />
-                        </svg>
-                        <svg
-                          class="h-4 w-4"
-                          viewBox="0 0 24 24"
-                          fill="currentColor"
-                        >
-                          <path
-                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14l-5-4.87 6.91-1.01z"
-                          />
-                        </svg>
-                        <svg
-                          class="h-4 w-4"
-                          viewBox="0 0 24 24"
-                          fill="currentColor"
-                        >
-                          <path
-                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14l-5-4.87 6.91-1.01z"
-                          />
-                        </svg>
-                        <svg
-                          class="h-4 w-4"
-                          viewBox="0 0 24 24"
-                          fill="currentColor"
-                        >
-                          <path
-                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14l-5-4.87 6.91-1.01z"
-                          />
-                        </svg>
-                      </div>
-                    </div>
-                  </figcaption>
-                </figure>
-              </div>
-            </div>
+          <div>
+            <h3 class="text-[10px] font-bold uppercase tracking-[.18em] text-white/40 mb-4">Company</h3>
+            <ul class="space-y-2.5">
+              <li><a href="about.html" class="text-white/55 hover:text-white text-sm transition-colors">Our Story</a></li>
+              <li><a href="about.html" class="text-white/55 hover:text-white text-sm transition-colors">Leadership</a></li>
+              <li><a href="about.html" class="text-white/55 hover:text-white text-sm transition-colors">Mission &amp; Vision</a></li>
+              <li><a href="about.html" class="text-white/55 hover:text-white text-sm transition-colors">Careers</a></li>
+              <li><a href="about.html" class="text-white/55 hover:text-white text-sm transition-colors">News</a></li>
+            </ul>
           </div>
 
-          <!-- Prev / Next arrows -->
-          <button
-            type="button"
-            data-prev
-            aria-label="Previous review"
-            class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1 sm:-translate-x-4 grid h-11 w-11 place-items-center rounded-full bg-white text-brand shadow-lg transition hover:bg-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
-          >
-            <svg
-              class="h-5 w-5"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <polyline points="15 18 9 12 15 6" />
-            </svg>
-          </button>
-          <button
-            type="button"
-            data-next
-            aria-label="Next review"
-            class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1 sm:translate-x-4 grid h-11 w-11 place-items-center rounded-full bg-white text-brand shadow-lg transition hover:bg-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
-          >
-            <svg
-              class="h-5 w-5"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <polyline points="9 18 15 12 9 6" />
-            </svg>
-          </button>
+          <div>
+            <h3 class="text-[10px] font-bold uppercase tracking-[.18em] text-white/40 mb-4">Services</h3>
+            <ul class="space-y-2.5">
+              <li><a href="services.html" class="text-white/55 hover:text-white text-sm transition-colors">Referral Pathways</a></li>
+              <li><a href="services.html" class="text-white/55 hover:text-white text-sm transition-colors">Structured Follow-Up</a></li>
+              <li><a href="services.html" class="text-white/55 hover:text-white text-sm transition-colors">NCD Screening</a></li>
+              <li><a href="services.html" class="text-white/55 hover:text-white text-sm transition-colors">Research Infrastructure</a></li>
+              <li><a href="services.html" class="text-white/55 hover:text-white text-sm transition-colors">Clinical Trials</a></li>
+            </ul>
+          </div>
 
-          <!-- Dot navigation -->
-          <div
-            data-dots
-            class="mt-8 flex justify-center gap-2.5"
-            role="tablist"
-            aria-label="Choose review"
-          ></div>
-        </div>
-      </div>
-    </section>
+          <div>
+            <h3 class="text-[10px] font-bold uppercase tracking-[.18em] text-white/40 mb-4">Patients</h3>
+            <ul class="space-y-2.5">
+              <li><a href="faqs.html" class="text-white/55 hover:text-white text-sm transition-colors">FAQs</a></li>
+              <li><a href="contact-us.html" class="text-white/55 hover:text-white text-sm transition-colors">Contact Us</a></li>
+              <li><a href="testimonials.html" class="text-white/55 hover:text-white text-sm transition-colors">Testimonials</a></li>
+              <li><a href="contact-us.html" class="text-white/55 hover:text-white text-sm transition-colors">Partner With Us</a></li>
+            </ul>
+          </div>
 
-    <!-- ============ FOOTER ============ -->
-    <footer id="contact" class="bg-ink text-white">
-      <!-- Subscribe -->
-      <div class="border-b border-white/10">
-        <div class="mx-auto max-w-7xl px-5 lg:px-8 py-16">
-          <div class="grid gap-8 lg:grid-cols-2 lg:items-center">
-            <div>
-              <span
-                class="inline-flex h-12 w-12 items-center justify-center rounded-full bg-brand"
-              >
-                <svg
-                  class="h-6 w-6 text-white"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  aria-hidden="true"
-                >
-                  <path d="M4 4h16v16H4z" />
-                  <polyline points="4 6 12 13 20 6" />
-                </svg>
-              </span>
-              <h2 class="mt-5 text-2xl md:text-3xl font-bold">
-                Subscribe to our latest news
-              </h2>
-            </div>
-            <form
-              onsubmit="return false;"
-              class="flex w-full overflow-hidden rounded-full bg-white/10 ring-1 ring-white/20 focus-within:ring-brand"
-            >
-              <input
-                type="email"
-                placeholder="Email"
-                required
-                class="w-full bg-transparent px-6 py-4 text-sm text-white placeholder-white/60 outline-none"
-              />
-              <button
-                class="shrink-0 bg-brand px-8 py-4 text-sm font-semibold text-white transition hover:bg-brand/90"
-              >
-                Subscribe
-              </button>
+          <div>
+            <h3 class="text-[10px] font-bold uppercase tracking-[.18em] text-white/40 mb-4">Get in Touch</h3>
+            <ul class="space-y-3 mb-7">
+              <li>
+                <p class="text-[10px] text-white/35 uppercase tracking-widest mb-1">Phone</p>
+                <a href="tel:+19733568322" class="text-white/55 hover:text-white text-sm transition-colors block">+1 973 356 8322</a>
+                <a href="tel:+16063560179" class="text-white/55 hover:text-white text-sm transition-colors block">+1 606 356 0179</a>
+              </li>
+              <li>
+                <p class="text-[10px] text-white/35 uppercase tracking-widest mb-1">Location</p>
+                <p class="text-white/55 text-sm leading-relaxed">Konza Technopolis,<br />Machakos County, Kenya</p>
+              </li>
+            </ul>
+            <p class="text-[10px] text-white/35 uppercase tracking-widest mb-2.5">Newsletter</p>
+            <form class="flex flex-col gap-2" data-fake-form="newsletter-success">
+              <label for="footer-email" class="sr-only">Email address</label>
+              <input id="footer-email" type="email" placeholder="your@email.com" required class="bg-white/[8%] border border-white/15 rounded-xl px-3.5 py-2.5 text-sm text-white placeholder:text-white/30 focus:outline-none focus:border-brand focus:bg-white/[12%] transition-all" />
+              <button type="submit" class="bg-brand text-white py-2.5 rounded-xl text-sm font-semibold hover:bg-brand-deep transition-colors">Subscribe</button>
             </form>
+            <p id="newsletter-success" class="hidden text-brand text-sm font-semibold">Thank you for subscribing!</p>
           </div>
         </div>
-      </div>
 
-      <!-- Top footer -->
-      <div class="mx-auto max-w-7xl px-5 lg:px-8 py-16">
-        <div
-          class="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between"
-        >
-          <a href="index.html" class="flex items-center">
-            <img
-              src="images/logo.png"
-              alt="J.P. Muia Medicine"
-              class="h-16 w-auto rounded bg-white p-1"
-            />
-          </a>
-
-          <div class="grid gap-6 sm:grid-cols-3">
-            <div class="flex items-start gap-3">
-              <svg
-                class="mt-0.5 h-5 w-5 shrink-0 text-brand"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                aria-hidden="true"
-              >
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                <circle cx="12" cy="10" r="3" />
-              </svg>
-              <p class="text-sm text-white/80">
-                Konza Technopolis, Machakos County, Kenya
-              </p>
-            </div>
-            <div class="flex items-start gap-3">
-              <svg
-                class="mt-0.5 h-5 w-5 shrink-0 text-brand"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                aria-hidden="true"
-              >
-                <path
-                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"
-                />
-              </svg>
-              <div class="flex flex-col text-sm text-white/80">
-                <a href="tel:+19733568322" class="hover:text-white"
-                  >+1 973 356 8322</a
-                >
-                <a href="tel:+16063560179" class="hover:text-white"
-                  >+1 606 356 0179</a
-                >
-              </div>
-            </div>
-            <div class="flex items-start gap-3">
-              <svg
-                class="mt-0.5 h-5 w-5 shrink-0 text-brand"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                aria-hidden="true"
-              >
-                <rect x="2" y="4" width="20" height="16" rx="2" />
-                <path d="m22 7-10 5L2 7" />
-              </svg>
-              <a
-                href="mailto:info@jpmuiahealthsystem.org"
-                class="text-sm text-white/80 hover:text-white"
-                >info@jpmuiahealthsystem.org</a
-              >
-            </div>
-          </div>
-
-          <a
-            href="contact-us.html"
-            class="inline-flex items-center gap-3 rounded-full bg-brand px-6 py-3 text-sm font-semibold text-white transition hover:bg-brand/90"
-          >
-            Get in Touch
-            <svg
-              class="h-4 w-4"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              aria-hidden="true"
-            >
-              <line x1="7" y1="17" x2="17" y2="7" />
-              <polyline points="7 7 17 7 17 17" />
-            </svg>
-          </a>
-        </div>
-      </div>
-
-      <!-- Bottom footer -->
-      <div class="border-t border-white/10">
-        <div class="mx-auto max-w-7xl px-5 lg:px-8 py-8">
-          <div
-            class="flex flex-col gap-6 md:flex-row md:items-center md:justify-between"
-          >
-            <nav class="flex flex-wrap gap-x-6 gap-y-2 text-sm">
-              <a href="index.html" class="text-white/80 hover:text-white"
-                >Home</a
-              >
-              <a href="about.html" class="text-white/80 hover:text-white"
-                >About</a
-              >
-              <a href="faqs.html" class="text-white/80 hover:text-white"
-                >The Problem</a
-              >
-              <a href="services.html" class="text-white/80 hover:text-white"
-                >Solutions</a
-              >
-              <a href="testimonials.html" class="text-white/80 hover:text-white"
-                >Team</a
-              >
-              <a href="contact-us.html" class="text-white/80 hover:text-white"
-                >Contact</a
-              >
-              <a
-                href="https://www.instagram.com/"
-                target="_blank"
-                rel="noopener"
-                class="text-brand hover:text-white"
-                >Instagram</a
-              >
-              <a
-                href="https://twitter.com/"
-                target="_blank"
-                rel="noopener"
-                class="text-brand hover:text-white"
-                >Twitter</a
-              >
-            </nav>
-            <p class="text-sm text-white/60">
-              © J.P. Muia Health System. All Rights Reserved.
-            </p>
+        <div class="border-t border-white/[8%] pt-7 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <p class="text-white/30 text-xs">&copy; <span id="footer-year"></span> J.P. Muia Health System. All rights reserved.</p>
+          <div class="flex gap-5">
+            <a href="#" class="text-white/30 hover:text-white/60 text-xs transition-colors">Privacy Policy</a>
+            <a href="#" class="text-white/30 hover:text-white/60 text-xs transition-colors">Terms of Use</a>
+            <a href="#" class="text-white/30 hover:text-white/60 text-xs transition-colors">Accessibility</a>
           </div>
         </div>
       </div>
     </footer>
 
-    <!-- ============ GALLERY LIGHTBOX OVERLAY (built for JS; harmless without) ============ -->
-    <div
-      id="lightbox"
-      hidden
-      role="dialog"
-      aria-modal="true"
-      aria-label="Image gallery"
-      class="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 p-4"
-    >
-      <button
-        type="button"
-        data-lb-close
-        aria-label="Close gallery"
-        class="absolute right-4 top-4 grid h-11 w-11 place-items-center rounded-full bg-white/10 text-white hover:bg-white/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
-      >
-        <svg
-          class="h-6 w-6"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-          <line x1="18" y1="6" x2="6" y2="18" />
-          <line x1="6" y1="6" x2="18" y2="18" />
-        </svg>
-      </button>
-      <button
-        type="button"
-        data-lb-prev
-        aria-label="Previous image"
-        class="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 grid h-12 w-12 place-items-center rounded-full bg-white/10 text-white hover:bg-white/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
-      >
-        <svg
-          class="h-6 w-6"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2.5"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-          <polyline points="15 18 9 12 15 6" />
-        </svg>
-      </button>
-      <button
-        type="button"
-        data-lb-next
-        aria-label="Next image"
-        class="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 grid h-12 w-12 place-items-center rounded-full bg-white/10 text-white hover:bg-white/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
-      >
-        <svg
-          class="h-6 w-6"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2.5"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-          <polyline points="9 18 15 12 9 6" />
-        </svg>
-      </button>
-      <figure class="mx-auto max-h-[88vh] max-w-6xl" data-lb-stage>
-        <!-- media injected here -->
-      </figure>
-      <p
-        data-lb-counter
-        class="absolute bottom-5 left-1/2 -translate-x-1/2 text-sm text-white/80"
-      ></p>
-    </div>
-
-    <!-- ============ BACK TO TOP ============ -->
-    <button
-      type="button"
-      id="back-to-top"
-      aria-label="Back to top"
-      class="fixed bottom-6 right-6 z-[90] grid h-12 w-12 place-items-center rounded-full bg-brand text-white shadow-lg transition-all duration-300 hover:bg-brand-dark focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand opacity-0 translate-y-3 pointer-events-none"
-    >
-      <svg
-        class="h-5 w-5"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      >
-        <polyline points="18 15 12 9 6 15" />
-      </svg>
+    <button data-back-top class="back-top hidden" aria-label="Back to top">
+      <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 15l-6-6-6 6" /></svg>
     </button>
 
     <script>
-      (function () {
-        "use strict";
-        var root = document.documentElement;
-        root.classList.add("js"); // gate progressive-enhancement styles
-        var reduceMotion = window.matchMedia(
-          "(prefers-reduced-motion: reduce)",
-        ).matches;
-
-        /* ---------------------------------------------------------------
-       1. REVIEWS CAROUSEL — arrows, dots, keyboard, swipe, infinite.
-          Autoplay off (matches original data-autoplay="false").
-    --------------------------------------------------------------- */
-        (function reviewsCarousel() {
-          var carousel = document.getElementById("reviews-carousel");
-          if (!carousel) return;
-          var track = carousel.querySelector("[data-track]");
-          var viewport = carousel.querySelector("[data-viewport]");
-          var slides = Array.prototype.slice.call(track.children);
-          var dotsWrap = carousel.querySelector("[data-dots]");
-          var prevBtn = carousel.querySelector("[data-prev]");
-          var nextBtn = carousel.querySelector("[data-next]");
-          var count = slides.length;
-          if (!count) return;
-          var index = 0;
-
-          // perView: responsive (1 on small screens, matches original single-slide slider).
-          function perView() {
-            return 1;
-          }
-
-          // Build dots
-          var dots = [];
-          for (var i = 0; i < count; i++) {
-            var b = document.createElement("button");
-            b.type = "button";
-            b.setAttribute("role", "tab");
-            b.className =
-              "h-2.5 w-2.5 rounded-full bg-white/40 transition hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white";
-            (function (i) {
-              b.addEventListener("click", function () {
-                go(i);
-              });
-            })(i);
-            dotsWrap.appendChild(b);
-            dots.push(b);
-          }
-
-          function render() {
-            track.style.transform = "translateX(" + -index * 100 + "%)";
-            slides.forEach(function (s, i) {
-              s.setAttribute("aria-hidden", i === index ? "false" : "true");
-            });
-            dots.forEach(function (d, i) {
-              var on = i === index;
-              d.classList.toggle("bg-white", on);
-              d.classList.toggle("w-6", on);
-              d.classList.toggle("bg-white/40", !on);
-              d.setAttribute("aria-selected", on ? "true" : "false");
-            });
-          }
-          function go(i) {
-            index = ((i % count) + count) % count;
-            render();
-          } // infinite wrap
-          function next() {
-            go(index + 1);
-          }
-          function prev() {
-            go(index - 1);
-          }
-
-          nextBtn.addEventListener("click", next);
-          prevBtn.addEventListener("click", prev);
-
-          // Keyboard arrows when carousel focused/hovered
-          carousel.setAttribute("tabindex", "0");
-          carousel.addEventListener("keydown", function (e) {
-            if (e.key === "ArrowRight") {
-              e.preventDefault();
-              next();
-            } else if (e.key === "ArrowLeft") {
-              e.preventDefault();
-              prev();
-            }
-          });
-
-          // Touch / pointer swipe
-          var startX = 0,
-            dragging = false;
-          viewport.addEventListener(
-            "touchstart",
-            function (e) {
-              startX = e.touches[0].clientX;
-              dragging = true;
-            },
-            { passive: true },
-          );
-          viewport.addEventListener(
-            "touchend",
-            function (e) {
-              if (!dragging) return;
-              dragging = false;
-              var dx = e.changedTouches[0].clientX - startX;
-              if (Math.abs(dx) > 40) {
-                dx < 0 ? next() : prev();
-              }
-            },
-            { passive: true },
-          );
-
-          render();
-        })();
-
-        /* ---------------------------------------------------------------
-       2. GALLERY LIGHTBOX — open/close, prev/next, backdrop, ESC,
-          arrow keys, scroll-lock. Video items open as iframe (none here).
-    --------------------------------------------------------------- */
-        (function lightbox() {
-          var items = Array.prototype.slice.call(
-            document.querySelectorAll("[data-lightbox]"),
-          );
-          var box = document.getElementById("lightbox");
-          if (!items.length || !box) return;
-          var stage = box.querySelector("[data-lb-stage]");
-          var counter = box.querySelector("[data-lb-counter]");
-          var current = 0,
-            lastFocus = null;
-
-          function mediaFor(el) {
-            var video = el.getAttribute("data-video"); // YouTube id or url, if any
-            if (video) {
-              var src = /^https?:/.test(video)
-                ? video
-                : "https://www.youtube.com/embed/" + video;
-              if (src.indexOf("?") === -1) src += "?autoplay=1&rel=0";
-              else src += "&autoplay=1&rel=0";
-              var iframe = document.createElement("iframe");
-              iframe.src = src;
-              iframe.className = "aspect-video w-[88vw] max-w-5xl rounded-lg";
-              iframe.setAttribute(
-                "allow",
-                "autoplay; fullscreen; encrypted-media",
-              );
-              iframe.setAttribute("allowfullscreen", "");
-              return iframe;
-            }
-            var img = document.createElement("img");
-            img.src = el.getAttribute("data-full") || el.getAttribute("src");
-            img.alt = el.getAttribute("alt") || "";
-            img.className = "max-h-[88vh] max-w-full rounded-lg object-contain";
-            return img;
-          }
-
-          function show(i) {
-            current = ((i % items.length) + items.length) % items.length;
-            stage.innerHTML = "";
-            stage.appendChild(mediaFor(items[current]));
-            counter.textContent = current + 1 + " / " + items.length;
-          }
-
-          function open(i) {
-            lastFocus = document.activeElement;
-            box.hidden = false;
-            document.body.classList.add("no-scroll");
-            show(i);
-            requestAnimationFrame(function () {
-              box.classList.add("is-open");
-            });
-            box.querySelector("[data-lb-close]").focus();
-          }
-          function close() {
-            box.classList.remove("is-open");
-            document.body.classList.remove("no-scroll");
-            var done = function () {
-              box.hidden = true;
-              stage.innerHTML = ""; // stops any iframe/video playback
-              box.removeEventListener("transitionend", done);
-            };
-            if (reduceMotion) {
-              done();
-            } else {
-              box.addEventListener("transitionend", done);
-            }
-            if (lastFocus && lastFocus.focus) lastFocus.focus();
-          }
-
-          items.forEach(function (el, i) {
-            el.setAttribute("role", "button");
-            el.setAttribute("tabindex", "0");
-            el.setAttribute(
-              "aria-label",
-              "Open image: " + (el.getAttribute("alt") || "image " + (i + 1)),
-            );
-            el.addEventListener("click", function () {
-              open(i);
-            });
-            el.addEventListener("keydown", function (e) {
-              if (e.key === "Enter" || e.key === " ") {
-                e.preventDefault();
-                open(i);
-              }
-            });
-          });
-
-          box.querySelector("[data-lb-close]").addEventListener("click", close);
-          box
-            .querySelector("[data-lb-next]")
-            .addEventListener("click", function () {
-              show(current + 1);
-            });
-          box
-            .querySelector("[data-lb-prev]")
-            .addEventListener("click", function () {
-              show(current - 1);
-            });
-          box.addEventListener("click", function (e) {
-            if (e.target === box) close();
-          }); // backdrop
-          document.addEventListener("keydown", function (e) {
-            if (box.hidden) return;
-            if (e.key === "Escape") close();
-            else if (e.key === "ArrowRight") show(current + 1);
-            else if (e.key === "ArrowLeft") show(current - 1);
-          });
-        })();
-
-        /* ---------------------------------------------------------------
-       3. REVEAL ON SCROLL — IntersectionObserver, once.
-    --------------------------------------------------------------- */
-        (function reveal() {
-          var els = Array.prototype.slice.call(
-            document.querySelectorAll("[data-reveal]"),
-          );
-          if (!els.length) return;
-          if (reduceMotion || !("IntersectionObserver" in window)) {
-            els.forEach(function (el) {
-              el.classList.add("is-visible");
-            });
-            return;
-          }
-          var io = new IntersectionObserver(
-            function (entries) {
-              entries.forEach(function (entry) {
-                if (entry.isIntersecting) {
-                  entry.target.classList.add("is-visible");
-                  io.unobserve(entry.target);
-                }
-              });
-            },
-            { threshold: 0.12, rootMargin: "0px 0px -8% 0px" },
-          );
-          els.forEach(function (el) {
-            io.observe(el);
-          });
-        })();
-
-        /* ---------------------------------------------------------------
-       4. COUNT-UP — animate stat numbers on scroll, preserve suffix.
-    --------------------------------------------------------------- */
-        (function countUp() {
-          var nums = Array.prototype.slice.call(
-            document.querySelectorAll("[data-count-up]"),
-          );
-          if (!nums.length) return;
-          function run(el) {
-            var target = parseFloat(el.getAttribute("data-count")) || 0;
-            var suffix = el.getAttribute("data-suffix") || "";
-            if (reduceMotion) {
-              el.textContent = target.toLocaleString() + suffix;
-              return;
-            }
-            var start = null,
-              dur = 1600;
-            function step(ts) {
-              if (start === null) start = ts;
-              var p = Math.min((ts - start) / dur, 1);
-              var eased = 1 - Math.pow(1 - p, 3);
-              el.textContent =
-                Math.round(target * eased).toLocaleString() + suffix;
-              if (p < 1) requestAnimationFrame(step);
-            }
-            requestAnimationFrame(step);
-          }
-          if (!("IntersectionObserver" in window)) {
-            nums.forEach(run);
-            return;
-          }
-          var io = new IntersectionObserver(
-            function (entries) {
-              entries.forEach(function (entry) {
-                if (entry.isIntersecting) {
-                  run(entry.target);
-                  io.unobserve(entry.target);
-                }
-              });
-            },
-            { threshold: 0.5 },
-          );
-          nums.forEach(function (el) {
-            io.observe(el);
-          });
-        })();
-
-        /* ---------------------------------------------------------------
-       5. DROPDOWN NAV — touch/click toggle; keyboard focus + hover
-          still handled by CSS. Mobile menu (checkbox+peer) untouched.
-    --------------------------------------------------------------- */
-        (function nav() {
-          var canHover = window.matchMedia("(hover: hover)").matches;
-          var items = Array.prototype.slice.call(
-            document.querySelectorAll("nav li.group.relative"),
-          );
-          items.forEach(function (li) {
-            var btn = li.querySelector("button");
-            var panel = li.querySelector(":scope > div");
-            if (!btn || !panel) return;
-            btn.setAttribute("aria-haspopup", "true");
-            btn.setAttribute("aria-expanded", "false");
-            btn.addEventListener("click", function (e) {
-              e.preventDefault();
-              // Desktop opens on hover; a real pointer click would latch the
-              // panel open via :focus-within, so just drop focus and let hover
-              // own opening. Keyboard activation (detail === 0) still toggles.
-              if (canHover && e.detail !== 0) {
-                btn.blur();
-                return;
-              }
-              var open = li.getAttribute("data-open") === "true";
-              // close siblings
-              items.forEach(function (o) {
-                if (o !== li) {
-                  o.setAttribute("data-open", "false");
-                  var b = o.querySelector("button");
-                  if (b) b.setAttribute("aria-expanded", "false");
-                }
-              });
-              li.setAttribute("data-open", open ? "false" : "true");
-              btn.setAttribute("aria-expanded", open ? "false" : "true");
-            });
-          });
-          // Click outside closes any open dropdown (desktop touch)
-          document.addEventListener("click", function (e) {
-            if (e.target.closest("nav li.group.relative")) return;
-            items.forEach(function (li) {
-              li.setAttribute("data-open", "false");
-              var b = li.querySelector("button");
-              if (b) b.setAttribute("aria-expanded", "false");
-            });
-          });
-          // Close mobile menu when a link is chosen
-          var toggle = document.getElementById("nav-toggle");
-          if (toggle) {
-            document.querySelectorAll("nav a").forEach(function (a) {
-              a.addEventListener("click", function () {
-                toggle.checked = false;
-              });
-            });
-          }
-        })();
-
-        /* ---------------------------------------------------------------
-       6. BACK TO TOP — reveal after ~400px, smooth scroll to top.
-    --------------------------------------------------------------- */
-        (function backToTop() {
-          var btn = document.getElementById("back-to-top");
-          if (!btn) return;
-          function update() {
-            var show = window.scrollY > 400;
-            btn.classList.toggle("opacity-0", !show);
-            btn.classList.toggle("translate-y-3", !show);
-            btn.classList.toggle("pointer-events-none", !show);
-          }
-          window.addEventListener("scroll", update, { passive: true });
-          btn.addEventListener("click", function () {
-            window.scrollTo({
-              top: 0,
-              behavior: reduceMotion ? "auto" : "smooth",
-            });
-          });
-          update();
-        })();
-      })();
+      document.getElementById("footer-year").textContent = new Date().getFullYear();
     </script>
+    <script src="script.js"></script>
   </body>
 </html>
