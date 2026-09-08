@@ -1,35 +1,25 @@
 <!doctype html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <title>The Problem — J.P. Muia Health System</title>
-
-    <meta content="The Problem — J.P. Muia Health System" property="og:title" />
+    <script>document.documentElement.classList.add("js");</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Frequently Asked Questions — J.P. Muia Healthcare</title>
     <meta
-      content="The Problem — J.P. Muia Health System"
-      name="twitter:title"
-    />
-    <meta
-      content="The NCD crisis is the emergency we are solving. NCDs account for 39% of deaths and over 50% of hospital admissions in Kenya, yet the specialist infrastructure to treat them is critically scarce."
       name="description"
+      content="Everything you need to know about J.P. Muia Health System, our clinical model, and how to get involved."
     />
-    <meta
-      content="images/P1580060.webp"
-      property="og:image"
-    />
-    <meta
-      content="images/P1580060.webp"
-      name="twitter:image"
-    />
+    <meta property="og:title" content="FAQs — J.P. Muia Healthcare" />
+    <meta property="og:description" content="Answers about the hospital, the AI-smart model, partnership & investment, and community health." />
+    <meta property="og:image" content="images/P1580060-Dw3yMRDx.webp" />
+    <meta name="twitter:card" content="summary_large_image" />
 
-    <link rel="icon" type="image/png" href="images/logo.png" />
+    <link rel="icon" type="image/png" href="images/jp-muia-healthcare-logo-1gt7bfqC.png" />
 
-    <!-- Google Fonts replacing WebFont.load (Lato, Poppins, Inter) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Lato:wght@300;400;700;900&family=Poppins:wght@400;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="theme.css" />
@@ -41,919 +31,339 @@
           extend: {
             colors: {
               brand: "rgb(var(--color-brand) / <alpha-value>)",
+              "brand-deep": "rgb(var(--color-brand-deep) / <alpha-value>)",
               "brand-dark": "rgb(var(--color-brand-dark) / <alpha-value>)",
-              accent: "rgb(var(--color-accent) / <alpha-value>)",
-              "accent-dark": "rgb(var(--color-accent-dark) / <alpha-value>)",
+              "brand-mid": "rgb(var(--color-brand-mid) / <alpha-value>)",
+              "brand-light": "rgb(var(--color-brand-light) / <alpha-value>)",
+              "brand-xlight": "rgb(var(--color-brand-xlight) / <alpha-value>)",
+              "brand-yellow": "rgb(var(--color-brand-yellow) / <alpha-value>)",
               ink: "rgb(var(--color-ink) / <alpha-value>)",
+              "ink-muted": "rgb(var(--color-ink-muted) / <alpha-value>)",
+              "ink-faint": "rgb(var(--color-ink-faint) / <alpha-value>)",
+              surface: "rgb(var(--color-surface) / <alpha-value>)",
             },
             fontFamily: {
-              sans: [
-                "Inter",
-                "Lato",
-                "ui-sans-serif",
-                "system-ui",
-                "sans-serif",
-              ],
-              display: ["Poppins", "Inter", "sans-serif"],
+              sans: ["Inter", "system-ui", "-apple-system", "sans-serif"],
+              display: ["DM Serif Display", "Georgia", "serif"],
             },
           },
         },
       };
     </script>
-    <!-- Mark that JS is available BEFORE first paint so reveal-hidden styles only apply when JS can undo them (progressive enhancement, no FOUC). -->
-    <script>
-      document.documentElement.classList.add("js");
-    </script>
-
-    <style>
-      body {
-        font-family: "Inter", "Lato", sans-serif;
-      }
-      h1,
-      h2,
-      h3,
-      h4,
-      h5 {
-        font-family: "Poppins", "Inter", sans-serif;
-      }
-
-      /* ---- Scroll reveal (only hidden when JS is present) ---- */
-      .js [data-reveal] {
-        opacity: 0;
-        transform: translateY(28px);
-        transition:
-          opacity 0.7s ease,
-          transform 0.7s ease;
-      }
-      .js [data-reveal].is-visible {
-        opacity: 1;
-        transform: none;
-      }
-      .js [data-reveal][data-reveal-delay="1"] {
-        transition-delay: 0.1s;
-      }
-      .js [data-reveal][data-reveal-delay="2"] {
-        transition-delay: 0.2s;
-      }
-      .js [data-reveal][data-reveal-delay="3"] {
-        transition-delay: 0.3s;
-      }
-
-      /* ---- FAQ accordion (native <details>/<summary>, works with zero JS) ---- */
-      details.faq > summary {
-        list-style: none;
-        cursor: pointer;
-      }
-      details.faq > summary::-webkit-details-marker {
-        display: none;
-      }
-      /* rotate the plus/chevron when open */
-      details.faq[open] .faq-icon {
-        transform: rotate(45deg);
-      }
-      /* smooth reveal of the answer body */
-      details.faq .faq-body {
-        overflow: hidden;
-      }
-      .js details.faq .faq-body {
-        display: grid;
-        grid-template-rows: 0fr;
-        transition: grid-template-rows 0.35s ease;
-      }
-      .js details.faq[open] .faq-body {
-        grid-template-rows: 1fr;
-      }
-      .js details.faq .faq-body > div {
-        min-height: 0;
-      }
-
-      /* ---- Mobile dropdown submenu (JS click toggle) ---- */
-      .js .nav-submenu.open {
-        display: block;
-      }
-
-      /* ---- Back-to-top: hidden until scrolled (JS only) ---- */
-      .js #back-to-top {
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(12px);
-        transition:
-          opacity 0.3s ease,
-          transform 0.3s ease,
-          visibility 0.3s;
-      }
-      .js #back-to-top.is-visible {
-        opacity: 1;
-        visibility: visible;
-        transform: none;
-      }
-
-      @media (prefers-reduced-motion: reduce) {
-        .js [data-reveal] {
-          transition: none;
-          opacity: 1;
-          transform: none;
-        }
-        .js details.faq .faq-body {
-          transition: none;
-        }
-        .faq-icon {
-          transition: none !important;
-        }
-      }
-    </style>
   </head>
-
   <body class="bg-white text-ink antialiased">
-    <!-- ================= NAV ================= -->
-    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur shadow-sm">
-      <div class="mx-auto max-w-7xl px-5 lg:px-8">
-        <div class="flex items-center justify-between h-20">
-          <!-- Brand logo -->
-          <a href="index.html" class="flex items-center">
-            <img
-              src="images/logo.png"
-              alt="J.P. Muia Medicine"
-              class="h-14 w-auto"
-            />
+    <!-- ================= HEADER ================= -->
+    <header data-header class="fixed inset-x-0 top-0 z-40 transition-all duration-300 bg-white border-b border-brand-mid/20 [&.is-scrolled]:bg-white/[96%] [&.is-scrolled]:backdrop-blur-md [&.is-scrolled]:shadow-[0_2px_20px_rgba(10,46,95,.09)]">
+      <div class="max-w-7xl mx-auto px-5 lg:px-10">
+        <div class="flex items-center justify-between h-[68px]">
+          <a href="index.html" class="site-logo shrink-0" aria-label="J.P. Muia Healthcare home">
+            <img src="images/jp-muia-healthcare-logo-1gt7bfqC.png" alt="J.P. Muia Healthcare" />
           </a>
 
-          <!-- Mobile toggle (checkbox + label peer pattern) -->
-          <input type="checkbox" id="nav-toggle" class="peer hidden" />
-          <label
-            for="nav-toggle"
-            class="lg:hidden cursor-pointer p-2 text-ink"
-            aria-label="Toggle menu"
-          >
-            <svg
-              class="h-7 w-7"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              aria-hidden="true"
-            >
-              <line x1="3" y1="6" x2="21" y2="6" />
-              <line x1="3" y1="12" x2="21" y2="12" />
-              <line x1="3" y1="18" x2="21" y2="18" />
-            </svg>
-          </label>
-
-          <!-- Nav menu -->
-          <nav
-            class="hidden peer-checked:block lg:flex lg:items-center lg:gap-1 absolute lg:static top-20 left-0 right-0 bg-white lg:bg-transparent shadow-lg lg:shadow-none px-5 lg:px-0 py-4 lg:py-0 space-y-1 lg:space-y-0"
-          >
-            <a
-              href="index.html"
-              class="block px-4 py-2 text-sm font-medium text-ink hover:text-brand"
-              >Home</a
-            >
-            <div class="group relative">
-              <button
-                data-dropdown-btn
-                class="flex items-center gap-1 px-4 py-2 text-sm font-medium text-ink hover:text-brand w-full lg:w-auto"
-              >
+          <nav class="hidden lg:flex items-center gap-0.5" aria-label="Primary navigation">
+            <a href="index.html" class="px-3.5 py-2.5 rounded-xl text-[13px] font-medium transition-colors text-ink-muted hover:text-ink hover:bg-surface">Home</a>
+            <div class="relative" data-dropdown>
+              <button data-dropdown-btn aria-expanded="false" class="flex items-center gap-1 px-3.5 py-2.5 rounded-xl text-[13px] font-medium transition-colors text-ink-muted hover:text-ink hover:bg-surface">
                 About
-                <svg
-                  class="h-4 w-4"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  aria-hidden="true"
-                >
-                  <polyline points="6 9 12 15 18 9" />
-                </svg>
+                <svg class="h-3.5 w-3.5" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4l4 4 4-4" /></svg>
               </button>
-              <div
-                class="nav-submenu hidden group-hover:block group-focus-within:block lg:absolute lg:top-full lg:left-0 lg:min-w-48 rounded-xl lg:bg-white lg:shadow-xl lg:ring-1 lg:ring-black/5 lg:p-2 pl-4 lg:pl-2"
-              >
-                <a
-                  href="about.html"
-                  class="block rounded-lg px-3 py-2 text-sm text-gray-700 hover:bg-brand/5 hover:text-brand"
-                  >Our Story</a
-                >
-                <a
-                  href="testimonials.html"
-                  class="block rounded-lg px-3 py-2 text-sm text-gray-700 hover:bg-brand/5 hover:text-brand"
-                  >Our Team</a
-                >
+              <div data-dropdown-panel class="hidden animate-dropdown absolute top-full left-0 mt-2 w-52 bg-white rounded-2xl shadow-[0_8px_32px_rgba(10,46,95,.14)] border border-brand-mid/30 overflow-hidden py-1.5">
+                <a href="about.html#story" class="flex items-center gap-2.5 px-4 py-2.5 text-[13px] text-ink-muted hover:text-brand hover:bg-brand-xlight transition-colors"><span class="w-1.5 h-1.5 rounded-full bg-brand-mid shrink-0" aria-hidden="true"></span>Our Story</a>
+                <a href="about.html#leadership" class="flex items-center gap-2.5 px-4 py-2.5 text-[13px] text-ink-muted hover:text-brand hover:bg-brand-xlight transition-colors"><span class="w-1.5 h-1.5 rounded-full bg-brand-mid shrink-0" aria-hidden="true"></span>Leadership</a>
+                <a href="about.html#mission" class="flex items-center gap-2.5 px-4 py-2.5 text-[13px] text-ink-muted hover:text-brand hover:bg-brand-xlight transition-colors"><span class="w-1.5 h-1.5 rounded-full bg-brand-mid shrink-0" aria-hidden="true"></span>Mission &amp; Vision</a>
               </div>
             </div>
-            <a
-              href="faqs.html"
-              class="block px-4 py-2 text-sm font-medium text-ink hover:text-brand"
-              >The Problem</a
-            >
-            <a
-              href="services.html"
-              class="block px-4 py-2 text-sm font-medium text-ink hover:text-brand"
-              >Solutions</a
-            >
-            <a
-              href="testimonials.html"
-              class="block px-4 py-2 text-sm font-medium text-ink hover:text-brand"
-              >Team</a
-            >
-            <a
-              href="contact-us.html"
-              class="mt-2 lg:mt-0 lg:ml-3 inline-flex items-center justify-center rounded-full bg-brand px-6 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-brand/90"
-              >Partner With Us</a
-            >
+            <a href="services.html" class="px-3.5 py-2.5 rounded-xl text-[13px] font-medium transition-colors text-ink-muted hover:text-ink hover:bg-surface">Services</a>
+            <a href="testimonials.html" class="px-3.5 py-2.5 rounded-xl text-[13px] font-medium transition-colors text-ink-muted hover:text-ink hover:bg-surface">Testimonials</a>
+            <a href="faqs.html" class="px-3.5 py-2.5 rounded-xl text-[13px] font-medium transition-colors text-brand bg-brand-light">FAQs</a>
+            <a href="contact-us.html" class="px-3.5 py-2.5 rounded-xl text-[13px] font-medium transition-colors text-ink-muted hover:text-ink hover:bg-surface">Contact Us</a>
           </nav>
+
+          <div class="hidden lg:block">
+            <a href="contact-us.html" class="btn btn-primary text-[13px] py-2.5 px-5 ml-2">
+              Partner With Us
+              <svg width="14" height="14" fill="none" viewBox="0 0 16 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" /></svg>
+            </a>
+          </div>
+
+          <button data-menu-btn class="lg:hidden flex flex-col gap-[5px] p-2.5 rounded-xl hover:bg-surface transition-colors" aria-label="Open menu" aria-expanded="false">
+            <span class="block w-5 h-[2px] bg-ink rounded transition-all duration-300 origin-center"></span>
+            <span class="block w-5 h-[2px] bg-ink rounded transition-all duration-300"></span>
+            <span class="block w-5 h-[2px] bg-ink rounded transition-all duration-300 origin-center"></span>
+          </button>
         </div>
+      </div>
+
+      <div data-mobile-nav class="hidden lg:hidden bg-white border-t border-brand-mid/20 max-h-[calc(100svh-68px)] overflow-y-auto">
+        <nav class="px-5 py-4 flex flex-col gap-1" aria-label="Mobile navigation">
+          <a href="index.html" class="px-4 py-3.5 rounded-xl text-sm font-medium min-h-[44px] flex items-center text-ink hover:bg-surface transition-colors">Home</a>
+          <div>
+            <button data-accordion-btn aria-expanded="false" class="w-full flex items-center justify-between px-4 py-3.5 rounded-xl text-sm font-medium text-ink hover:bg-surface transition-colors min-h-[44px]">
+              About
+              <svg class="w-4 h-4 transition-transform duration-200" fill="none" viewBox="0 0 12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4l4 4 4-4" /></svg>
+            </button>
+            <div data-accordion-panel class="hidden pl-4 flex flex-col gap-0.5">
+              <a href="about.html#story" class="px-4 py-3 rounded-xl text-sm text-ink-muted hover:text-brand hover:bg-brand-xlight transition-colors min-h-[44px] flex items-center">Our Story</a>
+              <a href="about.html#leadership" class="px-4 py-3 rounded-xl text-sm text-ink-muted hover:text-brand hover:bg-brand-xlight transition-colors min-h-[44px] flex items-center">Leadership</a>
+              <a href="about.html#mission" class="px-4 py-3 rounded-xl text-sm text-ink-muted hover:text-brand hover:bg-brand-xlight transition-colors min-h-[44px] flex items-center">Mission &amp; Vision</a>
+            </div>
+          </div>
+          <a href="services.html" class="px-4 py-3.5 rounded-xl text-sm font-medium min-h-[44px] flex items-center text-ink hover:bg-surface transition-colors">Services</a>
+          <a href="testimonials.html" class="px-4 py-3.5 rounded-xl text-sm font-medium min-h-[44px] flex items-center text-ink hover:bg-surface transition-colors">Testimonials</a>
+          <a href="faqs.html" class="px-4 py-3.5 rounded-xl text-sm font-medium min-h-[44px] flex items-center text-brand bg-brand-light">FAQs</a>
+          <a href="contact-us.html" class="px-4 py-3.5 rounded-xl text-sm font-medium min-h-[44px] flex items-center text-ink hover:bg-surface transition-colors">Contact Us</a>
+          <div class="pt-2">
+            <a href="contact-us.html" class="btn btn-primary w-full justify-center">Partner With Us</a>
+          </div>
+        </nav>
       </div>
     </header>
 
-    <!-- ================= PAGE HERO / BANNER ================= -->
-    <section class="relative flex min-h-[380px] items-center overflow-hidden">
-      <img
-        src="images/P1580060.webp"
-        alt="Silicon Savannah innovation hub"
-        class="absolute inset-0 h-full w-full object-cover"
-      />
-      <div
-        class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/25"
-      ></div>
-      <div class="relative mx-auto w-full max-w-7xl px-5 py-20 lg:px-8">
-        <div class="max-w-2xl" data-reveal>
-          <nav
-            class="mb-4 flex items-center gap-2 text-sm text-white/70"
-            aria-label="Breadcrumb"
-          >
-            <a href="index.html" class="hover:text-white">Home</a>
-            <span aria-hidden="true">/</span>
-            <span class="text-white">The Problem</span>
-          </nav>
-          <p class="mb-2 font-semibold uppercase tracking-wide text-white/70">
-            Special Report
-          </p>
-          <h1 class="text-4xl font-bold leading-tight text-white md:text-6xl">
-            The NCD Crisis: The Emergency We Are Solving
-          </h1>
-          <p class="mt-6 text-lg text-white/85">
-            Non-communicable diseases account for 39% of deaths in Kenya and
-            more than 50% of hospital admissions, yet the specialist
-            infrastructure needed to treat these conditions remains critically
-            limited.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= FAQ ACCORDION ================= -->
-    <section class="py-20">
-      <div class="mx-auto max-w-7xl px-5 lg:px-8">
-        <div class="mx-auto max-w-2xl text-center" data-reveal>
-          <p class="font-semibold uppercase tracking-wide text-brand">
-            The gaps in the system
-          </p>
-          <h2 class="mt-2 text-3xl font-bold text-ink md:text-4xl">
-            Understanding the crisis
-          </h2>
-          <p class="mt-4 text-gray-600">
-            Six structural gaps drive Kenya's NCD emergency. Here is what the
-            data shows and why it matters.
-          </p>
-        </div>
-
-        <!-- data-faq-group enables the optional single-open enhancement (native <details> still works with JS off) -->
-        <div
-          class="mt-14 grid gap-6 lg:grid-cols-2"
-          data-faq-group
-          data-reveal
-          data-reveal-delay="1"
-        >
-          <!-- Column 1 -->
-          <div class="space-y-4">
-            <details
-              class="faq group rounded-2xl border border-gray-200 bg-gray-50/60 p-1 transition open:border-brand/40 open:bg-white open:shadow-lg"
-              open
-            >
-              <summary class="flex items-start justify-between gap-4 px-6 py-5">
-                <h3 class="text-base font-semibold text-ink md:text-lg">
-                  Why do patients fall through the cracks in Kenya's health
-                  system?
-                </h3>
-                <span
-                  class="faq-icon mt-1 inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-brand/10 text-brand transition-transform duration-300"
-                  aria-hidden="true"
-                >
-                  <svg
-                    class="h-4 w-4"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <line x1="12" y1="5" x2="12" y2="19" />
-                    <line x1="5" y1="12" x2="19" y2="12" />
-                  </svg>
-                </span>
-              </summary>
-              <div class="faq-body">
-                <div>
-                  <p class="px-6 pb-6 text-sm leading-relaxed text-gray-600">
-                    Referral pathways are broken. Patients are frequently lost
-                    between primary facilities and tertiary hospitals, with no
-                    clarity about which specialist should see them, when they
-                    should be seen, or how referrals should be tracked once they
-                    leave a clinic.
-                  </p>
-                </div>
-              </div>
-            </details>
-
-            <details
-              class="faq group rounded-2xl border border-gray-200 bg-gray-50/60 p-1 transition open:border-brand/40 open:bg-white open:shadow-lg"
-            >
-              <summary class="flex items-start justify-between gap-4 px-6 py-5">
-                <h3 class="text-base font-semibold text-ink md:text-lg">
-                  What happens to patients after diagnosis or hospitalization?
-                </h3>
-                <span
-                  class="faq-icon mt-1 inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-brand/10 text-brand transition-transform duration-300"
-                  aria-hidden="true"
-                >
-                  <svg
-                    class="h-4 w-4"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <line x1="12" y1="5" x2="12" y2="19" />
-                    <line x1="5" y1="12" x2="19" y2="12" />
-                  </svg>
-                </span>
-              </summary>
-              <div class="faq-body">
-                <div>
-                  <p class="px-6 pb-6 text-sm leading-relaxed text-gray-600">
-                    There is little structured follow-up. After diagnosis or
-                    hospitalization, patients often fall out of the system
-                    entirely, a gap that drives readmission, clinical decline,
-                    poor outcomes, and preventable death.
-                  </p>
-                </div>
-              </div>
-            </details>
-
-            <details
-              class="faq group rounded-2xl border border-gray-200 bg-gray-50/60 p-1 transition open:border-brand/40 open:bg-white open:shadow-lg"
-            >
-              <summary class="flex items-start justify-between gap-4 px-6 py-5">
-                <h3 class="text-base font-semibold text-ink md:text-lg">
-                  Are non-communicable diseases well understood?
-                </h3>
-                <span
-                  class="faq-icon mt-1 inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-brand/10 text-brand transition-transform duration-300"
-                  aria-hidden="true"
-                >
-                  <svg
-                    class="h-4 w-4"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <line x1="12" y1="5" x2="12" y2="19" />
-                    <line x1="5" y1="12" x2="19" y2="12" />
-                  </svg>
-                </span>
-              </summary>
-              <div class="faq-body">
-                <div>
-                  <p class="px-6 pb-6 text-sm leading-relaxed text-gray-600">
-                    Not consistently. Hypertension, diabetes, stroke, mental
-                    illness, and neurological disease are often undiagnosed,
-                    normalized, or stigmatized, and mental and neurological
-                    disorders are projected to increase by 40% by 2030. The
-                    economic toll is already severe: NCDs cost Kenya an
-                    estimated KSh 300 billion (about $2.3 billion) a year,
-                    reduce affected families' income by 28.6%, and leave those
-                    families 30% more likely to fall into poverty than families
-                    affected by communicable disease.
-                  </p>
-                </div>
-              </div>
-            </details>
-          </div>
-
-          <!-- Column 2 -->
-          <div class="space-y-4">
-            <details
-              class="faq group rounded-2xl border border-gray-200 bg-gray-50/60 p-1 transition open:border-brand/40 open:bg-white open:shadow-lg"
-            >
-              <summary class="flex items-start justify-between gap-4 px-6 py-5">
-                <h3 class="text-base font-semibold text-ink md:text-lg">
-                  Is there enough specialist capacity?
-                </h3>
-                <span
-                  class="faq-icon mt-1 inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-brand/10 text-brand transition-transform duration-300"
-                  aria-hidden="true"
-                >
-                  <svg
-                    class="h-4 w-4"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <line x1="12" y1="5" x2="12" y2="19" />
-                    <line x1="5" y1="12" x2="19" y2="12" />
-                  </svg>
-                </span>
-              </summary>
-              <div class="faq-body">
-                <div>
-                  <p class="px-6 pb-6 text-sm leading-relaxed text-gray-600">
-                    Far from it. Kenya has approximately 2.5 interventional
-                    neuro specialists for more than 55 million people, 48
-                    cardiologists in total, and fewer than 10 interventional
-                    cardiologists. The country's two neuronavigation systems
-                    have both been non-functional for more than two years.
-                  </p>
-                </div>
-              </div>
-            </details>
-
-            <details
-              class="faq group rounded-2xl border border-gray-200 bg-gray-50/60 p-1 transition open:border-brand/40 open:bg-white open:shadow-lg"
-            >
-              <summary class="flex items-start justify-between gap-4 px-6 py-5">
-                <h3 class="text-base font-semibold text-ink md:text-lg">
-                  Why is research infrastructure a problem?
-                </h3>
-                <span
-                  class="faq-icon mt-1 inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-brand/10 text-brand transition-transform duration-300"
-                  aria-hidden="true"
-                >
-                  <svg
-                    class="h-4 w-4"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <line x1="12" y1="5" x2="12" y2="19" />
-                    <line x1="5" y1="12" x2="19" y2="12" />
-                  </svg>
-                </span>
-              </summary>
-              <div class="faq-body">
-                <div>
-                  <p class="px-6 pb-6 text-sm leading-relaxed text-gray-600">
-                    Kenya faces a shortage of Good Clinical Practice-ready trial
-                    sites, biobanks, interoperable data systems, African genomic
-                    baselines, and research-ready hospital infrastructure, gaps
-                    that also leave many rural counties without neurologists,
-                    cardiologists, or endocrinologists.
-                  </p>
-                </div>
-              </div>
-            </details>
-
-            <details
-              class="faq group rounded-2xl border border-gray-200 bg-gray-50/60 p-1 transition open:border-brand/40 open:bg-white open:shadow-lg"
-            >
-              <summary class="flex items-start justify-between gap-4 px-6 py-5">
-                <h3 class="text-base font-semibold text-ink md:text-lg">
-                  Why does this matter globally?
-                </h3>
-                <span
-                  class="faq-icon mt-1 inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-brand/10 text-brand transition-transform duration-300"
-                  aria-hidden="true"
-                >
-                  <svg
-                    class="h-4 w-4"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <line x1="12" y1="5" x2="12" y2="19" />
-                    <line x1="5" y1="12" x2="19" y2="12" />
-                  </svg>
-                </span>
-              </summary>
-              <div class="faq-body">
-                <div>
-                  <p class="px-6 pb-6 text-sm leading-relaxed text-gray-600">
-                    Because Africa is being left out of the research that could
-                    close this gap. The continent holds roughly 19% of the
-                    world's population and about 25% of the global disease
-                    burden, yet it hosted only about 1.1% of the 76,331 clinical
-                    trials initiated globally in 2023 (845 trials, 73% of them
-                    in South Africa). Kenya has hosted just 113 clinical trials
-                    across its entire history.
-                  </p>
-                </div>
-              </div>
-            </details>
+    <main>
+      <!-- ================= FAQS HEADER ================= -->
+      <section class="pt-[68px] hero-bg" aria-label="FAQs header">
+        <div class="max-w-7xl mx-auto px-5 lg:px-10 py-20 lg:py-28">
+          <div class="max-w-3xl reveal">
+            <div class="label-tag mb-6">Questions</div>
+            <h1 class="font-display text-5xl lg:text-6xl text-ink mb-5">Frequently Asked Questions</h1>
+            <p class="text-ink-muted text-xl leading-relaxed">Everything you need to know about J.P. Muia Health System, our clinical model, and how to get involved.</p>
           </div>
         </div>
+      </section>
 
-        <!-- Still have questions CTA -->
-        <div
-          class="mx-auto mt-16 max-w-3xl rounded-3xl bg-brand p-8 text-center text-white md:p-12"
-          data-reveal
-        >
-          <h3 class="text-2xl font-bold md:text-3xl">
-            Ready to see the solution?
-          </h3>
-          <p class="mx-auto mt-3 max-w-xl text-white/85">
-            This is the emergency. Explore our vision for closing the gap, or
-            reach out to discuss partnership opportunities.
-          </p>
-          <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
-            <a
-              href="about.html"
-              class="inline-flex items-center gap-2 rounded-full bg-white px-7 py-3 text-sm font-semibold text-brand transition hover:bg-gray-100"
-            >
-              <svg
-                class="h-5 w-5"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                aria-hidden="true"
-              >
-                <path
-                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"
-                />
-              </svg>
-              View Our Vision
-            </a>
-            <a
-              href="contact-us.html"
-              class="inline-flex items-center gap-2 rounded-full border-2 border-white/70 px-7 py-3 text-sm font-semibold text-white transition hover:bg-white hover:text-brand"
-            >
-              <svg
-                class="h-5 w-5"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                aria-hidden="true"
-              >
-                <rect x="2" y="4" width="20" height="16" rx="2" />
-                <path d="m22 7-10 5L2 7" />
-              </svg>
-              Partnership Inquiries
-            </a>
+      <!-- ================= FAQ LIST ================= -->
+      <section class="py-20 bg-white" aria-label="FAQ list">
+        <div class="max-w-3xl mx-auto px-5 lg:px-10 space-y-12">
+          <!-- About the Hospital -->
+          <div class="reveal">
+            <h2 class="font-display text-2xl text-ink pb-4 mb-0 border-b-2 border-brand/15">About the Hospital</h2>
+            <div>
+              <div class="border-b border-brand-mid/30">
+                <button data-faq-btn aria-expanded="false" class="w-full text-left flex items-start justify-between gap-4 py-5">
+                  <span data-faq-label class="font-medium text-sm leading-snug text-ink transition-colors">Where will J.P. Muia Health System be located?</span>
+                  <span data-faq-icon class="w-6 h-6 rounded-full border-2 border-brand-mid text-ink-muted flex items-center justify-center shrink-0 mt-0.5 transition-all"><svg width="10" height="10" fill="none" viewBox="0 0 12 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M6 2v8M2 6h8" /></svg></span>
+                </button>
+                <div data-faq-panel class="hidden pb-5 pr-10"><p class="text-ink-muted text-sm leading-relaxed">The hospital will be at Konza Technopolis, Machakos County, Kenya — Africa's purpose-built smart city, approximately 64 km from Nairobi.</p></div>
+              </div>
+              <div class="border-b border-brand-mid/30">
+                <button data-faq-btn aria-expanded="false" class="w-full text-left flex items-start justify-between gap-4 py-5">
+                  <span data-faq-label class="font-medium text-sm leading-snug text-ink transition-colors">When will the hospital open?</span>
+                  <span data-faq-icon class="w-6 h-6 rounded-full border-2 border-brand-mid text-ink-muted flex items-center justify-center shrink-0 mt-0.5 transition-all"><svg width="10" height="10" fill="none" viewBox="0 0 12 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M6 2v8M2 6h8" /></svg></span>
+                </button>
+                <div data-faq-panel class="hidden pb-5 pr-10"><p class="text-ink-muted text-sm leading-relaxed">Phase 1 is expected to receive its first patients in 2031. Foundation works commenced in 2025.</p></div>
+              </div>
+              <div class="border-b border-brand-mid/30">
+                <button data-faq-btn aria-expanded="false" class="w-full text-left flex items-start justify-between gap-4 py-5">
+                  <span data-faq-label class="font-medium text-sm leading-snug text-ink transition-colors">What will Phase 1 include?</span>
+                  <span data-faq-icon class="w-6 h-6 rounded-full border-2 border-brand-mid text-ink-muted flex items-center justify-center shrink-0 mt-0.5 transition-all"><svg width="10" height="10" fill="none" viewBox="0 0 12 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M6 2v8M2 6h8" /></svg></span>
+                </button>
+                <div data-faq-panel class="hidden pb-5 pr-10"><p class="text-ink-muted text-sm leading-relaxed">Phase 1 includes 120 inpatient beds, 6 operating theatres, specialist outpatient departments, diagnostic imaging, a research laboratory, and integrated AI clinical decision support.</p></div>
+              </div>
+              <div class="border-0">
+                <button data-faq-btn aria-expanded="false" class="w-full text-left flex items-start justify-between gap-4 py-5">
+                  <span data-faq-label class="font-medium text-sm leading-snug text-ink transition-colors">Why Konza Technopolis?</span>
+                  <span data-faq-icon class="w-6 h-6 rounded-full border-2 border-brand-mid text-ink-muted flex items-center justify-center shrink-0 mt-0.5 transition-all"><svg width="10" height="10" fill="none" viewBox="0 0 12 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M6 2v8M2 6h8" /></svg></span>
+                </button>
+                <div data-faq-panel class="hidden pb-5 pr-10"><p class="text-ink-muted text-sm leading-relaxed">Konza Technopolis is Kenya's premier smart city — world-class infrastructure, proximity to Nairobi, and a mandate to attract technology and innovation. The natural home for Africa's first AI-smart hospital.</p></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- The AI-Smart Model -->
+          <div class="reveal">
+            <h2 class="font-display text-2xl text-ink pb-4 mb-0 border-b-2 border-brand/15">The AI-Smart Model</h2>
+            <div>
+              <div class="border-b border-brand-mid/30">
+                <button data-faq-btn aria-expanded="false" class="w-full text-left flex items-start justify-between gap-4 py-5">
+                  <span data-faq-label class="font-medium text-sm leading-snug text-ink transition-colors">What does "AI-smart" mean in practice?</span>
+                  <span data-faq-icon class="w-6 h-6 rounded-full border-2 border-brand-mid text-ink-muted flex items-center justify-center shrink-0 mt-0.5 transition-all"><svg width="10" height="10" fill="none" viewBox="0 0 12 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M6 2v8M2 6h8" /></svg></span>
+                </button>
+                <div data-faq-panel class="hidden pb-5 pr-10"><p class="text-ink-muted text-sm leading-relaxed">AI is embedded throughout the clinical workflow — from patient risk stratification at community screening to diagnostic imaging analysis, clinical decision support in theatres, and post-discharge follow-up monitoring.</p></div>
+              </div>
+              <div class="border-b border-brand-mid/30">
+                <button data-faq-btn aria-expanded="false" class="w-full text-left flex items-start justify-between gap-4 py-5">
+                  <span data-faq-label class="font-medium text-sm leading-snug text-ink transition-colors">Is AI replacing doctors?</span>
+                  <span data-faq-icon class="w-6 h-6 rounded-full border-2 border-brand-mid text-ink-muted flex items-center justify-center shrink-0 mt-0.5 transition-all"><svg width="10" height="10" fill="none" viewBox="0 0 12 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M6 2v8M2 6h8" /></svg></span>
+                </button>
+                <div data-faq-panel class="hidden pb-5 pr-10"><p class="text-ink-muted text-sm leading-relaxed">Absolutely not. AI augments clinical judgment. Every AI output is reviewed by a qualified clinician. Our doctors lead the care; AI helps them do it better.</p></div>
+              </div>
+              <div class="border-0">
+                <button data-faq-btn aria-expanded="false" class="w-full text-left flex items-start justify-between gap-4 py-5">
+                  <span data-faq-label class="font-medium text-sm leading-snug text-ink transition-colors">How is patient data protected?</span>
+                  <span data-faq-icon class="w-6 h-6 rounded-full border-2 border-brand-mid text-ink-muted flex items-center justify-center shrink-0 mt-0.5 transition-all"><svg width="10" height="10" fill="none" viewBox="0 0 12 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M6 2v8M2 6h8" /></svg></span>
+                </button>
+                <div data-faq-panel class="hidden pb-5 pr-10"><p class="text-ink-muted text-sm leading-relaxed">J.P. Muia will comply fully with Kenya's Data Protection Act 2019 and applicable international standards. Patient data is encrypted, access-controlled, and used only for care and consented research.</p></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Partnership & Investment -->
+          <div class="reveal">
+            <h2 class="font-display text-2xl text-ink pb-4 mb-0 border-b-2 border-brand/15">Partnership &amp; Investment</h2>
+            <div>
+              <div class="border-b border-brand-mid/30">
+                <button data-faq-btn aria-expanded="false" class="w-full text-left flex items-start justify-between gap-4 py-5">
+                  <span data-faq-label class="font-medium text-sm leading-snug text-ink transition-colors">How can I partner with J.P. Muia Health System?</span>
+                  <span data-faq-icon class="w-6 h-6 rounded-full border-2 border-brand-mid text-ink-muted flex items-center justify-center shrink-0 mt-0.5 transition-all"><svg width="10" height="10" fill="none" viewBox="0 0 12 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M6 2v8M2 6h8" /></svg></span>
+                </button>
+                <div data-faq-panel class="hidden pb-5 pr-10"><p class="text-ink-muted text-sm leading-relaxed">We welcome partnerships across clinical services, research, community health, technology, and infrastructure. Contact us and our team will respond within 48 hours.</p></div>
+              </div>
+              <div class="border-b border-brand-mid/30">
+                <button data-faq-btn aria-expanded="false" class="w-full text-left flex items-start justify-between gap-4 py-5">
+                  <span data-faq-label class="font-medium text-sm leading-snug text-ink transition-colors">Are there investment opportunities?</span>
+                  <span data-faq-icon class="w-6 h-6 rounded-full border-2 border-brand-mid text-ink-muted flex items-center justify-center shrink-0 mt-0.5 transition-all"><svg width="10" height="10" fill="none" viewBox="0 0 12 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M6 2v8M2 6h8" /></svg></span>
+                </button>
+                <div data-faq-panel class="hidden pb-5 pr-10"><p class="text-ink-muted text-sm leading-relaxed">Yes. J.P. Muia is actively engaging impact investors, institutional partners, and development finance institutions. Please reach out to discuss investment partnership opportunities.</p></div>
+              </div>
+              <div class="border-0">
+                <button data-faq-btn aria-expanded="false" class="w-full text-left flex items-start justify-between gap-4 py-5">
+                  <span data-faq-label class="font-medium text-sm leading-snug text-ink transition-colors">Can my hospital or clinic refer patients to J.P. Muia?</span>
+                  <span data-faq-icon class="w-6 h-6 rounded-full border-2 border-brand-mid text-ink-muted flex items-center justify-center shrink-0 mt-0.5 transition-all"><svg width="10" height="10" fill="none" viewBox="0 0 12 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M6 2v8M2 6h8" /></svg></span>
+                </button>
+                <div data-faq-panel class="hidden pb-5 pr-10"><p class="text-ink-muted text-sm leading-relaxed">Structured referral pathways will be available to providers across Kenya and East Africa from opening. We are already mapping referral networks. Contact us to register your interest.</p></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Community Health -->
+          <div class="reveal">
+            <h2 class="font-display text-2xl text-ink pb-4 mb-0 border-b-2 border-brand/15">Community Health</h2>
+            <div>
+              <div class="border-b border-brand-mid/30">
+                <button data-faq-btn aria-expanded="false" class="w-full text-left flex items-start justify-between gap-4 py-5">
+                  <span data-faq-label class="font-medium text-sm leading-snug text-ink transition-colors">How does the community health programme work?</span>
+                  <span data-faq-icon class="w-6 h-6 rounded-full border-2 border-brand-mid text-ink-muted flex items-center justify-center shrink-0 mt-0.5 transition-all"><svg width="10" height="10" fill="none" viewBox="0 0 12 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M6 2v8M2 6h8" /></svg></span>
+                </button>
+                <div data-faq-panel class="hidden pb-5 pr-10"><p class="text-ink-muted text-sm leading-relaxed">Our community health network reaches into towns, villages, and rural areas through trained community health workers, mobile screening units, and AI-assisted risk tools. Patients needing care are referred through structured pathways.</p></div>
+              </div>
+              <div class="border-b border-brand-mid/30">
+                <button data-faq-btn aria-expanded="false" class="w-full text-left flex items-start justify-between gap-4 py-5">
+                  <span data-faq-label class="font-medium text-sm leading-snug text-ink transition-colors">What diseases does the screening programme cover?</span>
+                  <span data-faq-icon class="w-6 h-6 rounded-full border-2 border-brand-mid text-ink-muted flex items-center justify-center shrink-0 mt-0.5 transition-all"><svg width="10" height="10" fill="none" viewBox="0 0 12 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M6 2v8M2 6h8" /></svg></span>
+                </button>
+                <div data-faq-panel class="hidden pb-5 pr-10"><p class="text-ink-muted text-sm leading-relaxed">Current NCD screening focuses on hypertension, diabetes, and selected cancers. We are expanding over time in partnership with county health authorities.</p></div>
+              </div>
+              <div class="border-0">
+                <button data-faq-btn aria-expanded="false" class="w-full text-left flex items-start justify-between gap-4 py-5">
+                  <span data-faq-label class="font-medium text-sm leading-snug text-ink transition-colors">Is screening free?</span>
+                  <span data-faq-icon class="w-6 h-6 rounded-full border-2 border-brand-mid text-ink-muted flex items-center justify-center shrink-0 mt-0.5 transition-all"><svg width="10" height="10" fill="none" viewBox="0 0 12 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M6 2v8M2 6h8" /></svg></span>
+                </button>
+                <div data-faq-panel class="hidden pb-5 pr-10"><p class="text-ink-muted text-sm leading-relaxed">Community health screening is provided free of charge. Access to early detection should not depend on ability to pay.</p></div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      <!-- ================= STILL HAVE QUESTIONS ================= -->
+      <section class="py-20 section-alt text-center" aria-label="More help">
+        <div class="max-w-xl mx-auto px-5">
+          <h2 class="font-display text-3xl text-ink mb-4">Still Have Questions?</h2>
+          <p class="text-ink-muted mb-8">Our team is happy to help. We respond within 48 hours.</p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="tel:+19733568322" class="btn btn-ghost">+1 973 356 8322</a>
+            <a href="contact-us.html" class="btn btn-primary">Send a Message</a>
+          </div>
+        </div>
+      </section>
+    </main>
 
     <!-- ================= FOOTER ================= -->
-    <footer id="contact" class="bg-ink text-white">
-      <!-- Subscribe -->
-      <div class="border-b border-white/10">
-        <div class="mx-auto max-w-7xl px-5 lg:px-8 py-16">
-          <div class="grid gap-8 lg:grid-cols-2 lg:items-center">
-            <div>
-              <span
-                class="inline-flex h-12 w-12 items-center justify-center rounded-full bg-brand"
-              >
-                <svg
-                  class="h-6 w-6 text-white"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  aria-hidden="true"
-                >
-                  <path d="M4 4h16v16H4z" />
-                  <polyline points="4 6 12 13 20 6" />
-                </svg>
-              </span>
-              <h2 class="mt-5 text-2xl md:text-3xl font-bold">
-                Subscribe to our latest news
-              </h2>
+    <footer class="bg-ink text-white relative overflow-hidden" aria-label="Site footer">
+      <div class="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-brand/40 to-transparent pointer-events-none" aria-hidden="true"></div>
+      <div class="relative max-w-7xl mx-auto px-5 lg:px-10 pt-16 pb-8">
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-[2fr_1fr_1fr_1fr_1.5fr] gap-10 mb-14">
+          <div class="col-span-2 sm:col-span-3 lg:col-span-1">
+            <a href="index.html" class="footer-logo mb-5" aria-label="J.P. Muia Healthcare home">
+              <img src="images/jp-muia-healthcare-logo-1gt7bfqC.png" alt="J.P. Muia Healthcare" />
+            </a>
+            <p class="text-white/55 text-sm leading-relaxed mb-6 max-w-xs">Africa's first AI-smart hospital — connecting community health, specialist care, and structured follow-up at Konza Technopolis, Kenya.</p>
+            <div class="flex gap-2.5">
+              <a href="#" aria-label="Follow us on Twitter / X" class="w-9 h-9 rounded-full border border-white/15 flex items-center justify-center text-white/45 hover:text-white hover:border-white/40 hover:bg-white/10 transition-all">
+                <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" /></svg>
+              </a>
+              <a href="#" aria-label="Follow us on LinkedIn" class="w-9 h-9 rounded-full border border-white/15 flex items-center justify-center text-white/45 hover:text-white hover:border-white/40 hover:bg-white/10 transition-all">
+                <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" /></svg>
+              </a>
+              <a href="#" aria-label="Follow us on Facebook" class="w-9 h-9 rounded-full border border-white/15 flex items-center justify-center text-white/45 hover:text-white hover:border-white/40 hover:bg-white/10 transition-all">
+                <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" /></svg>
+              </a>
             </div>
-            <form
-              onsubmit="return false;"
-              class="flex w-full overflow-hidden rounded-full bg-white/10 ring-1 ring-white/20 focus-within:ring-brand"
-            >
-              <input
-                type="email"
-                placeholder="Email"
-                required
-                class="w-full bg-transparent px-6 py-4 text-sm text-white placeholder-white/60 outline-none"
-              />
-              <button
-                class="shrink-0 bg-brand px-8 py-4 text-sm font-semibold text-white transition hover:bg-brand/90"
-              >
-                Subscribe
-              </button>
+          </div>
+
+          <div>
+            <h3 class="text-[10px] font-bold uppercase tracking-[.18em] text-white/40 mb-4">Company</h3>
+            <ul class="space-y-2.5">
+              <li><a href="about.html" class="text-white/55 hover:text-white text-sm transition-colors">Our Story</a></li>
+              <li><a href="about.html" class="text-white/55 hover:text-white text-sm transition-colors">Leadership</a></li>
+              <li><a href="about.html" class="text-white/55 hover:text-white text-sm transition-colors">Mission &amp; Vision</a></li>
+              <li><a href="about.html" class="text-white/55 hover:text-white text-sm transition-colors">Careers</a></li>
+              <li><a href="about.html" class="text-white/55 hover:text-white text-sm transition-colors">News</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-[10px] font-bold uppercase tracking-[.18em] text-white/40 mb-4">Services</h3>
+            <ul class="space-y-2.5">
+              <li><a href="services.html" class="text-white/55 hover:text-white text-sm transition-colors">Referral Pathways</a></li>
+              <li><a href="services.html" class="text-white/55 hover:text-white text-sm transition-colors">Structured Follow-Up</a></li>
+              <li><a href="services.html" class="text-white/55 hover:text-white text-sm transition-colors">NCD Screening</a></li>
+              <li><a href="services.html" class="text-white/55 hover:text-white text-sm transition-colors">Research Infrastructure</a></li>
+              <li><a href="services.html" class="text-white/55 hover:text-white text-sm transition-colors">Clinical Trials</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-[10px] font-bold uppercase tracking-[.18em] text-white/40 mb-4">Patients</h3>
+            <ul class="space-y-2.5">
+              <li><a href="faqs.html" class="text-white/55 hover:text-white text-sm transition-colors">FAQs</a></li>
+              <li><a href="contact-us.html" class="text-white/55 hover:text-white text-sm transition-colors">Contact Us</a></li>
+              <li><a href="testimonials.html" class="text-white/55 hover:text-white text-sm transition-colors">Testimonials</a></li>
+              <li><a href="contact-us.html" class="text-white/55 hover:text-white text-sm transition-colors">Partner With Us</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-[10px] font-bold uppercase tracking-[.18em] text-white/40 mb-4">Get in Touch</h3>
+            <ul class="space-y-3 mb-7">
+              <li>
+                <p class="text-[10px] text-white/35 uppercase tracking-widest mb-1">Phone</p>
+                <a href="tel:+19733568322" class="text-white/55 hover:text-white text-sm transition-colors block">+1 973 356 8322</a>
+                <a href="tel:+16063560179" class="text-white/55 hover:text-white text-sm transition-colors block">+1 606 356 0179</a>
+              </li>
+              <li>
+                <p class="text-[10px] text-white/35 uppercase tracking-widest mb-1">Location</p>
+                <p class="text-white/55 text-sm leading-relaxed">Konza Technopolis,<br />Machakos County, Kenya</p>
+              </li>
+            </ul>
+            <p class="text-[10px] text-white/35 uppercase tracking-widest mb-2.5">Newsletter</p>
+            <form class="flex flex-col gap-2" data-fake-form="newsletter-success">
+              <label for="footer-email" class="sr-only">Email address</label>
+              <input id="footer-email" type="email" placeholder="your@email.com" required class="bg-white/[8%] border border-white/15 rounded-xl px-3.5 py-2.5 text-sm text-white placeholder:text-white/30 focus:outline-none focus:border-brand focus:bg-white/[12%] transition-all" />
+              <button type="submit" class="bg-brand text-white py-2.5 rounded-xl text-sm font-semibold hover:bg-brand-deep transition-colors">Subscribe</button>
             </form>
+            <p id="newsletter-success" class="hidden text-brand text-sm font-semibold">Thank you for subscribing!</p>
           </div>
         </div>
-      </div>
 
-      <!-- Top footer -->
-      <div class="mx-auto max-w-7xl px-5 lg:px-8 py-16">
-        <div
-          class="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between"
-        >
-          <a href="index.html" class="flex items-center">
-            <img
-              src="images/logo.png"
-              alt="J.P. Muia Medicine"
-              class="h-16 w-auto rounded bg-white p-1"
-            />
-          </a>
-
-          <div class="grid gap-6 sm:grid-cols-3">
-            <div class="flex items-start gap-3">
-              <svg
-                class="mt-0.5 h-5 w-5 shrink-0 text-brand"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                aria-hidden="true"
-              >
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                <circle cx="12" cy="10" r="3" />
-              </svg>
-              <p class="text-sm text-white/80">
-                Konza Technopolis, Machakos County, Kenya
-              </p>
-            </div>
-            <div class="flex items-start gap-3">
-              <svg
-                class="mt-0.5 h-5 w-5 shrink-0 text-brand"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                aria-hidden="true"
-              >
-                <path
-                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"
-                />
-              </svg>
-              <div class="flex flex-col text-sm text-white/80">
-                <a href="tel:+19733568322" class="hover:text-white"
-                  >+1 973 356 8322</a
-                >
-                <a href="tel:+16063560179" class="hover:text-white"
-                  >+1 606 356 0179</a
-                >
-              </div>
-            </div>
-            <div class="flex items-start gap-3">
-              <svg
-                class="mt-0.5 h-5 w-5 shrink-0 text-brand"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                aria-hidden="true"
-              >
-                <rect x="2" y="4" width="20" height="16" rx="2" />
-                <path d="m22 7-10 5L2 7" />
-              </svg>
-              <a
-                href="mailto:info@jpmuiahealthsystem.org"
-                class="text-sm text-white/80 hover:text-white"
-                >info@jpmuiahealthsystem.org</a
-              >
-            </div>
-          </div>
-
-          <a
-            href="contact-us.html"
-            class="inline-flex items-center gap-3 rounded-full bg-brand px-6 py-3 text-sm font-semibold text-white transition hover:bg-brand/90"
-          >
-            Get in Touch
-            <svg
-              class="h-4 w-4"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              aria-hidden="true"
-            >
-              <line x1="7" y1="17" x2="17" y2="7" />
-              <polyline points="7 7 17 7 17 17" />
-            </svg>
-          </a>
-        </div>
-      </div>
-
-      <!-- Bottom footer -->
-      <div class="border-t border-white/10">
-        <div class="mx-auto max-w-7xl px-5 lg:px-8 py-8">
-          <div
-            class="flex flex-col gap-6 md:flex-row md:items-center md:justify-between"
-          >
-            <nav class="flex flex-wrap gap-x-6 gap-y-2 text-sm">
-              <a href="index.html" class="text-white/80 hover:text-white"
-                >Home</a
-              >
-              <a href="about.html" class="text-white/80 hover:text-white"
-                >About</a
-              >
-              <a href="faqs.html" class="text-white/80 hover:text-white"
-                >The Problem</a
-              >
-              <a href="services.html" class="text-white/80 hover:text-white"
-                >Solutions</a
-              >
-              <a href="testimonials.html" class="text-white/80 hover:text-white"
-                >Team</a
-              >
-              <a href="contact-us.html" class="text-white/80 hover:text-white"
-                >Contact</a
-              >
-              <a
-                href="https://www.instagram.com/"
-                target="_blank"
-                rel="noopener"
-                class="text-brand hover:text-white"
-                >Instagram</a
-              >
-              <a
-                href="https://twitter.com/"
-                target="_blank"
-                rel="noopener"
-                class="text-brand hover:text-white"
-                >Twitter</a
-              >
-            </nav>
-            <p class="text-sm text-white/60">
-              © J.P. Muia Health System. All Rights Reserved.
-            </p>
+        <div class="border-t border-white/[8%] pt-7 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <p class="text-white/30 text-xs">&copy; <span id="footer-year"></span> J.P. Muia Health System. All rights reserved.</p>
+          <div class="flex gap-5">
+            <a href="#" class="text-white/30 hover:text-white/60 text-xs transition-colors">Privacy Policy</a>
+            <a href="#" class="text-white/30 hover:text-white/60 text-xs transition-colors">Terms of Use</a>
+            <a href="#" class="text-white/30 hover:text-white/60 text-xs transition-colors">Accessibility</a>
           </div>
         </div>
       </div>
     </footer>
 
-    <!-- Back-to-top (visible without JS; JS reveals it after scrolling and smooth-scrolls) -->
-    <a
-      href="#"
-      id="back-to-top"
-      class="fixed bottom-6 right-6 z-50 inline-flex h-12 w-12 items-center justify-center rounded-full bg-brand text-white shadow-lg transition hover:bg-brand/90"
-      aria-label="Back to top"
-    >
-      <svg
-        class="h-6 w-6"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        aria-hidden="true"
-      >
-        <line x1="12" y1="19" x2="12" y2="5" />
-        <polyline points="5 12 12 5 19 12" />
-      </svg>
-    </a>
+    <button data-back-top class="back-top hidden" aria-label="Back to top">
+      <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 15l-6-6-6 6" /></svg>
+    </button>
 
     <script>
-      (function () {
-        "use strict";
-        var reduceMotion = window.matchMedia(
-          "(prefers-reduced-motion: reduce)",
-        ).matches;
-
-        /* ---------- 1. SCROLL REVEAL ---------- */
-        (function () {
-          var els = document.querySelectorAll("[data-reveal]");
-          if (!els.length) return;
-          if (reduceMotion || !("IntersectionObserver" in window)) {
-            els.forEach(function (el) {
-              el.classList.add("is-visible");
-            });
-            return;
-          }
-          var io = new IntersectionObserver(
-            function (entries) {
-              entries.forEach(function (e) {
-                if (e.isIntersecting) {
-                  e.target.classList.add("is-visible");
-                  io.unobserve(e.target);
-                }
-              });
-            },
-            { threshold: 0.12, rootMargin: "0px 0px -8% 0px" },
-          );
-          els.forEach(function (el) {
-            io.observe(el);
-          });
-        })();
-
-        /* ---------- 2. FAQ ACCORDION: single-open enhancement ---------- */
-        /* Native <details> works with JS off. When JS is present we sync open
-       state across a group so only one answer stays open at a time. */
-        (function () {
-          var groups = document.querySelectorAll("[data-faq-group]");
-          groups.forEach(function (group) {
-            var items = Array.prototype.slice.call(
-              group.querySelectorAll("details.faq"),
-            );
-            items.forEach(function (item) {
-              item.addEventListener("toggle", function () {
-                if (!item.open) return;
-                items.forEach(function (other) {
-                  if (other !== item && other.open) other.open = false;
-                });
-              });
-            });
-          });
-        })();
-
-        /* ---------- 3. DROPDOWN NAV (mobile click toggle) ---------- */
-        (function () {
-          var isMobile = function () {
-            return window.matchMedia("(max-width: 1023px)").matches;
-          };
-          var btns = document.querySelectorAll("[data-dropdown-btn]");
-          btns.forEach(function (btn) {
-            var menu = btn.parentElement.querySelector(".nav-submenu");
-            if (!menu) return;
-            btn.setAttribute("aria-haspopup", "true");
-            btn.setAttribute("aria-expanded", "false");
-            btn.addEventListener("click", function (e) {
-              if (!isMobile()) {
-                // Desktop opens on hover; a mouse click would latch the panel
-                // open via :focus-within, so drop focus to let it close.
-                if (e.detail !== 0) btn.blur();
-                return;
-              }
-              e.preventDefault();
-              var isOpen = menu.classList.toggle("open");
-              btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
-            });
-          });
-          window.addEventListener("resize", function () {
-            if (!isMobile()) {
-              document
-                .querySelectorAll(".nav-submenu.open")
-                .forEach(function (m) {
-                  m.classList.remove("open");
-                });
-              btns.forEach(function (b) {
-                b.setAttribute("aria-expanded", "false");
-              });
-            }
-          });
-        })();
-
-        /* ---------- 4. BACK TO TOP ---------- */
-        (function () {
-          var btn = document.getElementById("back-to-top");
-          if (!btn) return;
-          function onScroll() {
-            if (window.pageYOffset > 400) btn.classList.add("is-visible");
-            else btn.classList.remove("is-visible");
-          }
-          window.addEventListener("scroll", onScroll, { passive: true });
-          onScroll();
-          btn.addEventListener("click", function (e) {
-            e.preventDefault();
-            window.scrollTo({
-              top: 0,
-              behavior: reduceMotion ? "auto" : "smooth",
-            });
-          });
-        })();
-      })();
+      document.getElementById("footer-year").textContent = new Date().getFullYear();
     </script>
+    <script src="script.js"></script>
   </body>
 </html>
